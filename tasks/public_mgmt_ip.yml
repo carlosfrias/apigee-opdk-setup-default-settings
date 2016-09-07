@@ -1,0 +1,16 @@
+---
+
+- name: Get local management server if on dc-1
+  set_fact:
+    public_mgmt_ip: "{{ groups['dc-1-ms'][0] }}"
+  when: groups['dc-1'] is defined and inventory_hostname in groups['dc-1']
+
+- name: Get local management server if on dc-2
+  set_fact:
+    public_mgmt_ip: "{{ groups['dc-2-ms'][0] }}"
+  when: groups['dc-2'] is defined and inventory_hostname in groups['dc-2']
+
+- name: Cache public mgmt address for node
+  cache:
+    key: 'public_mgmt_ip'
+    value: '{{ public_mgmt_ip }}'

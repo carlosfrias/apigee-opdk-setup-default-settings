@@ -1,0 +1,75 @@
+---
+- hosts: ms
+  remote_user: root
+  roles:
+  - opdk-setup-default-settings
+  tasks:
+  - name: opdk server self
+    opdk_server_self:
+      server_type: 'ms'
+      username: '{{ opdk_user_email }}'
+      password: '{{ opdk_user_pass }}'
+
+  - debug: var=edge_ms_self
+#
+- hosts: rmp
+  remote_user: root
+  roles:
+  - opdk-setup-default-settings
+  tasks:
+  - name: opdk server self
+    opdk_server_self:
+      server_type: 'mp'
+      username: '{{ opdk_user_email }}'
+      password: '{{ opdk_user_pass }}'
+
+  - debug: var=edge_mp_self
+
+  - name: opdk server self
+    opdk_server_self:
+      server_type: 'router'
+      username: '{{ opdk_user_email }}'
+      password: '{{ opdk_user_pass }}'
+
+  - debug: var=edge_router_self
+
+- hosts: qpid
+  remote_user: root
+  roles:
+    - opdk-setup-default-settings
+
+  tasks:
+  - name: opdk server self
+    opdk_server_self:
+      server_type: 'qs'
+      username: '{{ opdk_user_email }}'
+      password: '{{ opdk_user_pass }}'
+
+  - debug: var=edge_qpid_self
+
+- hosts: pg
+  remote_user: root
+  roles:
+    - opdk-setup-default-settings
+
+  tasks:
+  - name: opdk server self
+    opdk_server_self:
+      server_type: 'ps'
+      username: '{{ opdk_user_email }}'
+      password: '{{ opdk_user_pass }}'
+
+  - debug: var=edge_pg_self
+
+- hosts: '{{ hosts }}'
+  roles:
+    - opdk-setup-default-settings
+
+  tasks:
+  - name: Obtain server self report
+    opdk_server_self:
+      server_type: '{{ server_type }}'
+      username: '{{ opdk_user_email }}'
+      password: '{{ opdk_user_pass }}'
+
+  - debug: var="edge_{{ server_type }}_self"

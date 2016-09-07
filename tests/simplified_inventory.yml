@@ -1,0 +1,20 @@
+---
+apigee_topology:
+  - dc-1 dc1n1 ms
+  - dc-1 dc1n2 ds
+  - dc-1 dc1n3 ds
+  - dc-1 dc1n4 ds
+  - dc-1 dc1n5 rmp
+  - dc-1 dc1n6 rmp
+  - dc-1 dc1n7 qs
+  - dc-1 dc1n8 qs
+  - dc-1 dc1n9 ps
+  - dc-2 dc2n1 ms
+  - dc-2 dc2n2 ds
+  - dc-2 dc2n3 ds
+  - dc-2 dc1n4 ds
+  - dc-2 dc2n5 rmp
+  - dc-2 dc2n6 rmp
+  - dc-2 dc2n7 qs
+  - dc-2 dc2n8 qs
+  - dc-2 dc2n9 ps

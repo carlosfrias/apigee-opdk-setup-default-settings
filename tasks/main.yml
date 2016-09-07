@@ -1,0 +1,103 @@
+---
+# tasks file for opdk-setup-default-settings
+- name: Update setup facts
+  setup:
+
+- name: Update AWS facts, if running AWS
+  ec2_facts:
+  when: ansible_bios_version | search('amazon')
+
+- include: network-interface-name.yml
+  when: interface_name is not defined
+
+- include: local_address.yml
+  when: local_address is not defined
+
+- include: public_address.yml
+  when: public_address is not defined
+
+- include: local_mgmt_ip.yml
+  when: local_mgmt_ip is not defined
+
+- include: public_mgmt_ip.yml
+  when: public_mgmt_ip is not defined
+
+#- cache:
+#    key: 'jdk_version'
+#    value: '{{ jdk_version }}'
+#
+#- cache:
+#    key: 'java_home'
+#    value: '{{ java_home }}'
+#
+#- cache:
+#    key: 'opdk_user_name'
+#    value: '{{ opdk_user_name }}'
+#
+#- cache:
+#    key: 'opdk_group_name'
+#    value: '{{ opdk_group_name }}'
+#
+#- cache:
+#    key: 'opdk_user_email'
+#    value: '{{ opdk_user_email }}'
+#
+#- cache:
+#    key: 'opdk_user_pass'
+#    value: '{{ opdk_user_pass }}'
+#
+#- cache:
+#    key: 'opdk_user_home'
+#    value: '{{ opdk_user_home }}'
+#
+#- cache:
+#    key: 'admin_user'
+#    value: '{{ admin_user }}'
+#
+#- cache:
+#    key: 'opdk_installer_path'
+#    value: '{{ opdk_installer_path }}'
+#
+#- cache:
+#    key: 'apigee_data_backup_archive_name'
+#    value: 'apigee_data_backup.tar.gz'
+#
+#- cache:
+#    key: 'apigee_archive_storage_folder'
+#    value: '{{ opdk_installer_path }}'
+#
+#- cache:
+#    key: 'apigee_installation_home'
+#    value: '{{ apigee_installation_home }}'
+#
+#- cache:
+#    key: 'apigee_service'
+#    value: '{{ apigee_installation_home }}/apigee-service/bin/apigee-service'
+#
+#- cache:
+#    key: 'nodetool'
+#    value: '{{ apigee_installation_home }}/apigee-cassandra/bin/nodetool'
+#
+#- cache:
+#    key: 'apigee_setup'
+#    value: '{{ apigee_installation_home }}/apigee-setup/bin/setup.sh'
+#
+#- cache:
+#    key: 'apigee_update'
+#    value: '{{ apigee_installation_home }}/apigee-setup/bin/update.sh'
+#
+#- cache:
+#    key: 'apigee_all'
+#    value: '{{ apigee_installation_home }}/apigee-service/bin/apigee-all'
+#
+#- cache:
+#    key: 'opdk_license_target_file_path'
+#    value: "{{ opdk_installer_path }}/license.conf"
+#
+#- cache:
+#    key: 'opdk_installation_config_file'
+#    value: "{{ opdk_installer_path }}/silent-install.conf"
+#
+#- cache:
+#    key: 'apigee_validate_config_file'
+#    value: '{{ opdk_installer_path }}/apigee-validate.conf'

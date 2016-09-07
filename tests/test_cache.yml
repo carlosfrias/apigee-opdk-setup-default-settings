@@ -1,0 +1,14 @@
+---
+- hosts: ms
+  remote_user: root
+  roles:
+    - opdk-setup-default-settings
+
+  tasks:
+  - name: Obtain server self report
+    cache:
+      key: 'test_user'
+      value: 'Carlos'
+
+  - debug:
+      var: test_user
