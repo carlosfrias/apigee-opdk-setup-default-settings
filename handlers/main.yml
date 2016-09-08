@@ -1,2 +1,9 @@
 ---
 # handlers file for opdk-setup-default-settings
+
+- name: restart node
+  become: true
+  ignore_errors: yes
+  shell: 'reboot now'
+  async: '{{ restart_node_async }}'
+  poll: '{{ restart_node_poll }}'
