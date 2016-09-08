@@ -95,7 +95,6 @@ archives
 ssh_keys
 ansible.log
 *.zip
-license.txt
 *.log
 *.tar.gz
 *.rpm
