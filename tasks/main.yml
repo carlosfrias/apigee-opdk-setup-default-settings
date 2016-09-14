@@ -5,7 +5,7 @@
 
 - name: Update AWS facts, if running AWS
   ec2_facts:
-  when: ansible_bios_version | search('amazon')
+  when: ansible_bios_version is defined and ansible_bios_version | search('amazon')
 
 - include: network-interface-name.yml
   when: interface_name is not defined
