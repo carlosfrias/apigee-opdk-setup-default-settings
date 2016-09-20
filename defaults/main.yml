@@ -146,10 +146,7 @@ grafana_username: ''
 grafana_password: '{{ grafana_username }}'
 
 # Default collectd installation file
-collectd_installation_config: collectd-installation.conf
-
-# Default influxdb host
-influxdb_host: 127.0.0.1
+influxdb_installation_config: influxdb.conf
 
 # Local folder in which to store logs and config files
 conf_logs_dir: configs_and_logs
@@ -277,7 +274,7 @@ system_config_files:
   - { dir: '/etc/security/limits.d/', name: '*conf' }
 
 apigee_config_files:
-  - { dir: '{{ opdk_installer_path }}/', name: '*conf' }
+  - { dir: '{{ opdk_installer_path }}/', name: '*.conf' }
   - { dir: '{{ apigee_installation_home }}/customer/', name: '*' }
   - { dir: '{{ apigee_installation_home }}/apigee-cassandra/', name: '*yaml' }
   - { dir: '{{ apigee_installation_home }}/etc/', name: 'default*.sh' }
