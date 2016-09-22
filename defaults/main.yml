@@ -232,6 +232,9 @@ opdk_mp_pod: 'gateway'
 # Default to enable use of the zookeeper cluster
 opdk_use_zk_cluster: 'y'
 
+# Default cassandra clustername used for monetization
+opdk_cass_clustername: 'Apigee'
+
 # SMTP settings for Edge Configuration
 opdk_skip_smpt: 'y'
 opdk_smtp_host: 'smtp.example.com'
