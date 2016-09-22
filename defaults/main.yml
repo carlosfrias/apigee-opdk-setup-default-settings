@@ -8,7 +8,7 @@ jdk_version: '1.7'
 java_home: /usr/lib/jvm/java-openjdk
 
 # OPDK OS user name
-opdk_user_name: apigee
+opdk_user_name: ''
 
 # OPDK OS group name
 opdk_group_name: "{{ opdk_user_name }}"
