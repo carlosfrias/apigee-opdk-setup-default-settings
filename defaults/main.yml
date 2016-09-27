@@ -2,7 +2,7 @@
 # defaults file for opdk-setup-default-settings
 
 # Target Java JDK version
-jdk_version: '1.7'
+jdk_version: '1.8'
 
 # System file path to use in JAVA_HOME
 java_home: /usr/lib/jvm/java-openjdk
@@ -29,10 +29,10 @@ admin_user: '{{ opdk_user_email }}'
 admin_pass: '{{ opdk_user_pass }}'
 
 # Default Apigee Edge Private Cloud Version
-opdk_version: '4.16.01'
+opdk_version: '4.16.09'
 
 # Default version of the Apigee mirror to use
-apigee_mirror_version: '4.16.01.03'
+apigee_mirror_version: '4.16.09'
 
 # Apigee staging installation folder
 opdk_installer_path: "/tmp"
