@@ -99,7 +99,7 @@ apigee_repo_url: 'https://{{ apigee_repo_uri }}'
 copy_archive: yes
 
 # Storage folder for the Apigee archive
-archive_folder: /tmp/
+archive_folder: /tmp
 
 # Apigee archive that is created when a mirror is used.
 archive_name: apigee-{{ opdk_version }}.tar.gz
