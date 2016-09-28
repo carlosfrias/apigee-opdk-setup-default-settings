@@ -3,14 +3,15 @@
 - name: Get local management server if on dc-1
   set_fact:
     local_mgmt_ip: "{{ hostvars[groups['dc-1-ms'][0]][interface_name].ipv4.address }}"
-  when: groups['dc-1'] is defined and inventory_hostname in groups['dc-1']
+  when: groups['dc-1'] is defined and groups['dc-1-ms'] and inventory_hostname in groups['dc-1']
 
 - name: Get local management server if on dc-2
   set_fact:
     local_mgmt_ip: "{{ hostvars[groups['dc-2-ms'][0]][interface_name].ipv4.address }}"
-  when: groups['dc-2'] is defined and inventory_hostname in groups['dc-2']
+  when: groups['dc-2-ms'] is defined and groups['dc-1-ms'] and inventory_hostname in groups['dc-2']
 
 - name: Cache local mgmt address for node
   cache:
     key: 'local_mgmt_ip'
     value: '{{ local_mgmt_ip }}'
+  when: local_mgmt_ip is defined
