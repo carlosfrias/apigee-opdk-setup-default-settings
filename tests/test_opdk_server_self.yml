@@ -1,6 +1,5 @@
 ---
 - hosts: ms
-  remote_user: root
   roles:
   - opdk-setup-default-settings
   tasks:
@@ -13,7 +12,6 @@
   - debug: var=edge_ms_self
 #
 - hosts: rmp
-  remote_user: root
   roles:
   - opdk-setup-default-settings
   tasks:

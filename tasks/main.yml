@@ -22,6 +22,8 @@
 - include: public_mgmt_ip.yml
   when: public_mgmt_ip is not defined
 
+- include: server_self_reports.yml
+
 #- cache:
 #    key: 'jdk_version'
 #    value: '{{ jdk_version }}'
