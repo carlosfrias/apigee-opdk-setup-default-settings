@@ -1,29 +1,34 @@
 ---
 - name: OPDK ms server self
+  ignore_errors: yes
   opdk_server_self:
     server_type: 'ms'
     username: '{{ opdk_user_email }}'
     password: '{{ opdk_user_pass }}'
 
 - name: OPDK mp server self
+  ignore_errors: yes
   opdk_server_self:
     server_type: 'mp'
     username: '{{ opdk_user_email }}'
     password: '{{ opdk_user_pass }}'
 
 - name: OPDK router server self
+  ignore_errors: yes
   opdk_server_self:
     server_type: 'router'
     username: '{{ opdk_user_email }}'
     password: '{{ opdk_user_pass }}'
 
 - name: OPDK qs server self
+  ignore_errors: yes
   opdk_server_self:
     server_type: 'qs'
     username: '{{ opdk_user_email }}'
     password: '{{ opdk_user_pass }}'
 
 - name: OPDK ps server self
+  ignore_errors: yes
   opdk_server_self:
     server_type: 'ps'
     username: '{{ opdk_user_email }}'
