@@ -89,10 +89,11 @@ def main():
     inventory_hostname = module.params['inventory_hostname']
     hostvars = module.params['hostvars']
 
+    with open('~/.ansible/tmp/hostvars.json','w') as hostvars_file:
+        hostvars_file.write(hostvars)
+
     hostvars = ast.literal_eval(hostvars)
     hostvars = json.dumps(hostvars)
-    with open('hostvars.json','w') as hostvars_file:
-        hostvars_file.write(hostvars)
     hostvars = json.loads(hostvars)
 
     cass_hosts = build_cass_hosts_config(inventory_hostname, hostvars)
