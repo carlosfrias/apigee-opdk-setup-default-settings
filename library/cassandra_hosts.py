@@ -87,7 +87,7 @@ def main():
     # SEMANTIC_PUBLIC_ADDRESS = module.params['public_ip_field_name']
 
     inventory_hostname = module.params['inventory_hostname']
-    hostvars = module.params['hostvars']
+    hostvars = json.dumps(module.params['hostvars'])
 
     with open('hostvars.json','w') as hostvars_file:
         hostvars_file.write(hostvars)
