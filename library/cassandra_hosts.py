@@ -77,7 +77,7 @@ def main():
     module = AnsibleModule(
             argument_spec=dict(
                     inventory_hostname=dict(required=True, type='str'),
-                    hostvars=dict(required=True, type='jsonargs'),
+                    hostvars=dict(required=True, type='jsonarg'),
                     # public_ip_field_name=dict(required=False, choices=['ec2_ip_address', 'public_address']),
                     # private_ip_field_name=dict(required=False, choices=['ec2_private_ip_address', 'local_address'])
             )
