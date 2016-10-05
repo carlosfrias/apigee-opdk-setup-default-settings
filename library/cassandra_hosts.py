@@ -87,14 +87,13 @@ def main():
 
     inventory_hostname = module.params['inventory_hostname']
     hostvars = module.params['hostvars']
-    # hostvars = str(hostvars)
 
     with open('hostvars.json','w') as hostvars_file:
         hostvars_file.write(json.dumps(hostvars))
 
-    # hostvars = ast.literal_eval(hostvars)
-    # hostvars = json.dumps(hostvars)
-    # hostvars = json.loads(hostvars)
+    hostvars = ast.literal_eval(hostvars)
+    hostvars = json.dumps(hostvars)
+    hostvars = json.loads(hostvars)
 
     cass_hosts = build_cass_hosts_config(inventory_hostname, hostvars)
     cass_hosts = json.dumps(cass_hosts)
