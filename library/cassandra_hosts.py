@@ -88,6 +88,7 @@ def main():
 
     inventory_hostname = module.params['inventory_hostname']
     hostvars = module.params['hostvars']
+    hostvars = str(hostvars)
 
     with open('hostvars.json','w') as hostvars_file:
         hostvars_file.write(hostvars)
