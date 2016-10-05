@@ -1,7 +1,6 @@
 from ansible.module_utils.basic import *
 import ast
 import json
-import uni
 
 GROUPS = 'groups'
 PUBLIC_ADDRESS = 'public_address'
