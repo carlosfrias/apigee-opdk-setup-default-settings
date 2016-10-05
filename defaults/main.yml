@@ -306,7 +306,7 @@ apigee_log_files:
   - { dir: '{{ apigee_installation_home }}/', name: '*.out' }
 
 # Default settings for removing data on rollback
-remove_data_on_rollback: false
+remove_data: false
 
 # Default values used to restart a node
 restart_node_async: 1
