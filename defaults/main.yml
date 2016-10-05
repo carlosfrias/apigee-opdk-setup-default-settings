@@ -307,8 +307,3 @@ apigee_log_files:
 
 # Default settings for removing data on rollback
 remove_data: false
-
-# Default values used to restart a node
-restart_node_async: 1
-restart_node_poll: 0
-
