@@ -1,7 +1,7 @@
 from ansible.module_utils.basic import *
 import ast
 import json
-
+import uni
 
 GROUPS = 'groups'
 PUBLIC_ADDRESS = 'public_address'
@@ -77,7 +77,7 @@ def main():
     module = AnsibleModule(
             argument_spec=dict(
                     inventory_hostname=dict(required=True, type='str'),
-                    hostvars=dict(required=True, type='str'),
+                    hostvars=dict(required=True, type='jsonarg'),
                     # public_ip_field_name=dict(required=False, choices=['ec2_ip_address', 'public_address']),
                     # private_ip_field_name=dict(required=False, choices=['ec2_private_ip_address', 'local_address'])
             )
@@ -88,14 +88,14 @@ def main():
 
     inventory_hostname = module.params['inventory_hostname']
     hostvars = module.params['hostvars']
-    hostvars = str(hostvars)
+    # hostvars = str(hostvars)
 
     with open('hostvars.json','w') as hostvars_file:
-        hostvars_file.write(hostvars)
+        hostvars_file.write(json.dumps(hostvars))
 
-    hostvars = ast.literal_eval(hostvars)
-    hostvars = json.dumps(hostvars)
-    hostvars = json.loads(hostvars)
+    # hostvars = ast.literal_eval(hostvars)
+    # hostvars = json.dumps(hostvars)
+    # hostvars = json.loads(hostvars)
 
     cass_hosts = build_cass_hosts_config(inventory_hostname, hostvars)
     cass_hosts = json.dumps(cass_hosts)
