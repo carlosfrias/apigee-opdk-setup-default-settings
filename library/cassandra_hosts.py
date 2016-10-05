@@ -89,7 +89,7 @@ def main():
     hostvars = module.params['hostvars']
 
     with open('hostvars.json','w') as hostvars_file:
-        hostvars_file.write(json.dumps(hostvars))
+        hostvars_file.write(hostvars)
 
     hostvars = ast.literal_eval(hostvars)
     hostvars = json.dumps(hostvars)
