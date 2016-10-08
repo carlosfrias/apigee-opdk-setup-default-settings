@@ -297,6 +297,8 @@ system_config_files:
 
 apigee_config_files:
   - { dir: '{{ opdk_installer_path }}/', name: '*.conf' }
+  - { dir: '{{ opdk_installer_path }}/', name: '*.sh' }
+  - { dir: '{{ opdk_installer_path }}/', name: '*.py' }
   - { dir: '{{ apigee_installation_home }}/customer/', name: '*' }
   - { dir: '{{ apigee_installation_home }}/', name: '*cfg' }
   - { dir: '{{ apigee_installation_home }}/', name: '*yaml' }
