@@ -314,7 +314,6 @@ apigee_config_files:
 apigee_log_files:
   - { dir: '{{ opdk_installer_path }}/', name: '*.log' }
   - { dir: '{{ opdk_installer_path }}/', name: '*.txt' }
-  - { dir: '{{ apigee_installation_home }}/var/log/', name: '*.log' }
   - { dir: '{{ apigee_installation_home }}/', name: '*.out' }
   - { dir: '/var/log/', name: 'messages' }
 
