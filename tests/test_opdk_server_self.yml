@@ -1,7 +1,7 @@
 ---
 - hosts: ms
   roles:
-  - opdk-setup-default-settings
+  - apigee-opdk-setup-default-settings
   tasks:
   - name: opdk server self
     opdk_server_self:
@@ -13,7 +13,7 @@
 #
 - hosts: rmp
   roles:
-  - opdk-setup-default-settings
+  - apigee-opdk-setup-default-settings
   tasks:
   - name: opdk server self
     opdk_server_self:
@@ -34,7 +34,7 @@
 - hosts: qpid
   remote_user: root
   roles:
-    - opdk-setup-default-settings
+    - apigee-opdk-setup-default-settings
 
   tasks:
   - name: opdk server self
@@ -48,7 +48,7 @@
 - hosts: pg
   remote_user: root
   roles:
-    - opdk-setup-default-settings
+    - apigee-opdk-setup-default-settings
 
   tasks:
   - name: opdk server self
@@ -61,7 +61,7 @@
 
 - hosts: '{{ hosts }}'
   roles:
-    - opdk-setup-default-settings
+    - apigee-opdk-setup-default-settings
 
   tasks:
   - name: Obtain server self report

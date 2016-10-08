@@ -1,5 +1,5 @@
 ---
-# tasks file for opdk-setup-default-settings
+# tasks file for apigee-opdk-setup-default-settings
 - name: Update setup facts
   setup:
 

@@ -368,7 +368,7 @@ Default system config files to download
 
 Default settings for removing data on rollback
 
-    remove_data_on_rollback: false
+    remove_apigee: false
 
 Dependencies
 ------------
@@ -380,7 +380,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: opdk-setup-default-settings }
+         - { role: apigee-opdk-setup-default-settings }
 
 License
 -------

@@ -1,5 +1,5 @@
 ---
-# defaults file for opdk-setup-default-settings
+# defaults file for apigee-opdk-setup-default-settings
 
 # Target Java JDK version
 jdk_version: '1.8'
@@ -77,7 +77,7 @@ opdk_license_source_file_name: '~/.apigee/license.txt'
 # Apigee silent installation configuration file
 opdk_installation_config_file: "{{ opdk_installer_path }}/silent-install.conf"
 
-# defaults file for opdk-setup-ps
+# defaults file for apigee-opdk-setup-ps
 apigee_postgresql_data_dir: '{{ apigee_installation_home }}/data/apigee-postgresql/pgdata'
 
 # Silent installation configuration file that is provided manually
@@ -306,4 +306,4 @@ apigee_log_files:
   - { dir: '{{ apigee_installation_home }}/', name: '*.out' }
 
 # Default settings for removing data on rollback
-remove_data: false
+remove_apigee: false

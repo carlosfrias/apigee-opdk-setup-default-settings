@@ -2,7 +2,7 @@
 - hosts: ms
   remote_user: root
   roles:
-    - opdk-setup-default-settings
+    - apigee-opdk-setup-default-settings
 
   tasks:
   - name: Obtain server self report

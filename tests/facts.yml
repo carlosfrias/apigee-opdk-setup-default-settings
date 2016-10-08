@@ -5,6 +5,6 @@
   - setup:
   - ec2_facts:
   roles:
-  - opdk-setup-default-settings
+  - apigee-opdk-setup-default-settings
   tags:
   - facts

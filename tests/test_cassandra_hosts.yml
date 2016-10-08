@@ -2,7 +2,7 @@
 - hosts: '{{ hosts }}'
   remote_user: root
   roles:
-    - opdk-setup-default-settings
+    - apigee-opdk-setup-default-settings
   tasks:
   - name: Configure cassandra hosts
     cassandra_hosts:
