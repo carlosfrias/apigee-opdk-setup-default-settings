@@ -317,6 +317,7 @@ apigee_log_files:
   - { dir: '{{ opdk_installer_path }}/', name: '*.log' }
   - { dir: '{{ opdk_installer_path }}/', name: '*.txt' }
   - { dir: '{{ apigee_installation_home }}/', name: '*.out' }
+  - { dir: '{{ apigee_installation_home }}/', name: '*.log' }
   - { dir: '/var/log/', name: 'messages' }
 
 # Default settings for removing data on rollback
