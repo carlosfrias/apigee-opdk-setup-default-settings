@@ -300,8 +300,8 @@ apigee_config_files:
   - { dir: '{{ apigee_installation_home }}/customer/', name: '*' }
   - { dir: '{{ apigee_installation_home }}/apigee-cassandra/', name: '*yaml' }
   - { dir: '{{ apigee_installation_home }}/etc/', name: 'default*.sh' }
-#  - { dir: '{{ apigee_installation_home }}/customer', name: '*' }
-#  - { dir: '{{ apigee_installation_home }}/token/', name: '*conf' }
+  - { dir: '{{ apigee_installation_home }}/customer', name: '*' }
+  - { dir: '{{ apigee_installation_home }}/token/', name: '*conf' }
 #  - { dir: '{{ apigee_installation_home }}/*cassandra/', name: '*conf' }
 #  - { dir: '{{ apigee_installation_home }}/*qpid-server/', name: '*conf' }
 #  - { dir: '{{ apigee_installation_home }}/*qpidd/', name: '*conf' }
@@ -313,7 +313,6 @@ apigee_config_files:
 
 apigee_log_files:
   - { dir: '{{ opdk_installer_path }}/', name: '*.log' }
-  - { dir: '{{ opdk_installer_path }}/var/log/', name: '*.log' }
   - { dir: '{{ opdk_installer_path }}/', name: '*.txt' }
   - { dir: '{{ apigee_installation_home }}/var/log/', name: '*.log' }
   - { dir: '{{ apigee_installation_home }}/', name: '*.out' }
