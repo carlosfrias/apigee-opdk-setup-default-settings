@@ -2,23 +2,12 @@
 - name: Normal interface name for redhat family
   set_fact:
     interface_name: 'ansible_eth0'
-  when: ansible_os_family | lower == 'redhat' or ansible_os_family | lower == 'centos' or ansible_os_family | lower == 'darwin'
+  when: ansible_os_family | lower == 'redhat' or ansible_os_family | lower == 'centos' or ansible_distribution | lower == 'oraclelinux'
 
-
-- name: Capture interface Name if running Centos on Virtualbox
+- name: Capture interface Name if running an EL on Virtualbox
   set_fact:
     interface_name: "ansible_eth1"
-  when: (ansible_os_family | lower == 'redhat'  or ansible_os_family | lower == 'centos' or ansible_os_family | lower == 'darwin') and ansible_bios_version | lower | search('virtualbox')
-
-#- name: Capture Interface Name if running Centos
-#  set_fact:
-#    interface_name: "ansible_eth0"
-#  when: not ansible_bios_version | search('VirtualBox') and ansible_distribution | lower == 'centos'
-
-#- name: Capture Interface Name if running Centos on Amazon
-#  set_fact:
-#    interface_name: "ansible_eth0"
-#  when: ansible_bios_version | lower | search('amazon') and ansible_distribution | lower == 'centos'
+  when: ansible_bios_version | lower | search('virtualbox') and (ansible_os_family | lower == 'redhat'  or ansible_os_family | lower == 'centos' or ansible_os_family | lower == 'darwin' or ansible_distribution | lower == 'oraclelinux')
 
 - name: Capture Interface Name if running Oracle Linux 7 on Virtualbox
   set_fact:
@@ -28,7 +17,7 @@
 - name: Capture Interface Name if running Oracle Linux 6 on Virtualbox
   set_fact:
     interface_name: "ansible_eth1"
-  when: ansible_bios_version | lower | search('virtualbox') and ansible_distribution_major_version == '6' and ansible_distribution | lower == 'oraclelinux'
+  when: ansible_bios_version | lower | search('virtualbox') and ansible_distribution_major_version | version_compare('6', '==') and ansible_distribution | lower == 'oraclelinux'
 
 - name: Capture Interface Name if running Oracle Linux 7
   set_fact:
