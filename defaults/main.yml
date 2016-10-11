@@ -303,10 +303,13 @@ apigee_config_files:
   - { dir: '{{ apigee_installation_home }}/etc/', name: 'default*.sh' }
   - { dir: '{{ apigee_installation_home }}/customer', name: '*' }
   - { dir: '{{ apigee_installation_home }}/token/', name: '*conf' }
-#  - { dir: '{{ apigee_installation_home }}/*cassandra/', name: '*conf' }
+  - { dir: '{{ apigee_installation_home }}/apigee-cassandra/', name: '*conf' }
+  - { dir: '{{ apigee_installation_home }}/apigee-cassandra/', name: '*yml' }
+  - { dir: '{{ apigee_installation_home }}/apigee-cassandra/', name: '*yaml' }
+  - { dir: '{{ apigee_installation_home }}/apigee-zookeeper/', name: '*conf' }
+  - { dir: '{{ apigee_installation_home }}/apigee-zookeeper/', name: '*cfg' }
 #  - { dir: '{{ apigee_installation_home }}/*qpid-server/', name: '*conf' }
 #  - { dir: '{{ apigee_installation_home }}/*qpidd/', name: '*conf' }
-#  - { dir: '{{ apigee_installation_home }}/*zookeeper/', name: '*conf' }
 #  - { dir: '{{ apigee_installation_home }}/token/', name: '*properties' }
 #  - { dir: '{{ apigee_installation_home }}', name: '*yaml' }
 #  - { dir: '{{ apigee_installation_home }}', name: '*yml' }
