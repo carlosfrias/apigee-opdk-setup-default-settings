@@ -32,5 +32,5 @@
 - name: Cache interface name for node
   cache:
     key: 'interface_name'
-    value: '{{ interface_name }}'
+    value: '{{ interface_name | str}}'
 
