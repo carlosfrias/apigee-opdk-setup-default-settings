@@ -56,6 +56,9 @@ apigee_service: '{{ apigee_installation_home }}/apigee-service/bin/apigee-servic
 # Cassandra nodetool command
 nodetool: '{{ apigee_installation_home }}/apigee-cassandra/bin/nodetool'
 
+# Cassandra command line command
+cassandra_cli: '{{ apigee_installation_home }}/apigee-cassandra/bin/cassandra-cli'
+
 # Apigee setup command for 4.16.xx
 apigee_setup: '{{ apigee_installation_home }}/apigee-setup/bin/setup.sh'
 
@@ -204,7 +207,7 @@ onboarding_config_file_path: "{{ opdk_installer_path }}/{{ onboarding_config }}"
 apigee_provision_dir: '{{ apigee_installation_home }}/apigee-provision'
 
 # Default location and name of the Baas Silent Install file
-opdk_baas_silent_install_file_path: /tmp/baas-silent-install.conf
+opdk_baas_silent_install_file_path: '{{ opdk_installation_config_file }}'
 
 # Baas silent install file provided by customer
 opdk_baas_provided_silent_install_file: ''
@@ -299,20 +302,21 @@ apigee_config_files:
   - { dir: '{{ opdk_installer_path }}/', name: '*.conf' }
   - { dir: '{{ opdk_installer_path }}/', name: '*.sh' }
   - { dir: '{{ apigee_installation_home }}/customer/', name: '*' }
-  - { dir: '{{ apigee_installation_home }}/', name: '*cfg' }
   - { dir: '{{ apigee_installation_home }}/etc/', name: 'default*.sh' }
   - { dir: '{{ apigee_installation_home }}/customer', name: '*' }
-  - { dir: '{{ apigee_installation_home }}/token/', name: '*conf' }
-  - { dir: '{{ apigee_installation_home }}/apigee-cassandra/conf', name: '*conf' }
-  - { dir: '{{ apigee_installation_home }}/apigee-cassandra/conf', name: '*yml' }
-  - { dir: '{{ apigee_installation_home }}/apigee-cassandra/conf', name: '*yaml' }
-  - { dir: '{{ apigee_installation_home }}/apigee-zookeeper/conf', name: '*conf' }
-  - { dir: '{{ apigee_installation_home }}/apigee-zookeeper/conf', name: '*cfg' }
+  - { dir: '{{ apigee_installation_home }}/apigee-cassandra/', name: '*conf' }
+  - { dir: '{{ apigee_installation_home }}/apigee-cassandra/', name: '*cfg' }
+  - { dir: '{{ apigee_installation_home }}/apigee-cassandra/', name: '*yml' }
+  - { dir: '{{ apigee_installation_home }}/apigee-cassandra/', name: '*yaml' }
+  - { dir: '{{ apigee_installation_home }}/apigee-cassandra/', name: '*properties' }
+  - { dir: '{{ apigee_installation_home }}/apigee-zookeeper/', name: '*conf' }
+  - { dir: '{{ apigee_installation_home }}/apigee-zookeeper/', name: '*cfg' }
+  - { dir: '{{ apigee_installation_home }}/apigee-zookeeper/', name: '*yml' }
+  - { dir: '{{ apigee_installation_home }}/apigee-zookeeper/', name: '*yaml' }
+  - { dir: '{{ apigee_installation_home }}/apigee-zookeeper/', name: '*properties' }
 #  - { dir: '{{ apigee_installation_home }}/*qpid-server/', name: '*conf' }
 #  - { dir: '{{ apigee_installation_home }}/*qpidd/', name: '*conf' }
 #  - { dir: '{{ apigee_installation_home }}/token/', name: '*properties' }
-#  - { dir: '{{ apigee_installation_home }}', name: '*yaml' }
-#  - { dir: '{{ apigee_installation_home }}', name: '*yml' }
 #  - { dir: '{{ apigee_installation_home }}', name: '*sh' }
 
 apigee_log_files:
@@ -324,3 +328,9 @@ apigee_log_files:
 
 # Default settings for removing data on rollback
 remove_apigee: false
+
+# Default timeout setting used for restarting a node when selinux is not disabled
+server_restart_timeout: 720
+
+# Default to allow server restarts
+server_restart: true

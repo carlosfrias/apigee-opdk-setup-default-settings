@@ -1,15 +1,20 @@
 ---
 
-- name: Get public address for node
-  set_fact:
-    public_address: '{{ inventory_hostname }}'
-
-- name: Get public address for node on AWS
-  set_fact:
-    public_address: '{{ ansible_ec2_public_ipv4 }}'
-  when: "{{ ansible_bios_version | search('amazon') and ansible_ec2_public_ipv4 is defined}}"
-
-- name: Cache public address for node
+- name: Get public address for current node
   cache:
     key: 'public_address'
     value: '{{ inventory_hostname }}'
+
+- block:
+
+  - name: Missing AWS public ip
+    ec2_facts:
+    when: ansible_ec2_public_ipv4 is not defined
+
+  - name: Get public address for current node on AWS
+    cache:
+      key: 'public_address'
+      value: '{{ ansible_ec2_public_ipv4 }}'
+
+  when: "{{ ansible_bios_version | search('amazon') and ansible_ec2_public_ipv4 is defined}}"
+

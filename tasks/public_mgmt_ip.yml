@@ -1,17 +1,17 @@
 ---
-
-- name: Get local management server if on dc-1
-  set_fact:
-    public_mgmt_ip: "{{ groups['dc-1-ms'][0] }}"
-  when: groups['dc-1'] is defined and groups['dc-1-ms'] is defined and inventory_hostname in groups['dc-1']
-
 - name: Get local management server if on dc-2
-  set_fact:
-    public_mgmt_ip: "{{ groups['dc-2-ms'][0] }}"
-  when: groups['dc-2'] is defined and groups['dc-2-ms'] is defined and inventory_hostname in groups['dc-2']
-
-- name: Cache public mgmt address for node
   cache:
     key: 'public_mgmt_ip'
-    value: '{{ public_mgmt_ip }}'
-  when: public_mgmt_ip is defined
+    value: "{{ groups['dc-2-ms'][0] }}"
+  when: groups['dc-2'] is defined and groups['dc-2-ms'] is defined and inventory_hostname in groups['dc-2']
+
+- name: Get local management server if not defined
+  cache:
+    key: 'public_mgmt_ip'
+    value: "{{ groups['dc-1-ms'][0] }}"
+  when: groups['dc-2'] is not defined
+
+- name: Fail playbook if local_mgmt_ip was not defined
+  fail:
+    msg: "Unable to define public_mgmt_ip; likely because of missing dc-1 or dc-2 group in inventory"
+  when: public_mgmt_ip is not defined

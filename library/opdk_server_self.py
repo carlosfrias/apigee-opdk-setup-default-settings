@@ -1,5 +1,6 @@
 import requests
 from requests import ConnectionError
+from requests.exceptions import RequestException
 import sys
 from requests.auth import HTTPBasicAuth
 from ansible.module_utils.basic import *
@@ -47,7 +48,7 @@ def main():
     try:
         resp = get_server_self(server_type, username, password)
         status_code = resp.status_code
-    except ConnectionError as ex:
+    except RequestException as ex:
         status_code = 500
         msg = str(ex) + " Did you run on the correct server?"
         print(msg)
@@ -61,9 +62,12 @@ def main():
                 ansible_facts=facts
         )
     elif status_code > 400:
+        err_msg = "Error status code returned: ["
+        if 'msg' in globals():
+            err_msg += msg
         module.fail_json(
                 changed=False,
-                msg=msg,
+                msg=err_msg,
                 status_code=status_code,
         )
 
