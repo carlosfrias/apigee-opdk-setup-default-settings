@@ -1,21 +1,21 @@
 ---
-- name: Set cache local management server if current node is on dc-2
-  cache:
-    key: 'local_mgmt_ip'
-    value: "{{ hostvars[groups['dc-2-ms'][0]][interface_name].ipv4.address }}"
-  when: groups['dc-2'] is defined and groups['dc-2-ms'] is defined and inventory_hostname in groups['dc-2']
-
 - block:
-
   - name: Set cache local management server if not defined for current node
     cache:
       key: 'local_mgmt_ip'
       value: "{{ hostvars[groups['dc-1-ms'][0]][interface_name].ipv4.address }}"
-    when: groups['dc-2'] is not defined
+    when: groups['dc-1-ms'] is defined
+
+  - name: Set cache local management server if current node is on dc-2
+    cache:
+      key: 'local_mgmt_ip'
+      value: "{{ hostvars[groups['dc-2-ms'][0]][interface_name].ipv4.address }}"
+    when: groups['dc-2'] is defined and groups['dc-2-ms'] is defined and inventory_hostname in groups['dc-2']
+
+  - name: Fail playbook if local_mgmt_ip was not defined
+    fail:
+      msg: "Unable to define local_mgmt_ip; likely because of missing dc-1 or dc-2 group in inventory"
+    when: local_mgmt_ip is not defined
 
   when: local_mgmt_ip is not defined
 
-- name: Fail playbook if local_mgmt_ip was not defined
-  fail:
-    msg: "Unable to define local_mgmt_ip; likely because of missing dc-1 or dc-2 group in inventory"
-  when: local_mgmt_ip is not defined
