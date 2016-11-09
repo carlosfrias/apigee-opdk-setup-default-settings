@@ -197,6 +197,9 @@ env_name: test
 # Default analytics group
 ax_group: axgroup001
 
+# Default consumer group
+consumer_group: consumer-group-001
+
 # Default onboarding provisioning file name
 onboarding_config: 'apigee-provision.conf'
 
