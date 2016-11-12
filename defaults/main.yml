@@ -35,7 +35,7 @@ opdk_version: '4.16.01'
 apigee_mirror_version: '4.16.09'
 
 # Apigee staging installation folder
-opdk_installer_path: "/tmp"
+opdk_installer_path: "~"
 
 # Default name of the backup archive of the apigee data folder
 apigee_data_backup_archive_name: apigee_data_backup.tar.gz
