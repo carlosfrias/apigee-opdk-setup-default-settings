@@ -333,7 +333,9 @@ apigee_log_files:
 remove_apigee: false
 
 # Default timeout setting used for restarting a node when selinux is not disabled
-server_restart_timeout: 720
+#server_restart_timeout: 720
 
 # Default to allow server restarts
 server_restart: true
+
+start_check_delay: 30
