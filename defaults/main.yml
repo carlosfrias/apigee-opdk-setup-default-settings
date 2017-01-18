@@ -99,7 +99,8 @@ apigee_repo_password: ''
 apigee_repo_uri: 'software.apigee.com'
 
 # Apigee bootstrap download url
-apigee_repo_url: 'https://{{ apigee_repo_uri }}'
+apigee_repo_protocol: 'https'
+apigee_repo_url: '{{ apigee_repo_protocol }}://{{ apigee_repo_uri }}'
 
 # Choose whether to copy the Apigee Mirror archive from your control machine or use an existing archive on the server.
 copy_archive: yes
