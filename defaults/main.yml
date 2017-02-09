@@ -224,6 +224,8 @@ baas_superuser_name: ''
 baas_superuser_email: ''
 baas_superuser_pass: ''
 
+baas_create_org_and_user_script: "{{ apigee_installation_home }}/baas-usergrid/bin/create_org_and_user.py"
+
 # Cassandra username and password must be provided regardless of whether you enable authentication.
 opdk_cass_username: ''
 opdk_cass_password: ''
