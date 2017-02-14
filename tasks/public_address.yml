@@ -7,7 +7,7 @@
 
 - block:
 
-  - name: Missing AWS public ip
+  - name: Get public address for current node if on AWS public ip
     ec2_facts:
     when: ansible_ec2_public_ipv4 is not defined
 
