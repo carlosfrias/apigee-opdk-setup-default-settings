@@ -1,19 +1,19 @@
 ---
-- name: Get private address for current node
+- name: Update cache with normalized name for private address
   cache:
     key: 'local_address'
     value: '{{ hostvars[inventory_hostname][interface_name].ipv4.address }}'
 
-#- block:
-#
-#  - name: Missing AWS private ip
-#    ec2_facts:
-#    when: ansible_ec2_local_ipv4 is not defined
-#
-#  - name: Get private address for current node on AWS
-#    cache:
-#      key: 'local_address'
-#      value: '{{ ansible_ec2_local_ipv4 }}'
-#
-#  when: ansible_bios_version is defined and ansible_bios_version | search('amazon')
+- block:
+
+  - name: Update cache with missing private ip on AWS
+    ec2_facts:
+    when: ansible_ec2_local_ipv4 is not defined
+
+  - name: Update cache with normalized name for private address on AWS
+    cache:
+      key: 'local_address'
+      value: '{{ ansible_ec2_local_ipv4 }}'
+
+  when: ansible_bios_version is defined and ansible_bios_version | search('amazon')
 

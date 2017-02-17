@@ -1,22 +1,22 @@
 ---
-- name: Update cache if missing OS family
+- name: Update cache with os_family if is missing
   setup:
   when: ansible_os_family is not defined
 
-- name: Normal network interface name for redhat family OS
+- name: Update cache with normalized network interface name for redhat family OS
   cache:
     key: 'interface_name'
     value: 'ansible_eth0'
   when: ansible_os_family | lower in ['centos', 'oraclelinux', 'redhat']
 
 - block:
-  - name: Capture network interface Name if running an EL Version 6 on Virtualbox
+  - name: Update cache with normalized network interface name if running an EL Version 6 on Virtualbox
     cache:
       key: 'interface_name'
       value: 'ansible_eth1'
     when: ansible_os_family | lower in ['redhat', 'centos', 'darwin', 'oraclelinux'] and ansible_distribution_major_version | version_compare('6', '==')
 
-  - name: Capture network Interface Name if running Oracle Linux 7 on Virtualbox
+  - name: Update cache with normalized network interface iame if running Oracle Linux 7 on Virtualbox
     cache:
       key: 'interface_name'
       value: "ansible_enp0s8"
@@ -24,10 +24,8 @@
 
   when: ansible_bios_version | lower | search('virtualbox')
 
-- name: Capture network Interface Name if running Oracle Linux 7
+- name: Update cache with normalized network interface name if running Oracle Linux 7
   cache:
     key: 'interface_name'
     value: "ansible_enp0s3"
   when: ansible_distribution_major_version | version_compare('7', '==') and ansible_distribution | lower == 'oraclelinux'
-
-

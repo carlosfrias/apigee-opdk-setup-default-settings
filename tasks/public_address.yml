@@ -1,20 +1,18 @@
 ---
-
-- name: Get public address for current node
+- name: Update cache with normalized name for public address
   cache:
     key: 'public_address'
     value: '{{ inventory_hostname }}'
 
 - block:
 
-  - name: Get public address for current node if on AWS public ip
+  - name: Update cache with missing public ip on AWS
     ec2_facts:
     when: ansible_ec2_public_ipv4 is not defined
 
-  - name: Get public address for current node on AWS
+  - name: Update cache with normalized name for public address on AWS
     cache:
       key: 'public_address'
       value: '{{ ansible_ec2_public_ipv4 }}'
 
-  when: "{{ ansible_bios_version | search('amazon') and ansible_ec2_public_ipv4 is defined}}"
-
+  when: ansible_bios_version is defined and ansible_bios_version | search('amazon')
