@@ -70,6 +70,11 @@
     key: 'nodetool'
     value: '{{ apigee_installation_home }}/apigee-cassandra/bin/nodetool'
 
+- name: Update cache with cqlsh path
+  cache:
+    key: 'cqlsh'
+    value: '{{ apigee_installation_home }}/apigee-cassandra/bin/cqlsh'
+
 - name: Update cache with apigee_setup path
   cache:
     key: 'apigee_setup'
