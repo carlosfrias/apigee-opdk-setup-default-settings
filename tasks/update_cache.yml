@@ -1,127 +1,105 @@
 ---
-
 - name: Update cache with jdk_version
   cache:
     key: 'jdk_version'
     value: '{{ jdk_version }}'
-  when: jdk_version is not defined
 
 - name: Update cache with java_home
   cache:
     key: 'java_home'
     value: '{{ java_home }}'
-  when: java_home is not defined
 
 - name: Update cache with opdk_user_name
   cache:
     key: 'opdk_user_name'
     value: '{{ opdk_user_name }}'
-  when: opdk_user_name is not defined
 
 - name: Update cache with opdk_group_name
   cache:
     key: 'opdk_group_name'
     value: '{{ opdk_group_name }}'
-  when: opdk_group_name is not defined
 
 - name: Update cache with opdk_email_name
   cache:
     key: 'opdk_user_email'
     value: '{{ opdk_user_email }}'
-  when: opdk_user_email is not defined
 
 - name: Update cache with opdk_user_password
   cache:
     key: 'opdk_user_pass'
     value: '{{ opdk_user_pass }}'
-  when: opdk_user_pass is not defined
 
 - name: Update cache with opdk_user_home
   cache:
     key: 'opdk_user_home'
     value: '{{ opdk_user_home }}'
-  when: opdk_user_home is not defined
 
 - name: Update cache with admin_user
   cache:
     key: 'admin_user'
     value: '{{ admin_user }}'
-  when: admin_user is not defined
 
 - name: Update cache with opdk_installer_path path
   cache:
     key: 'opdk_installer_path'
     value: '{{ opdk_installer_path }}'
-  when: opdk_installer_path is not defined
 
 - name: Update cache with apigee_data_backup_archive_name
   cache:
     key: 'apigee_data_backup_archive_name'
     value: 'apigee_data_backup.tar.gz'
-  when: apigee_data_backup_archive_name is not defined
 
 - name: Update cache with apigee_archive_storage_folder path
   cache:
     key: 'apigee_archive_storage_folder'
     value: '{{ opdk_installer_path }}'
-  when: apigee_archive_storage_folder is not defined
 
 - name: Update cache with apigee_installation_home path
   cache:
     key: 'apigee_installation_home'
     value: '{{ apigee_installation_home }}'
-  when: apigee_installation_home is not defined
 
 - name: Update cache with apigee_service path
   cache:
     key: 'apigee_service'
     value: '{{ apigee_installation_home }}/apigee-service/bin/apigee-service'
-  when: apigee_service is not defined
 
 - name: Update cache with nodetool path
   cache:
     key: 'nodetool'
     value: '{{ apigee_installation_home }}/apigee-cassandra/bin/nodetool'
-  when: nodetool is not defined
 
 - name: Update cache with cqlsh path
   cache:
     key: 'cqlsh'
     value: '{{ apigee_installation_home }}/apigee-cassandra/bin/cqlsh'
-  when: cqlsh is not defined
 
 - name: Update cache with apigee_setup path
   cache:
     key: 'apigee_setup'
     value: '{{ apigee_installation_home }}/apigee-setup/bin/setup.sh'
-  when: apigee_setup is not defined
 
 - name: Update cache with apigee_update path
   cache:
     key: 'apigee_update'
     value: '{{ apigee_installation_home }}/apigee-setup/bin/update.sh'
-  when: apigee_update is not defined
 
 - name: Update cache with apigee_all path
   cache:
     key: 'apigee_all'
     value: '{{ apigee_installation_home }}/apigee-service/bin/apigee-all'
-  when: apigee_all is not defined
 
 - name: Update cache with opdk_license_target_file_path path
   cache:
     key: 'opdk_license_target_file_path'
     value: "{{ opdk_installer_path }}/license.conf"
-  when: opdk_license_target_file_path is not defined
 
 - name: Update cache with opdk_installation_config_file path
   cache:
     key: 'opdk_installation_config_file'
     value: "{{ opdk_installer_path }}/silent-install.conf"
-  when: opdk_installation_config_file is not defined
 
 - name: Update cache with apigee_validate_config_file path
   cache:
     key: 'apigee_validate_config_file'
     value: '{{ opdk_installer_path }}/apigee-validate.conf'
-  when: apigee_validate_config_file is not defined
