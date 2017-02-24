@@ -323,3 +323,8 @@
   cache:
     key: 'ax_group'
     value: '{{ ax_group }}'
+
+- name: Update cache with env_name path
+  cache:
+    key: 'env_name'
+    value: '{{ env_name }}'
