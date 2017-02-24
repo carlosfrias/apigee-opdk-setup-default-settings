@@ -233,3 +233,53 @@
   cache:
     key: 'opdk_use_cass_cluster'
     value: '{{ opdk_use_cass_cluster }}'
+
+- name: Update cache with opdk_skip_smtp path
+  cache:
+    key: 'opdk_skip_smtp'
+    value: '{{ opdk_skip_smtp }}'
+
+- name: Update cache with opdk_smtp_host path
+  cache:
+    key: 'opdk_smtp_host'
+    value: '{{ opdk_smtp_host }}'
+
+- name: Update cache with opdk_smtp_port path
+  cache:
+    key: 'opdk_smtp_port'
+    value: '{{ opdk_smtp_port }}'
+
+- name: Update cache with opdk_smtp_user path
+  cache:
+    key: 'opdk_smtp_user'
+    value: '{{ opdk_smtp_user }}'
+
+- name: Update cache with opdk_smtp_password path
+  cache:
+    key: 'opdk_smtp_password'
+    value: '{{ opdk_smtp_password }}'
+
+- name: Update cache with opdk_smtp_ssl path
+  cache:
+    key: 'opdk_smtp_ssl'
+    value: '{{ opdk_smtp_ssl }}'
+
+- name: Update cache with opdk_bind_on_all_interfaces path
+  cache:
+    key: 'opdk_bind_on_all_interfaces'
+    value: '{{ opdk_bind_on_all_interfaces }}'
+
+- name: Update cache with org_name path
+  cache:
+    key: 'org_name'
+    value: '{{ org_name }}'
+
+- name: Update cache with ms_ext_mgmt_port path
+  cache:
+    key: 'ms_ext_mgmt_port'
+    value: '{{ ms_ext_mgmt_port }}'
+
+- name: Update cache with qpid_ext_mgmt_port path
+  cache:
+    key: 'qpid_ext_mgmt_port'
+    value: '{{ qpid_ext_mgmt_port }}'
