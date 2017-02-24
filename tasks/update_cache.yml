@@ -283,3 +283,8 @@
   cache:
     key: 'qpid_ext_mgmt_port'
     value: '{{ qpid_ext_mgmt_port }}'
+
+- name: Update cache with onboarding_config_file_path path
+  cache:
+    key: 'onboarding_config_file_path'
+    value: '{{ onboarding_config_file_path }}'
