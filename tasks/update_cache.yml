@@ -288,3 +288,33 @@
   cache:
     key: 'onboarding_config_file_path'
     value: '{{ onboarding_config_file_path }}'
+
+- name: Update cache with new_user path
+  cache:
+    key: 'new_user'
+    value: '{{ new_user }}'
+
+- name: Update cache with first_name path
+  cache:
+    key: 'first_name'
+    value: '{{ first_name }}'
+
+- name: Update cache with last_name path
+  cache:
+    key: 'last_name'
+    value: '{{ last_name }}'
+
+- name: Update cache with virtual_host_port path
+  cache:
+    key: 'virtual_host_port'
+    value: '{{ virtual_host_port }}'
+
+- name: Update cache with virtual_host_name path
+  cache:
+    key: 'virtual_host_name'
+    value: '{{ virtual_host_name }}'
+
+- name: Update cache with ax_group path
+  cache:
+    key: 'ax_group'
+    value: '{{ ax_group }}'
