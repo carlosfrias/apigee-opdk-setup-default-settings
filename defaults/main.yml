@@ -57,7 +57,7 @@ apigee_service: '{{ apigee_installation_home }}/apigee-service/bin/apigee-servic
 nodetool: '{{ apigee_installation_home }}/apigee-cassandra/bin/nodetool'
 
 # Cassandra cqlsh command
-cqlsh: '{{ apigee_installation_home }}/apigee-cassandra/bin/cqlsh'
+cqlsh: '{{ apigee_installation_home }}/apigee-cassandra/bin/nodetool'
 
 # Cassandra command line command
 cassandra_cli: '{{ apigee_installation_home }}/apigee-cassandra/bin/cassandra-cli'
