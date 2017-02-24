@@ -328,3 +328,8 @@
   cache:
     key: 'env_name'
     value: '{{ env_name }}'
+
+- name: Update cache with apigee_provision_dir path
+  cache:
+    key: 'apigee_provision_dir'
+    value: '{{ apigee_provision_dir }}'
