@@ -1,5 +1,6 @@
 ---
 # defaults file for apigee-opdk-setup-default-settings
+credentials_file: '~/.apigee/credentials.yml'
 
 # Target Java JDK version
 jdk_version: '1.8'
@@ -57,7 +58,7 @@ apigee_service: '{{ apigee_installation_home }}/apigee-service/bin/apigee-servic
 nodetool: '{{ apigee_installation_home }}/apigee-cassandra/bin/nodetool'
 
 # Cassandra cqlsh command
-cqlsh: '{{ apigee_installation_home }}/apigee-cassandra/bin/nodetool'
+cqlsh: '{{ apigee_installation_home }}/apigee-cassandra/bin/cqlsh'
 
 # Cassandra command line command
 cassandra_cli: '{{ apigee_installation_home }}/apigee-cassandra/bin/cassandra-cli'
