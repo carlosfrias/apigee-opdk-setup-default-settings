@@ -333,3 +333,145 @@
   cache:
     key: 'apigee_provision_dir'
     value: '{{ apigee_provision_dir }}'
+
+# Apigee Edge Ports
+- name: Update cache with cassandra_jmx_port path
+  cache:
+    key: 'cassandra_jmx_port'
+    value: '{{ cassandra_jmx_port }}'
+
+- name: Update cache with cassandra_thrift_client_port path
+  cache:
+    key: 'cassandra_thrift_client_port'
+    value: '{{ cassandra_thrift_client_port }}'
+
+- name: Update cache with cassandra_cql_native_port path
+  cache:
+    key: 'cassandra_cql_native_port'
+    value: '{{ cassandra_cql_native_port }}'
+
+- name: Update cache with cassandra_non_ssl_gossip_port path
+  cache:
+    key: 'cassandra_non_ssl_gossip_port'
+    value: '{{ cassandra_non_ssl_gossip_port }}'
+
+- name: Update cache with cassandra_ssl_gossip_port path
+  cache:
+    key: 'cassandra_ssl_gossip_port'
+    value: '{{ cassandra_ssl_gossip_port }}'
+
+- name: Update cache with zk_data_port path
+  cache:
+    key: 'zk_data_port'
+    value: '{{ zk_data_port }}'
+
+- name: Update cache with zk_leader_port path
+  cache:
+    key: 'zk_leader_port'
+    value: '{{ zk_leader_port }}'
+
+- name: Update cache with zk_voter_port path
+  cache:
+    key: 'zk_voter_port'
+    value: '{{ zk_voter_port }}'
+
+- name: Update cache with mp_int_mgmt_port path
+  cache:
+    key: 'mp_int_mgmt_port'
+    value: '{{ mp_int_mgmt_port }}'
+
+- name: Update cache with mp_ext_mgmt_port path
+  cache:
+    key: 'mp_ext_mgmt_port'
+    value: '{{ mp_ext_mgmt_port }}'
+
+- name: Update cache with mp_jmx_port path
+  cache:
+    key: 'mp_jmx_port'
+    value: '{{ mp_jmx_port }}'
+
+- name: Update cache with mp_router_port path
+  cache:
+    key: 'mp_router_port'
+    value: '{{ mp_router_port }}'
+
+- name: Update cache with ms_jmx_port path
+  cache:
+    key: 'ms_jmx_port'
+    value: '{{ ms_jmx_port }}'
+
+- name: Update cache with ms_ext_mgmt_port path
+  cache:
+    key: 'ms_ext_mgmt_port'
+    value: '{{ ms_ext_mgmt_port }}'
+
+- name: Update cache with router_jmx_port path
+  cache:
+    key: 'router_jmx_port'
+    value: '{{ router_jmx_port }}'
+
+- name: Update cache with router_ext_mgmt_port path
+  cache:
+    key: 'router_ext_mgmt_port'
+    value: '{{ router_ext_mgmt_port }}'
+
+- name: Update cache with router_int_mgmt_port path
+  cache:
+    key: 'router_int_mgmt_port'
+    value: '{{ router_int_mgmt_port }}'
+
+- name: Update cache with qpid_jmx_port path
+  cache:
+    key: 'qpid_jmx_port'
+    value: '{{ qpid_jmx_port }}'
+
+- name: Update cache with qpid_int_mgmt_port path
+  cache:
+    key: 'qpid_int_mgmt_port'
+    value: '{{ qpid_int_mgmt_port }}'
+
+- name: Update cache with qpid_messaging_port path
+  cache:
+    key: 'qpid_messaging_port'
+    value: '{{ qpid_messaging_port }}'
+
+- name: Update cache with qpid_ext_mgmt_port path
+  cache:
+    key: 'qpid_ext_mgmt_port'
+    value: '{{ qpid_ext_mgmt_port }}'
+
+- name: Update cache with pg_jmx_port path
+  cache:
+    key: 'pg_jmx_port'
+    value: '{{ pg_jmx_port }}'
+
+- name: Update cache with pg_int_mgmt_port path
+  cache:
+    key: 'pg_int_mgmt_port'
+    value: '{{ pg_int_mgmt_port }}'
+
+- name: Update cache with pg_db_port path
+  cache:
+    key: 'pg_db_port'
+    value: '{{ pg_db_port }}'
+
+- name: Update cache with pg_ext_mgmt_port path
+  cache:
+    key: 'pg_ext_mgmt_port'
+    value: '{{ pg_ext_mgmt_port }}'
+
+- name: Update cache with ui_http_port path
+  cache:
+    key: 'ui_http_port'
+    value: '{{ ui_http_port }}'
+
+- name: Update cache with edge_proxy_port path
+  cache:
+    key: 'edge_proxy_port'
+    value: '{{ edge_proxy_port }}'
+
+- name: Update cache with ldap_data_port path
+  cache:
+    key: 'ldap_data_port'
+    value: '{{ ldap_data_port }}'
+
