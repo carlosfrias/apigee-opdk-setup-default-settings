@@ -289,6 +289,11 @@
     key: 'onboarding_config_file_path'
     value: '{{ onboarding_config_file_path }}'
 
+- name: Update cache with onboarding_config path
+  cache:
+    key: 'onboarding_config'
+    value: '{{ onboarding_config }}'
+
 - name: Update cache with new_user path
   cache:
     key: 'new_user'
