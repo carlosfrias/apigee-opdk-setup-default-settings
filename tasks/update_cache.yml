@@ -228,3 +228,8 @@
   cache:
     key: 'opdk_cass_clustername'
     value: '{{ opdk_cass_clustername }}'
+
+- name: Update cache with opdk_use_cass_cluster path
+  cache:
+    key: 'opdk_use_cass_cluster'
+    value: '{{ opdk_use_cass_cluster }}'
