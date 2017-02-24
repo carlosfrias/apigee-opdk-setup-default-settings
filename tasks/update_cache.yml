@@ -194,3 +194,37 @@
     key: 'mp_pod'
     value: '{{ mp_pod }}'
 
+- name: Update cache with opdk_ldap_type path
+  cache:
+    key: 'opdk_ldap_type'
+    value: '{{ opdk_ldap_type }}'
+
+- name: Update cache with opdk_ldap_remote_host path
+  cache:
+    key: 'opdk_ldap_remote_host'
+    value: '{{ opdk_ldap_remote_host }}'
+
+- name: Update cache with opdk_ldap_pass path
+  cache:
+    key: 'opdk_ldap_pass'
+    value: '{{ opdk_ldap_pass }}'
+
+- name: Update cache with opdk_enable_ax path
+  cache:
+    key: 'opdk_enable_ax'
+    value: '{{ opdk_enable_ax }}'
+
+- name: Update cache with opdk_mp_pod path
+  cache:
+    key: 'opdk_mp_pod'
+    value: '{{ opdk_mp_pod }}'
+
+- name: Update cache with opdk_use_zk_cluster path
+  cache:
+    key: 'opdk_use_zk_cluster'
+    value: '{{ opdk_use_zk_cluster }}'
+
+- name: Update cache with opdk_cass_clustername path
+  cache:
+    key: 'opdk_cass_clustername'
+    value: '{{ opdk_cass_clustername }}'
