@@ -92,7 +92,7 @@
 - name: Update cache with cqlsh path
   cache:
     key: 'cqlsh'
-    value: '{{ cqlsh }'
+    value: '{{ cqlsh }}'
 
 - name: Update cache with apigee_setup path
   cache:
