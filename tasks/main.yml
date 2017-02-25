@@ -8,19 +8,17 @@
   ec2_facts:
   when: ansible_distribution | lower != 'macosx' and ansible_bios_version | lower | search('amazon')
 
+#- name: Load credentials from file
+#  include_vars: '{{ credentials_file }}'
+
 - include: network-interface-name.yml
-  when: interface_name is not defined
 
 - include: local_address.yml
-  when: local_address is not defined
 
 - include: public_address.yml
-  when: public_address is not defined
 
 - include: local_mgmt_ip.yml
-  when: local_mgmt_ip is not defined
 
 - include: public_mgmt_ip.yml
-  when: public_mgmt_ip is not defined
 
 - include: update_cache.yml
