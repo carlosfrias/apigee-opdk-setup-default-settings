@@ -174,10 +174,11 @@
     key: 'copy_archive'
     value: '{{ copy_archive }}'
 
-- name: Update cache with archive_folder path
-  cache:
-    key: 'archive_folder'
-    value: '{{ archive_folder }}'
+# TODO: This may not be needed.
+#- name: Update cache with archive_folder path
+#  cache:
+#    key: 'archive_folder'
+#    value: '{{ archive_folder }}'
 
 - name: Update cache with archive_name path
   cache:
