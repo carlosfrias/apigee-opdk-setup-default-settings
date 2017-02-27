@@ -476,3 +476,8 @@
     key: 'ldap_data_port'
     value: '{{ ldap_data_port }}'
 
+- name: Update cache with consumer_group path
+  cache:
+    key: 'consumer_group'
+    value: '{{ consumer_group }}'
+
