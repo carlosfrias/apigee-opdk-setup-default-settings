@@ -12,4 +12,5 @@ galaxy_info:
   galaxy_tags:
   - apigee
   - opdk
-dependencies: []
+dependencies:
+- apigee-opdk-cache-update
