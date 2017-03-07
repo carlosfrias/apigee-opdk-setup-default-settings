@@ -4,7 +4,7 @@
     cache:
       key: 'local_mgmt_ip'
       value: "{{ hostvars[groups['dc-1-ms'][0]][interface_name].ipv4.address }}"
-    when: groups['dc-1'] is defined and groups['dc-1-ms'] is defined
+    when: groups['dc-1'] is defined and groups['dc-1-ms'] is defined and inventory_hostname in groups['dc-1']
 
   - name: Update cache with normalized name for management server local ip if on DC-2
     cache:
