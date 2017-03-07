@@ -1,26 +1,23 @@
 ---
-- block:
-  - name: Update cache with normalized name for management server local ip if on DC-1
-    cache:
-      key: 'local_mgmt_ip'
-      value: "{{ hostvars[groups['dc-1-ms'][0]][interface_name].ipv4.address }}"
-    when: groups['dc-1'] is defined and groups['dc-1-ms'] is defined
+- name: Update cache with normalized name for management server local ip if on DC-1
+  cache:
+    key: 'local_mgmt_ip'
+    value: "{{ hostvars[groups['dc-1-ms'][0]][interface_name].ipv4.address }}"
+  when: groups['dc-1'] is defined and groups['dc-1-ms'] is defined and inventory_hostname in groups['dc-1']
 
-  - name: Update cache with normalized name for management server local ip if on DC-2
-    cache:
-      key: 'local_mgmt_ip'
-      value: "{{ hostvars[groups['dc-2-ms'][0]][interface_name].ipv4.address }}"
-    when: groups['dc-2'] is defined and groups['dc-2-ms'] is defined and inventory_hostname in groups['dc-2']
+- name: Update cache with normalized name for management server local ip if on DC-2
+  cache:
+    key: 'local_mgmt_ip'
+    value: "{{ hostvars[groups['dc-2-ms'][0]][interface_name].ipv4.address }}"
+  when: groups['dc-2'] is defined and groups['dc-2-ms'] is defined and inventory_hostname in groups['dc-2']
 
-  - name: Update cache with normalized name for management server local ip to DC-1 if current node is not on DC-1 or DC-2
-    cache:
-      key: 'local_mgmt_ip'
-      value: "{{ hostvars[groups['dc-1-ms'][0]][interface_name].ipv4.address }}"
-    when: groups['dc-1'] is defined and groups['dc-1-ms'] is defined and inventory_hostname not in groups['dc-1'] and inventory_hostname not in groups['dc-2']
+- name: Update cache with normalized name for management server local ip to DC-1 if current node is not on DC-1 or DC-2
+  cache:
+    key: 'local_mgmt_ip'
+    value: "{{ hostvars[groups['dc-1-ms'][0]][interface_name].ipv4.address }}"
+  when: groups['dc-1'] is defined and groups['dc-1-ms'] is defined and inventory_hostname not in groups['dc-1'] and inventory_hostname not in groups['dc-2']
 
-  - name: Fail if management server local ip was not defined
-    fail:
-      msg: "Unable to define management server private ip 'local_mgmt_ip'; likely because of missing dc-1 or dc-2 group in inventory"
-    when: local_mgmt_ip is not defined
-
+- name: Fail if management server local ip was not defined
+  fail:
+    msg: "Unable to define management server private ip 'local_mgmt_ip'; likely because of missing dc-1 or dc-2 group in inventory"
   when: local_mgmt_ip is not defined
