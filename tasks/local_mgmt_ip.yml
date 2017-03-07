@@ -24,4 +24,3 @@
     when: local_mgmt_ip is not defined
 
   when: local_mgmt_ip is not defined
-
