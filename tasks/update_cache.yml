@@ -496,3 +496,13 @@
     key: 'opdk_portal_installation_config_file'
     value: '{{ opdk_portal_installation_config_file }}'
 
+- name: Update cache with opdk_cass_username
+  cache:
+    key: 'opdk_cass_username'
+    value: '{{ opdk_cass_username }}'
+
+- name: Update cache with opdk_cass_password
+  cache:
+    key: 'opdk_cass_password'
+    value: '{{ opdk_cass_password }}'
+
