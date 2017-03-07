@@ -349,6 +349,6 @@ start_check_delay: 30
 
 bootstrap_filename: bootstrap.sh
 
-drupal_pg_user: {{ opdk_user_name }}
-drupal_pg_password: {{ opdk_user_pass }}
+drupal_pg_user: '{{ opdk_user_name }}'
+drupal_pg_password: '{{ opdk_user_pass }}'
 opdk_portal_installation_config_file: portal-silent-install.conf
