@@ -481,3 +481,18 @@
     key: 'consumer_group'
     value: '{{ consumer_group }}'
 
+- name: Update cache with drupal_pg_user
+  cache:
+    key: 'drupal_pg_user'
+    value: '{{ drupal_pg_user }}'
+
+- name: Update cache with drupal_pg_password
+  cache:
+    key: 'drupal_pg_password'
+    value: '{{ drupal_pg_password }}'
+
+- name: Update cache with opdk_portal_installation_config_file
+  cache:
+    key: 'opdk_portal_installation_config_file'
+    value: '{{ opdk_portal_installation_config_file }}'
+

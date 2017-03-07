@@ -22,3 +22,6 @@
 - include: public_mgmt_ip.yml
 
 - include: update_cache.yml
+
+- include: postgres.yml
+  when: "{{ groups['pgmaster'] is defined and groups['pgstandby'] is defined }}"
