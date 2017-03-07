@@ -54,6 +54,11 @@
     key: 'opdk_installer_path'
     value: '{{ opdk_installer_path }}'
 
+- name: Update cache with opdk_portal_installation_config_file
+  cache:
+    key: 'opdk_portal_installation_config_file'
+    value: '{{ opdk_portal_installation_config_file }}'
+
 - name: Update cache with apigee_data_backup_archive_name
   cache:
     key: 'apigee_data_backup_archive_name'
@@ -490,11 +495,6 @@
   cache:
     key: 'drupal_pg_password'
     value: '{{ drupal_pg_password }}'
-
-- name: Update cache with opdk_portal_installation_config_file
-  cache:
-    key: 'opdk_portal_installation_config_file'
-    value: '{{ opdk_portal_installation_config_file }}'
 
 - name: Update cache with opdk_cass_username
   cache:

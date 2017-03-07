@@ -84,6 +84,9 @@ opdk_license_source_file_name: '~/.apigee/license.txt'
 # Apigee silent installation configuration file
 opdk_installation_config_file: "{{ opdk_installer_path }}/silent-install.conf"
 
+# Silent config file for portal
+opdk_portal_installation_config_file: '{{ opdk_installer_path }}/portal-silent-install.conf'
+
 # defaults file for apigee-opdk-setup-ps
 apigee_postgresql_data_dir: '{{ apigee_installation_home }}/data/apigee-postgresql/pgdata'
 
@@ -351,4 +354,3 @@ bootstrap_filename: bootstrap.sh
 
 drupal_pg_user: '{{ opdk_user_name }}'
 drupal_pg_password: '{{ opdk_user_pass }}'
-opdk_portal_installation_config_file: '{{ opdk_installer_path }}/portal-silent-install.conf'
