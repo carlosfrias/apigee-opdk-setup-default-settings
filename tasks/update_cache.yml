@@ -57,7 +57,7 @@
 - name: Update cache with opdk_portal_installation_config_file
   cache:
     key: 'opdk_portal_installation_config_file'
-    value: '{{ opdk_installer_path }}/{{ opdk_portal_installation_config_file }}'
+    value: '{{ opdk_portal_installation_config_file }}'
 
 - name: Update cache with apigee_data_backup_archive_name
   cache:
