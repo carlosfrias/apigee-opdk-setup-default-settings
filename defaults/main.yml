@@ -163,6 +163,8 @@ edge_proxy_port: 9001
 
 ldap_data_port: 10389
 
+php_fpm_port: 8888
+
 influxdb_system_port: 25826
 influxdb_port: 8086
 

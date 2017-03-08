@@ -506,3 +506,8 @@
     key: 'opdk_cass_password'
     value: '{{ opdk_cass_password }}'
 
+- name: Update cache with php_fpm_port
+  cache:
+    key: 'php_fpm_port'
+    value: '{{ php_fpm_port }}'
+
