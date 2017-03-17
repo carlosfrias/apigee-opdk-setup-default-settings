@@ -1,16 +1,5 @@
 ---
 # tasks file for apigee-opdk-setup-default-settings
-- name: Update setup facts
-  setup:
-  when: ansible_bios_version is not defined
-
-- name: Update AWS facts, if running on AWS
-  ec2_facts:
-  when: ansible_distribution | lower != 'macosx' and ansible_bios_version | lower | search('amazon')
-
-#- name: Load credentials from file
-#  include_vars: '{{ credentials_file }}'
-
 - include: network-interface-name.yml
 
 - include: local_address.yml
