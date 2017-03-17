@@ -25,6 +25,7 @@
     value: '{{ opdk_user_email }}'
 
 - name: Update cache with opdk_user_password
+  no_log: True
   cache:
     key: 'opdk_user_pass'
     value: '{{ opdk_user_pass }}'
@@ -80,6 +81,7 @@
     value: '{{ pg_user }}'
 
 - name: Update cache with pg_pass path
+  no_log: True
   cache:
     key: 'pg_pass'
     value: '{{ pg_pass }}'
@@ -150,11 +152,13 @@
     value: "{{ apigee_validate_config_file }}"
 
 - name: Update cache with apigee_repo_user path
+  no_log: True
   cache:
     key: 'apigee_repo_user'
     value: '{{ apigee_repo_user }}'
 
 - name: Update cache with apigee_repo_password path
+  no_log: True
   cache:
     key: 'apigee_repo_password'
     value: '{{ apigee_repo_password }}'
@@ -211,6 +215,7 @@
     value: '{{ opdk_ldap_remote_host }}'
 
 - name: Update cache with opdk_ldap_pass path
+  no_log: True
   cache:
     key: 'opdk_ldap_pass'
     value: '{{ opdk_ldap_pass }}'
@@ -261,6 +266,7 @@
     value: '{{ opdk_smtp_user }}'
 
 - name: Update cache with opdk_smtp_password path
+  no_log: True
   cache:
     key: 'opdk_smtp_password'
     value: '{{ opdk_smtp_password }}'
@@ -492,16 +498,19 @@
     value: '{{ drupal_pg_user }}'
 
 - name: Update cache with drupal_pg_password
+  no_log: True
   cache:
     key: 'drupal_pg_password'
     value: '{{ drupal_pg_password }}'
 
 - name: Update cache with opdk_cass_username
+  no_log: True
   cache:
     key: 'opdk_cass_username'
     value: '{{ opdk_cass_username }}'
 
 - name: Update cache with opdk_cass_password
+  no_log: True
   cache:
     key: 'opdk_cass_password'
     value: '{{ opdk_cass_password }}'
