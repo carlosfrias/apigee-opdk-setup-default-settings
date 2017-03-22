@@ -293,8 +293,6 @@ baas_smtp_user: ''
 baas_smtp_user_pass: ''
 baas_smtp_ssl: 'n'
 
-linked_apigee_installation_home: ''
-
 # Default download location for log and config files
 fetched_logs_dir: ~/.apigee/logs_configs/
 fetched_configs_dir: ~/.apigee/logs_configs/
