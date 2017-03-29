@@ -141,11 +141,6 @@
     key: 'apigee_postgresql_data_dir'
     value: "{{ apigee_postgresql_data_dir }}"
 
-- name: Update cache with provided_response_file path
-  cache:
-    key: 'provided_response_file'
-    value: "{{ provided_response_file }}"
-
 - name: Update cache with apigee_validate_config_file path
   cache:
     key: 'apigee_validate_config_file'
@@ -525,5 +520,11 @@
     key: 'archive_folder'
     value: '{{ archive_folder }}'
   when: archive_folder is defined
+
+- name: Update cache with provided_response_file if provided
+  cache:
+    key: 'provided_response_file'
+    value: '{{ provided_response_file }}'
+  when: provided_response_file is defined
 
 
