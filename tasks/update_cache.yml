@@ -520,3 +520,10 @@
     key: 'php_fpm_port'
     value: '{{ php_fpm_port }}'
 
+- name: Update cache with archive_folder if provided
+  cache:
+    key: 'archive_folder'
+    value: '{{ archive_folder }}'
+  when: archive_folder is defined
+
+
