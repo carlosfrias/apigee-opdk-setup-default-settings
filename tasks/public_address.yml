@@ -13,6 +13,6 @@
   - name: Update cache with normalized name for public address on AWS
     cache:
       key: 'public_address'
-      value: '{{ ansible_ec2_public_ipv4 }}'
+      value: '{{ ansible_ec2_public_ipv4 | default(inventory_hostname) }}'
 
   when: ansible_bios_version is defined and ansible_bios_version | search('amazon')
