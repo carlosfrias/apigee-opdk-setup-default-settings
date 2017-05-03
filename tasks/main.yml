@@ -13,4 +13,4 @@
 - include: update_cache.yml
 
 - include: postgres.yml
-  when: "{{ groups['pgmaster'] is defined and groups['pgstandby'] is defined }}"
+  when: groups['pgmaster'] is defined and groups['pgstandby'] is defined
