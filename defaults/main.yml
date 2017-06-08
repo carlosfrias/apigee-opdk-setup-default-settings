@@ -33,7 +33,7 @@ admin_pass: '{{ opdk_user_pass }}'
 opdk_version: '4.16.01'
 
 # Default version of the Apigee mirror to use
-apigee_mirror_version: '{{ opdk_version'
+apigee_mirror_version: '{{ opdk_version }}'
 
 # Apigee staging installation folder
 opdk_installer_path: "/tmp/apigee"
