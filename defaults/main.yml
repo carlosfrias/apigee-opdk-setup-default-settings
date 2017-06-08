@@ -33,10 +33,10 @@ admin_pass: '{{ opdk_user_pass }}'
 opdk_version: '4.16.01'
 
 # Default version of the Apigee mirror to use
-apigee_mirror_version: '4.16.01'
+apigee_mirror_version: '{{ opdk_version'
 
 # Apigee staging installation folder
-opdk_installer_path: "/tmp"
+opdk_installer_path: "/tmp/apigee"
 
 # Default name of the backup archive of the apigee data folder
 apigee_data_backup_archive_name: apigee_data_backup.tar.gz
