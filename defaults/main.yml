@@ -30,7 +30,7 @@ admin_user: '{{ opdk_user_email }}'
 admin_pass: '{{ opdk_user_pass }}'
 
 # Default Apigee Edge Private Cloud Version
-opdk_version: '4.16.01'
+opdk_version: '4.17.01'
 
 # Default version of the Apigee mirror to use
 apigee_mirror_version: '{{ opdk_version }}'
