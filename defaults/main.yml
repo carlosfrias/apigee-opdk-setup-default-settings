@@ -17,7 +17,7 @@ opdk_group_name: "{{ opdk_user_name }}"
 # OPDK User Email
 opdk_user_email: ''
 
-opdk_smtp_mail_from: ''
+opdk_smtp_mail_from: '{{ opdk_user_name }}'
 
 # OPDK User Password
 opdk_user_pass: ''
