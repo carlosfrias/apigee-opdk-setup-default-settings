@@ -527,4 +527,10 @@
     value: '{{ provided_response_file }}'
   when: provided_response_file is defined
 
+- name: Update cache with opdk_smtp_mail_from if provided
+  cache:
+    key: 'opdk_smtp_mail_from'
+    value: '{{ opdk_smtp_mail_from }}'
+  when: provided_response_file is defined
+
 
