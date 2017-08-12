@@ -105,11 +105,11 @@ apigee_repo_user: '{{ opdk_user_name }}'
 apigee_repo_password: ''
 
 # Apigee bootstrap download uri
-apigee_repo_uri: 'software.apigee.com'
+default_apigee_repo_uri: 'software.apigee.com'
 
 # Apigee bootstrap download url
-apigee_repo_protocol: 'https'
-apigee_repo_url: '{{ apigee_repo_protocol }}://{{ apigee_repo_uri }}'
+default_apigee_repo_protocol: 'https'
+default_apigee_repo_url: '{{ default_apigee_repo_protocol }}://{{ default_apigee_repo_uri }}'
 
 # Choose whether to copy the Apigee Mirror archive from your control machine or use an existing archive on the server.
 copy_archive: yes

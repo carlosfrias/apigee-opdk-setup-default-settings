@@ -158,20 +158,20 @@
     key: 'apigee_repo_password'
     value: '{{ apigee_repo_password }}'
 
-- name: Update cache with apigee_repo_uri path
+- name: Update cache with default_apigee_repo_uri path
   cache:
-    key: 'apigee_repo_uri'
-    value: '{{ apigee_repo_uri }}'
+    key: 'default_apigee_repo_uri'
+    value: '{{ default_apigee_repo_uri }}'
 
-- name: Update cache with apigee_repo_protocol path
+- name: Update cache with default_apigee_repo_protocol path
   cache:
-    key: 'apigee_repo_protocol'
-    value: '{{ apigee_repo_protocol }}'
+    key: 'default_apigee_repo_protocol'
+    value: '{{ default_apigee_repo_protocol }}'
 
-- name: Update cache with apigee_repo_url path
+- name: Update cache with default_apigee_repo_url path
   cache:
-    key: 'apigee_repo_url'
-    value: '{{ apigee_repo_url }}'
+    key: 'default_apigee_repo_url'
+    value: '{{ default_apigee_repo_url }}'
 
 - name: Update cache with copy_archive path
   cache:
