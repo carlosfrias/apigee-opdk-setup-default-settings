@@ -81,7 +81,7 @@ opdk_license_target_file_path: "{{ opdk_installer_path }}/license.conf"
 local_resource_path: ~/.apigee
 
 # Apigee license file provided by customer
-opdk_license_source_file_name: '~/.apigee/license.txt'
+opdk_license_source_file_name: '~/.apigee-secure/license.txt'
 
 # Apigee silent installation configuration file
 opdk_installation_config_file: "{{ opdk_installer_path }}/silent-install.conf"
