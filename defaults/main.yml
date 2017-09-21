@@ -38,7 +38,7 @@ opdk_version: '4.17.01'
 apigee_mirror_version: '{{ opdk_version }}'
 
 # Apigee staging installation folder
-opdk_installer_path: "/tmp/apigee"
+opdk_installer_path: "/tmp/edge"
 
 # Default name of the backup archive of the apigee data folder
 apigee_data_backup_archive_name: apigee_data_backup.tar.gz
@@ -84,7 +84,7 @@ local_resource_path: ~/.apigee
 opdk_license_source_file_name: '~/.apigee-secure/license.txt'
 
 # Apigee silent installation configuration file
-opdk_installation_config_file: "{{ opdk_installer_path }}/silent-install.conf"
+opdk_installation_config_file: "{{ opdk_installer_path }}/edge-response.conf"
 
 # Silent config file for portal
 opdk_portal_installation_config_file: '{{ opdk_installer_path }}/portal-silent-install.conf'
