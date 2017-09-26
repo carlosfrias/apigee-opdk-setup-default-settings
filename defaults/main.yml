@@ -17,6 +17,8 @@ opdk_group_name: "{{ opdk_user_name }}"
 # OPDK User Email
 opdk_user_email: ''
 
+opdk_smtp_mail_from: '{{ opdk_user_name }}'
+
 # OPDK User Password
 opdk_user_pass: ''
 
@@ -36,7 +38,7 @@ opdk_version: '4.17.01'
 apigee_mirror_version: '{{ opdk_version }}'
 
 # Apigee staging installation folder
-opdk_installer_path: "/tmp/apigee"
+opdk_installer_path: "/tmp/edge"
 
 # Default name of the backup archive of the apigee data folder
 apigee_data_backup_archive_name: apigee_data_backup.tar.gz
@@ -79,10 +81,10 @@ opdk_license_target_file_path: "{{ opdk_installer_path }}/license.conf"
 local_resource_path: ~/.apigee
 
 # Apigee license file provided by customer
-opdk_license_source_file_name: '~/.apigee/license.txt'
+opdk_license_source_file_name: '~/.apigee-secure/license.txt'
 
 # Apigee silent installation configuration file
-opdk_installation_config_file: "{{ opdk_installer_path }}/silent-install.conf"
+opdk_installation_config_file: "{{ opdk_installer_path }}/edge-response.conf"
 
 # Silent config file for portal
 opdk_portal_installation_config_file: '{{ opdk_installer_path }}/portal-silent-install.conf'
@@ -103,11 +105,11 @@ apigee_repo_user: '{{ opdk_user_name }}'
 apigee_repo_password: ''
 
 # Apigee bootstrap download uri
-apigee_repo_uri: 'software.apigee.com'
+default_apigee_repo_uri: 'software.apigee.com'
 
 # Apigee bootstrap download url
-apigee_repo_protocol: 'https'
-apigee_repo_url: '{{ apigee_repo_protocol }}://{{ apigee_repo_uri }}'
+default_apigee_repo_protocol: 'https'
+default_apigee_repo_url: '{{ default_apigee_repo_protocol }}://{{ default_apigee_repo_uri }}'
 
 # Choose whether to copy the Apigee Mirror archive from your control machine or use an existing archive on the server.
 copy_archive: yes
