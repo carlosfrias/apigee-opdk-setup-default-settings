@@ -1,8 +1,16 @@
 ---
-- name: Update cache with normalized name for private address
-  cache:
-    key: 'local_address'
-    value: '{{ hostvars[inventory_hostname][interface_name].ipv4.address }}'
+- block:
+  - name: Update cache with normalized name for private address
+    cache:
+      key: 'local_address'
+      value: '{{ hostvars[inventory_hostname][interface_name].ipv4.address }}'
+
+  rescue:
+    - name: Normalized name for private address was not found, trying alternative
+      cache:
+        key: 'local_address'
+        value: "{{ hostvars[inventory_hostname]['ansible_default_ipv4'].address }}"
+
 
 - block:
 
