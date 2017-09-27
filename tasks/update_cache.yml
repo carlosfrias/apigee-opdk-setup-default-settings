@@ -25,7 +25,6 @@
     value: '{{ opdk_user_email }}'
 
 - name: Update cache with opdk_user_password
-  no_log: True
   cache:
     key: 'opdk_user_pass'
     value: '{{ opdk_user_pass }}'
@@ -81,7 +80,6 @@
     value: '{{ pg_user }}'
 
 - name: Update cache with pg_pass path
-  no_log: True
   cache:
     key: 'pg_pass'
     value: '{{ pg_pass }}'
@@ -493,19 +491,16 @@
     value: '{{ drupal_pg_user }}'
 
 - name: Update cache with drupal_pg_password
-  no_log: True
   cache:
     key: 'drupal_pg_password'
     value: '{{ drupal_pg_password }}'
 
 - name: Update cache with opdk_cass_username
-  no_log: True
   cache:
     key: 'opdk_cass_username'
     value: '{{ opdk_cass_username }}'
 
 - name: Update cache with opdk_cass_password
-  no_log: True
   cache:
     key: 'opdk_cass_password'
     value: '{{ opdk_cass_password }}'
