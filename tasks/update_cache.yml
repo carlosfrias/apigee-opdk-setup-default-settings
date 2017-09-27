@@ -238,10 +238,10 @@
     key: 'opdk_use_cass_cluster'
     value: '{{ opdk_use_cass_cluster }}'
 
-- name: Update cache with opdk_skip_smtp path
+- name: Update cache with opdk_smtp_skip path
   cache:
-    key: 'opdk_skip_smtp'
-    value: '{{ opdk_skip_smtp }}'
+    key: 'opdk_smtp_skip'
+    value: '{{ opdk_smtp_skip }}'
 
 - name: Update cache with opdk_smtp_host path
   cache:

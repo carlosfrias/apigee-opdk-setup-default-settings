@@ -300,7 +300,7 @@ Default to enable use of the zookeeper cluster
 
 SMTP settings for Edge Configuration
 
-    opdk_skip_smtp: 'y'
+    opdk_smtp_skip: 'y'
     opdk_smtp_host: 'smtp.example.com'
     opdk_smtp_port: '25'
     opdk_smtp_user: ''
