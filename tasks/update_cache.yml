@@ -269,6 +269,11 @@
     key: 'opdk_smtp_ssl'
     value: '{{ opdk_smtp_ssl }}'
 
+- name: Update cache with opdk_smtp_mail_from
+  cache:
+    key: 'opdk_smtp_mail_from'
+    value: '{{ opdk_smtp_mail_from }}'
+
 - name: Update cache with opdk_bind_on_all_interfaces path
   cache:
     key: 'opdk_bind_on_all_interfaces'
@@ -525,12 +530,6 @@
   cache:
     key: 'provided_response_file'
     value: '{{ provided_response_file }}'
-  when: provided_response_file is defined
-
-- name: Update cache with opdk_smtp_mail_from if provided
-  cache:
-    key: 'opdk_smtp_mail_from'
-    value: '{{ opdk_smtp_mail_from }}'
   when: provided_response_file is defined
 
 
