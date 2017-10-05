@@ -1,15 +1,15 @@
 ---
 # tasks file for apigee-opdk-setup-default-settings
-- include: network-interface-name.yml
+- include_tasks: network-interface-name.yml
 
-- include: local_address.yml
+- include_tasks: local_address.yml
 
-- include: public_address.yml
+- include_tasks: public_address.yml
 
-- include: local_mgmt_ip.yml
+- include_tasks: local_mgmt_ip.yml
 
-- include: public_mgmt_ip.yml
+- include_tasks: public_mgmt_ip.yml
 
-- include: update_cache.yml
+- include_tasks: update_cache.yml
 
-- include: postgres.yml
+- include_tasks: postgres.yml

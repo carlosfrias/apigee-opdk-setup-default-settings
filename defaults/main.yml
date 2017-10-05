@@ -254,7 +254,7 @@ opdk_ldap_pass: ''
 opdk_enable_ax: 'y'
 
 # Default pod
-opdk_mp_pod: 'gateway'
+default_mp_pod: 'gateway'
 
 # Default to enable use of the zookeeper cluster
 opdk_use_zk_cluster: 'y'
