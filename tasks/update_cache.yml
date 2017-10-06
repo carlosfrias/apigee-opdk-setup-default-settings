@@ -1,525 +1,4 @@
 ---
-- name: Update cache with jdk_version
-  cache:
-    key: 'jdk_version'
-    value: '{{ jdk_version }}'
-
-- name: Update cache with java_home
-  cache:
-    key: 'java_home'
-    value: '{{ java_home }}'
-
-- name: Update cache with opdk_user_name
-  cache:
-    key: 'opdk_user_name'
-    value: '{{ opdk_user_name }}'
-
-- name: Update cache with opdk_group_name
-  cache:
-    key: 'opdk_group_name'
-    value: '{{ opdk_group_name }}'
-
-- name: Update cache with opdk_email_name
-  cache:
-    key: 'opdk_user_email'
-    value: '{{ opdk_user_email }}'
-
-- name: Update cache with opdk_user_password
-  cache:
-    key: 'opdk_user_pass'
-    value: '{{ opdk_user_pass }}'
-
-- name: Update cache with opdk_user_home
-  cache:
-    key: 'opdk_user_home'
-    value: '{{ opdk_user_home }}'
-
-- name: Update cache with admin_user
-  cache:
-    key: 'admin_user'
-    value: '{{ admin_user }}'
-
-- name: Update cache with opdk_version
-  cache:
-    key: 'opdk_version'
-    value: '{{ opdk_version }}'
-
-- name: Update cache with apigee_mirror_version
-  cache:
-    key: 'apigee_mirror_version'
-    value: '{{ apigee_mirror_version }}'
-
-- name: Update cache with opdk_installer_path path
-  cache:
-    key: 'opdk_installer_path'
-    value: '{{ opdk_installer_path }}'
-
-- name: Update cache with opdk_portal_installation_config_file
-  cache:
-    key: 'opdk_portal_installation_config_file'
-    value: '{{ opdk_portal_installation_config_file }}'
-
-- name: Update cache with apigee_data_backup_archive_name
-  cache:
-    key: 'apigee_data_backup_archive_name'
-    value: '{{ apigee_data_backup_archive_name }}'
-
-- name: Update cache with apigee_archive_storage_folder path
-  cache:
-    key: 'apigee_archive_storage_folder'
-    value: '{{ apigee_archive_storage_folder }}'
-
-- name: Update cache with apigee_installation_home path
-  cache:
-    key: 'apigee_installation_home'
-    value: '{{ apigee_installation_home }}'
-
-- name: Update cache with pg_user path
-  cache:
-    key: 'pg_user'
-    value: '{{ pg_user }}'
-
-- name: Update cache with pg_pass path
-  cache:
-    key: 'pg_pass'
-    value: '{{ pg_pass }}'
-
-- name: Update cache with apigee_service path
-  cache:
-    key: 'apigee_service'
-    value: '{{ apigee_service }}'
-
-- name: Update cache with nodetool path
-  cache:
-    key: 'nodetool'
-    value: '{{ nodetool }}'
-
-- name: Update cache with cqlsh path
-  cache:
-    key: 'cqlsh'
-    value: '{{ cqlsh }}'
-
-- name: Update cache with apigee_setup path
-  cache:
-    key: 'apigee_setup'
-    value: '{{ apigee_setup }}'
-
-- name: Update cache with apigee_update path
-  cache:
-    key: 'apigee_update'
-    value: '{{ apigee_update }}'
-
-- name: Update cache with apigee_all path
-  cache:
-    key: 'apigee_all'
-    value: '{{ apigee_all }}'
-
-- name: Update cache with opdk_license_target_file_path path
-  cache:
-    key: 'opdk_license_target_file_path'
-    value: "{{ opdk_license_target_file_path }}"
-
-- name: Update cache with local_resource_path path
-  cache:
-    key: 'local_resource_path'
-    value: "{{ local_resource_path }}"
-
-- name: Update cache with opdk_license_source_file_name path
-  cache:
-    key: 'opdk_license_source_file_name'
-    value: "{{ opdk_license_source_file_name }}"
-
-- name: Update cache with opdk_installation_config_file path
-  cache:
-    key: 'opdk_installation_config_file'
-    value: "{{ opdk_installation_config_file }}"
-
-- name: Update cache with apigee_postgresql_data_dir path
-  cache:
-    key: 'apigee_postgresql_data_dir'
-    value: "{{ apigee_postgresql_data_dir }}"
-
-- name: Update cache with apigee_validate_config_file path
-  cache:
-    key: 'apigee_validate_config_file'
-    value: "{{ apigee_validate_config_file }}"
-
-- name: Update cache with apigee_repo_user path
-  no_log: True
-  cache:
-    key: 'apigee_repo_user'
-    value: '{{ apigee_repo_user }}'
-
-- name: Update cache with apigee_repo_password path
-  no_log: True
-  cache:
-    key: 'apigee_repo_password'
-    value: '{{ apigee_repo_password }}'
-
-- name: Update cache with default_apigee_repo_uri path
-  cache:
-    key: 'default_apigee_repo_uri'
-    value: '{{ default_apigee_repo_uri }}'
-
-- name: Update cache with default_apigee_repo_protocol path
-  cache:
-    key: 'default_apigee_repo_protocol'
-    value: '{{ default_apigee_repo_protocol }}'
-
-- name: Update cache with default_apigee_repo_url path
-  cache:
-    key: 'default_apigee_repo_url'
-    value: '{{ default_apigee_repo_url }}'
-
-- name: Update cache with copy_archive path
-  cache:
-    key: 'copy_archive'
-    value: '{{ copy_archive }}'
-
-# TODO: This may not be needed.
-#- name: Update cache with archive_folder path
-#  cache:
-#    key: 'archive_folder'
-#    value: '{{ archive_folder }}'
-
-- name: Update cache with archive_name path
-  cache:
-    key: 'archive_name'
-    value: '{{ archive_name }}'
-
-- name: Update cache with archive_path path
-  cache:
-    key: 'archive_path'
-    value: '{{ archive_path }}'
-
-- name: Update cache with mp_pod path
-  cache:
-    key: 'mp_pod'
-    value: '{{ mp_pod }}'
-
-- name: Update cache with opdk_ldap_type path
-  cache:
-    key: 'opdk_ldap_type'
-    value: '{{ opdk_ldap_type }}'
-
-- name: Update cache with opdk_ldap_remote_host path
-  cache:
-    key: 'opdk_ldap_remote_host'
-    value: '{{ opdk_ldap_remote_host }}'
-
-- name: Update cache with opdk_ldap_pass path
-  no_log: True
-  cache:
-    key: 'opdk_ldap_pass'
-    value: '{{ opdk_ldap_pass }}'
-
-- name: Update cache with opdk_enable_ax path
-  cache:
-    key: 'opdk_enable_ax'
-    value: '{{ opdk_enable_ax }}'
-
-- name: Update cache with default_mp_pod path
-  cache:
-    key: 'default_mp_pod'
-    value: '{{ default_mp_pod }}'
-
-- name: Update cache with opdk_use_zk_cluster path
-  cache:
-    key: 'opdk_use_zk_cluster'
-    value: '{{ opdk_use_zk_cluster }}'
-
-- name: Update cache with opdk_cass_clustername path
-  cache:
-    key: 'opdk_cass_clustername'
-    value: '{{ opdk_cass_clustername }}'
-
-- name: Update cache with opdk_use_cass_cluster path
-  cache:
-    key: 'opdk_use_cass_cluster'
-    value: '{{ opdk_use_cass_cluster }}'
-
-- name: Update cache with opdk_smtp_skip path
-  cache:
-    key: 'opdk_smtp_skip'
-    value: '{{ opdk_smtp_skip }}'
-
-- name: Update cache with opdk_smtp_host path
-  cache:
-    key: 'opdk_smtp_host'
-    value: '{{ opdk_smtp_host }}'
-
-- name: Update cache with opdk_smtp_port path
-  cache:
-    key: 'opdk_smtp_port'
-    value: '{{ opdk_smtp_port }}'
-
-- name: Update cache with opdk_smtp_user path
-  cache:
-    key: 'opdk_smtp_user'
-    value: '{{ opdk_smtp_user }}'
-
-- name: Update cache with opdk_smtp_password path
-  no_log: True
-  cache:
-    key: 'opdk_smtp_password'
-    value: '{{ opdk_smtp_password }}'
-
-- name: Update cache with opdk_smtp_ssl path
-  cache:
-    key: 'opdk_smtp_ssl'
-    value: '{{ opdk_smtp_ssl }}'
-
-- name: Update cache with opdk_smtp_mail_from
-  cache:
-    key: 'opdk_smtp_mail_from'
-    value: '{{ opdk_smtp_mail_from }}'
-
-- name: Update cache with opdk_bind_on_all_interfaces path
-  cache:
-    key: 'opdk_bind_on_all_interfaces'
-    value: '{{ opdk_bind_on_all_interfaces }}'
-
-- name: Update cache with org_name path
-  cache:
-    key: 'org_name'
-    value: '{{ org_name }}'
-
-- name: Update cache with ms_ext_mgmt_port path
-  cache:
-    key: 'ms_ext_mgmt_port'
-    value: '{{ ms_ext_mgmt_port }}'
-
-- name: Update cache with qpid_ext_mgmt_port path
-  cache:
-    key: 'qpid_ext_mgmt_port'
-    value: '{{ qpid_ext_mgmt_port }}'
-
-- name: Update cache with onboarding_config_file_path path
-  cache:
-    key: 'onboarding_config_file_path'
-    value: '{{ onboarding_config_file_path }}'
-
-- name: Update cache with onboarding_config path
-  cache:
-    key: 'onboarding_config'
-    value: '{{ onboarding_config }}'
-
-- name: Update cache with new_user path
-  cache:
-    key: 'new_user'
-    value: '{{ new_user }}'
-
-- name: Update cache with first_name path
-  cache:
-    key: 'first_name'
-    value: '{{ first_name }}'
-
-- name: Update cache with last_name path
-  cache:
-    key: 'last_name'
-    value: '{{ last_name }}'
-
-- name: Update cache with virtual_host_port path
-  cache:
-    key: 'virtual_host_port'
-    value: '{{ virtual_host_port }}'
-
-- name: Update cache with virtual_host_name path
-  cache:
-    key: 'virtual_host_name'
-    value: '{{ virtual_host_name }}'
-
-- name: Update cache with ax_group path
-  cache:
-    key: 'ax_group'
-    value: '{{ ax_group }}'
-
-- name: Update cache with env_name path
-  cache:
-    key: 'env_name'
-    value: '{{ env_name }}'
-
-- name: Update cache with apigee_provision_dir path
-  cache:
-    key: 'apigee_provision_dir'
-    value: '{{ apigee_provision_dir }}'
-
-# Apigee Edge Ports
-- name: Update cache with cassandra_jmx_port path
-  cache:
-    key: 'cassandra_jmx_port'
-    value: '{{ cassandra_jmx_port }}'
-
-- name: Update cache with cassandra_thrift_client_port path
-  cache:
-    key: 'cassandra_thrift_client_port'
-    value: '{{ cassandra_thrift_client_port }}'
-
-- name: Update cache with cassandra_cql_native_port path
-  cache:
-    key: 'cassandra_cql_native_port'
-    value: '{{ cassandra_cql_native_port }}'
-
-- name: Update cache with cassandra_non_ssl_gossip_port path
-  cache:
-    key: 'cassandra_non_ssl_gossip_port'
-    value: '{{ cassandra_non_ssl_gossip_port }}'
-
-- name: Update cache with cassandra_ssl_gossip_port path
-  cache:
-    key: 'cassandra_ssl_gossip_port'
-    value: '{{ cassandra_ssl_gossip_port }}'
-
-- name: Update cache with zk_data_port path
-  cache:
-    key: 'zk_data_port'
-    value: '{{ zk_data_port }}'
-
-- name: Update cache with zk_leader_port path
-  cache:
-    key: 'zk_leader_port'
-    value: '{{ zk_leader_port }}'
-
-- name: Update cache with zk_voter_port path
-  cache:
-    key: 'zk_voter_port'
-    value: '{{ zk_voter_port }}'
-
-- name: Update cache with mp_int_mgmt_port path
-  cache:
-    key: 'mp_int_mgmt_port'
-    value: '{{ mp_int_mgmt_port }}'
-
-- name: Update cache with mp_ext_mgmt_port path
-  cache:
-    key: 'mp_ext_mgmt_port'
-    value: '{{ mp_ext_mgmt_port }}'
-
-- name: Update cache with mp_jmx_port path
-  cache:
-    key: 'mp_jmx_port'
-    value: '{{ mp_jmx_port }}'
-
-- name: Update cache with mp_router_port path
-  cache:
-    key: 'mp_router_port'
-    value: '{{ mp_router_port }}'
-
-- name: Update cache with ms_jmx_port path
-  cache:
-    key: 'ms_jmx_port'
-    value: '{{ ms_jmx_port }}'
-
-- name: Update cache with ms_ext_mgmt_port path
-  cache:
-    key: 'ms_ext_mgmt_port'
-    value: '{{ ms_ext_mgmt_port }}'
-
-- name: Update cache with router_jmx_port path
-  cache:
-    key: 'router_jmx_port'
-    value: '{{ router_jmx_port }}'
-
-- name: Update cache with router_ext_mgmt_port path
-  cache:
-    key: 'router_ext_mgmt_port'
-    value: '{{ router_ext_mgmt_port }}'
-
-- name: Update cache with router_int_mgmt_port path
-  cache:
-    key: 'router_int_mgmt_port'
-    value: '{{ router_int_mgmt_port }}'
-
-- name: Update cache with qpid_jmx_port path
-  cache:
-    key: 'qpid_jmx_port'
-    value: '{{ qpid_jmx_port }}'
-
-- name: Update cache with qpid_int_mgmt_port path
-  cache:
-    key: 'qpid_int_mgmt_port'
-    value: '{{ qpid_int_mgmt_port }}'
-
-- name: Update cache with qpid_messaging_port path
-  cache:
-    key: 'qpid_messaging_port'
-    value: '{{ qpid_messaging_port }}'
-
-- name: Update cache with qpid_ext_mgmt_port path
-  cache:
-    key: 'qpid_ext_mgmt_port'
-    value: '{{ qpid_ext_mgmt_port }}'
-
-- name: Update cache with pg_jmx_port path
-  cache:
-    key: 'pg_jmx_port'
-    value: '{{ pg_jmx_port }}'
-
-- name: Update cache with pg_int_mgmt_port path
-  cache:
-    key: 'pg_int_mgmt_port'
-    value: '{{ pg_int_mgmt_port }}'
-
-- name: Update cache with pg_db_port path
-  cache:
-    key: 'pg_db_port'
-    value: '{{ pg_db_port }}'
-
-- name: Update cache with pg_ext_mgmt_port path
-  cache:
-    key: 'pg_ext_mgmt_port'
-    value: '{{ pg_ext_mgmt_port }}'
-
-- name: Update cache with ui_http_port path
-  cache:
-    key: 'ui_http_port'
-    value: '{{ ui_http_port }}'
-
-- name: Update cache with edge_proxy_port path
-  cache:
-    key: 'edge_proxy_port'
-    value: '{{ edge_proxy_port }}'
-
-- name: Update cache with ldap_data_port path
-  cache:
-    key: 'ldap_data_port'
-    value: '{{ ldap_data_port }}'
-
-- name: Update cache with consumer_group path
-  cache:
-    key: 'consumer_group'
-    value: '{{ consumer_group }}'
-
-- name: Update cache with drupal_pg_user
-  cache:
-    key: 'drupal_pg_user'
-    value: '{{ drupal_pg_user }}'
-
-- name: Update cache with drupal_pg_password
-  cache:
-    key: 'drupal_pg_password'
-    value: '{{ drupal_pg_password }}'
-
-- name: Update cache with opdk_cass_username
-  cache:
-    key: 'opdk_cass_username'
-    value: '{{ opdk_cass_username }}'
-
-- name: Update cache with opdk_cass_password
-  cache:
-    key: 'opdk_cass_password'
-    value: '{{ opdk_cass_password }}'
-
-- name: Update cache with opdk_cass_auth
-  cache:
-    key: 'opdk_cass_auth'
-    value: '{{ opdk_cass_auth }}'
-
-- name: Update cache with php_fpm_port
-  cache:
-    key: 'php_fpm_port'
-    value: '{{ php_fpm_port }}'
-
 - name: Update cache with archive_folder if provided
   cache:
     key: 'archive_folder'
@@ -532,4 +11,109 @@
     value: '{{ provided_response_file }}'
   when: provided_response_file is defined
 
+- name: Update cache with key and value
+  cache:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  with_items:
+  - { key: "jdk_version", value: "{{ jdk_version }}" }
+  - { key: 'java_home', value: '{{ java_home }}' }
+  - { key: 'opdk_user_name', value: '{{ opdk_user_name }}' }
+  - { key: 'opdk_group_name', value: '{{ opdk_group_name }}' }
+  - { key: 'opdk_user_email', value: '{{ opdk_user_email }}' }
+  - { key: 'opdk_user_pass', value: '{{ opdk_user_pass }}' }
+  - { key: 'opdk_user_home', value: '{{ opdk_user_home }}' }
+  - { key: 'admin_user', value: '{{ admin_user }}' }
+  - { key: 'opdk_version', value: '{{ opdk_version }}' }
+  - { key: 'apigee_mirror_version', value: '{{ apigee_mirror_version }}' }
+  - { key: 'opdk_installer_path', value: '{{ opdk_installer_path }}' }
+  - { key: 'opdk_portal_installation_config_file', value: '{{ opdk_portal_installation_config_file }}' }
+  - { key: 'apigee_data_backup_archive_name', value: '{{ apigee_data_backup_archive_name }}' }
+  - { key: 'apigee_archive_storage_folder', value: '{{ apigee_archive_storage_folder }}' }
+  - { key: 'apigee_installation_home', value: '{{ apigee_installation_home }}' }
+  - { key: 'pg_user', value: '{{ pg_user }}' }
+  - { key: 'pg_pass', value: '{{ pg_pass }}' }
+  - { key: 'apigee_service', value: '{{ apigee_service }}' }
+  - { key: 'nodetool', value: '{{ nodetool }}' }
+  - { key: 'cqlsh', value: '{{ cqlsh }}' }
+  - { key: 'apigee_setup', value: '{{ apigee_setup }}' }
+  - { key: 'apigee_update', value: '{{ apigee_update }}' }
+  - { key: 'apigee_all', value: '{{ apigee_all }}' }
+  - { key: 'opdk_license_target_file_path', value: "{{ opdk_license_target_file_path }}" }
+  - { key: 'local_resource_path', value: "{{ local_resource_path }}" }
+  - { key: 'opdk_license_source_file_name', value: "{{ opdk_license_source_file_name }}" }
+  - { key: 'opdk_installation_config_file', value: "{{ opdk_installation_config_file }}" }
+  - { key: 'apigee_postgresql_data_dir', value: "{{ apigee_postgresql_data_dir }}" }
+  - { key: 'apigee_validate_config_file', value: "{{ apigee_validate_config_file }}" }
+  - { key: 'apigee_repo_user', value: '{{ apigee_repo_user }}' }
+  - { key: 'apigee_repo_password', value: '{{ apigee_repo_password }}' }
+  - { key: 'default_apigee_repo_uri', value: '{{ default_apigee_repo_uri }}' }
+  - { key: 'default_apigee_repo_protocol', value: '{{ default_apigee_repo_protocol }}' }
+  - { key: 'default_apigee_repo_url', value: '{{ default_apigee_repo_url }}' }
+  - { key: 'copy_archive', value: '{{ copy_archive }}' }
+  - { key: 'archive_name', value: '{{ archive_name }}' }
+  - { key: 'archive_path', value: '{{ archive_path }}' }
+  - { key: 'mp_pod', value: '{{ mp_pod }}' }
+  - { key: 'opdk_ldap_type', value: '{{ opdk_ldap_type }}'}
+  - { key: 'opdk_ldap_remote_host', value: '{{ opdk_ldap_remote_host }}' }
+  - { key: 'opdk_ldap_pass', value: '{{ opdk_ldap_pass }}' }
+  - { key: 'opdk_enable_ax', value: '{{ opdk_enable_ax }}' }
+  - { key: 'default_mp_pod', value: '{{ default_mp_pod }}' }
+  - { key: 'opdk_use_zk_cluster', value: '{{ opdk_use_zk_cluster }}' }
+  - { key: 'opdk_cass_clustername', value: '{{ opdk_cass_clustername }}' }
+  - { key: 'opdk_use_cass_cluster', value: '{{ opdk_use_cass_cluster }}' }
+  - { key: 'opdk_smtp_skip', value: '{{ opdk_smtp_skip }}' }
+  - { key: 'opdk_smtp_host', value: '{{ opdk_smtp_host }}' }
+  - { key: 'opdk_smtp_port', value: '{{ opdk_smtp_port }}' }
+  - { key: 'opdk_smtp_user', value: '{{ opdk_smtp_user }}'}
+  - { key: 'opdk_smtp_password', value: '{{ opdk_smtp_password }}' }
+  - { key: 'opdk_smtp_ssl', value: '{{ opdk_smtp_ssl }}' }
+  - { key: "psql", value: "{{ psql }}" }
+  - { key: 'opdk_cass_auth', value: '{{ opdk_cass_auth }}' }
+  - { key: 'opdk_cass_password', value: '{{ opdk_cass_password }}' }
+  - { key: 'opdk_cass_username', value: '{{ opdk_cass_username }}' }
+  - { key: 'consumer_group', value: '{{ consumer_group }}' }
+  - { key: 'ldap_data_port', value: '{{ ldap_data_port }}' }
+  - { key: 'edge_proxy_port', value: '{{ edge_proxy_port }}' }
+  - { key: 'ui_http_port', value: '{{ ui_http_port }}' }
+  - { key: 'pg_ext_mgmt_port', value: '{{ pg_ext_mgmt_port }}' }
+  - { key: 'pg_db_port', value: '{{ pg_db_port }}' }
+  - { key: 'pg_int_mgmt_port', value: '{{ pg_int_mgmt_port }}' }
+  - { key: 'pg_jmx_port', value: '{{ pg_jmx_port }}' }
+  - { key: 'qpid_ext_mgmt_port', value: '{{ qpid_ext_mgmt_port }}' }
+  - { key: 'router_int_mgmt_port', value: '{{ router_int_mgmt_port }}' }
+  - { key: 'qpid_jmx_port', value: '{{ qpid_jmx_port }}' }
+  - { key: 'qpid_int_mgmt_port', value: '{{ qpid_int_mgmt_port }}' }
+  - { key: 'qpid_messaging_port', value: '{{ qpid_messaging_port }}' }
+  - { key: 'router_ext_mgmt_port', value: '{{ router_ext_mgmt_port }}' }
+  - { key: 'router_jmx_port', value: '{{ router_jmx_port }}' }
+  - { key: 'ms_ext_mgmt_port', value: '{{ ms_ext_mgmt_port }}' }
+  - { key: 'ms_jmx_port', value: '{{ ms_jmx_port }}' }
+  - { key: 'mp_router_port', value: '{{ mp_router_port }}' }
+  - { key: 'mp_jmx_port', value: '{{ mp_jmx_port }}' }
+  - { key: 'mp_ext_mgmt_port', value: '{{ mp_ext_mgmt_port }}' }
+  - { key: 'mp_int_mgmt_port', value: '{{ mp_int_mgmt_port }}' }
+  - { key: 'zk_voter_port', value: '{{ zk_voter_port }}' }
+  - { key: 'zk_leader_port', value: '{{ zk_leader_port }}' }
+  - { key: 'zk_data_port', value: '{{ zk_data_port }}' }
+  - { key: 'cassandra_ssl_gossip_port', value: '{{ cassandra_ssl_gossip_port }}' }
+  - { key: 'cassandra_non_ssl_gossip_port', value: '{{ cassandra_non_ssl_gossip_port }}' }
+  - { key: 'cassandra_cql_native_port', value: '{{ cassandra_cql_native_port }}' }
+  - { key: 'cassandra_thrift_client_port', value: '{{ cassandra_thrift_client_port }}' }
+  - { key: 'cassandra_jmx_port', value: '{{ cassandra_jmx_port }}' }
+  - { key: 'apigee_provision_dir', value: '{{ apigee_provision_dir }}' }
+  - { key: 'env_name', value: '{{ env_name }}' }
+  - { key: 'ax_group', value: '{{ ax_group }}' }
+  - { key: 'virtual_host_name', value: '{{ virtual_host_name }}' }
+  - { key: 'virtual_host_port', value: '{{ virtual_host_port }}' }
+  - { key: 'last_name', value: '{{ last_name }}' }
+  - { key: 'first_name', value: '{{ first_name }}' }
+  - { key: 'new_user', value: '{{ new_user }}' }
+  - { key: 'onboarding_config', value: '{{ onboarding_config }}' }
+  - { key: 'onboarding_config_file_path', value: '{{ onboarding_config_file_path }}' }
+  - { key: 'qpid_ext_mgmt_port', value: '{{ qpid_ext_mgmt_port }}' }
+  - { key: 'ms_ext_mgmt_port', value: '{{ ms_ext_mgmt_port }}' }
+  - { key: 'org_name', value: '{{ org_name }}' }
+  - { key: 'opdk_bind_on_all_interfaces', value: '{{ opdk_bind_on_all_interfaces }}' }
+  - { key: 'opdk_smtp_mail_from', value: '{{ opdk_smtp_mail_from }}' }
 

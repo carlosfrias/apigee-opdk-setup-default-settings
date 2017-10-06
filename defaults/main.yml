@@ -74,6 +74,9 @@ apigee_update: '{{ apigee_installation_home }}/apigee-setup/bin/update.sh'
 # Apigee all command for 4.16.xx
 apigee_all: '{{ apigee_installation_home }}/apigee-service/bin/apigee-all'
 
+# Postgres command line tool
+psql: "/usr/bin/psql"
+
 # Apigee license file path
 opdk_license_target_file_path: "{{ opdk_installer_path }}/license.conf"
 

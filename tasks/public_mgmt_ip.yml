@@ -1,24 +1,19 @@
 ---
 - block:
-  - name: Update cache with normalized name for management server public ip on DC-1
+  - name: Normalized name for management server public ip on DC-1
     cache:
       key: 'public_mgmt_ip'
       value: "{{ groups['dc-1-ms'][0] }}"
     when: groups['dc-1'] is defined and groups['dc-1-ms'] is defined and inventory_hostname in groups['dc-1']
 
-  - name: Update cache with normalized name for management server public ip  on DC-2
+  - name: Normalized name for management server public ip  on DC-2
     cache:
       key: 'public_mgmt_ip'
       value: "{{ groups['dc-2-ms'][0] }}"
     when: groups['dc-2'] is defined and groups['dc-2-ms'] is defined and inventory_hostname in groups['dc-2']
 
-  - name: Update cache with normalized name for management server public ip to DC-1 if current node is not in DC-1 or DC-2
+  - name: Normalized name for management server public ip to DC-1 if current node is not in DC-1 or DC-2
     cache:
       key: 'public_mgmt_ip'
       value: "{{ groups['dc-1-ms'][0] }}"
     when: groups['dc-1'] is defined and groups['dc-1-ms'] is defined and inventory_hostname in groups['dc-1']
-
-#  - name: Fail if management server public ip was not defined
-#    fail:
-#      msg: "Unable to define public_mgmt_ip; likely because of missing dc-1 or dc-2 group in inventory"
-#    when: public_mgmt_ip is not defined

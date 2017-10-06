@@ -1,8 +1,12 @@
 ---
 # tasks file for apigee-opdk-setup-default-settings
-- include_tasks: network-interface-name.yml
+- name: Normalized network interface name
+  cache:
+    key: 'interface_name'
+    value: 'ansible_{{ ansible_default_ipv4.interface }}'
+  when: ansible_os_family | lower in ['centos', 'oraclelinux', 'redhat']
 
-- include_tasks: local_address.yml
+- include_tasks: private_address.yml
 
 - include_tasks: public_address.yml
 
