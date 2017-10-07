@@ -69,4 +69,4 @@
       key: pgstandby_ip
       value: '{{ pgstandby_ip }}'
 
-  when: groups['dc-1-pgmaster'][0] is defined and groups['dc-2-pgstandby'][0] is defined
+  when: groups['dc-1-pgmaster'] is defined and groups['dc-2-pgstandby'] is defined
