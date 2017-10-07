@@ -1,18 +1,18 @@
 ---
-- name: Update cache with normalized name for private address
+- name: Normalized name for private address
   cache:
-    key: 'local_address'
+    key: 'private_address'
     value: '{{ hostvars[inventory_hostname][interface_name].ipv4.address }}'
 
 - block:
 
-  - name: Update cache with missing private ip on AWS
+  - name: Update EC2 for private ip on AWS
     ec2_facts:
     when: ansible_ec2_local_ipv4 is not defined
 
-  - name: Update cache with normalized name for private address on AWS
+  - name: Normalized name for private address on AWS
     cache:
-      key: 'local_address'
+      key: 'private_address'
       value: '{{ ansible_ec2_local_ipv4 }}'
     when: ansible_ec2_local_ipv4 is defined
 
