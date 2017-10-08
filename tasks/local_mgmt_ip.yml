@@ -1,20 +1,20 @@
 ---
 - block:
-  - name: Normalized name for management server local ip if on DC-1
+  - name: Normalized name for management server local ip if on dc1
     cache:
       key: 'local_mgmt_ip'
-      value: "{{ hostvars[groups['dc-1-ms'][0]][interface_name].ipv4.address }}"
-    when: groups['dc-1'] is defined and groups['dc-1-ms'] is defined and inventory_hostname in groups['dc-1']
+      value: "{{ hostvars[groups['dc1-ms'][0]][interface_name].ipv4.address }}"
+    when: groups['dc1'] is defined and groups['dc1-ms'] is defined and inventory_hostname in groups['dc1']
 
-  - name: Normalized name for management server local ip if on DC-2
+  - name: Normalized name for management server local ip if on dc2
     cache:
       key: 'local_mgmt_ip'
-      value: "{{ hostvars[groups['dc-2-ms'][0]][interface_name].ipv4.address }}"
-    when: groups['dc-2'] is defined and groups['dc-2-ms'] is defined and inventory_hostname in groups['dc-2']
+      value: "{{ hostvars[groups['dc2-ms'][0]][interface_name].ipv4.address }}"
+    when: groups['dc2'] is defined and groups['dc2-ms'] is defined and inventory_hostname in groups['dc2']
 
-  - name: Normalized name for management server local ip to DC-1 if current node is not on DC-1 or DC-2
+  - name: Normalized name for management server local ip to dc1 if current node is not on dc1 or dc2
     cache:
       key: 'local_mgmt_ip'
-      value: "{{ hostvars[groups['dc-1-ms'][0]][interface_name].ipv4.address }}"
-    when: not (inventory_hostname in groups['dc-1']) and not (inventory_hostname in groups['dc-2'])
-  when: groups['dc-1'] is defined or groups['dc-1-ms'] is defined
+      value: "{{ hostvars[groups['dc1-ms'][0]][interface_name].ipv4.address }}"
+    when: not (inventory_hostname in groups['dc1']) and not (inventory_hostname in groups['dc2'])
+  when: groups['dc1'] is defined or groups['dc1-ms'] is defined

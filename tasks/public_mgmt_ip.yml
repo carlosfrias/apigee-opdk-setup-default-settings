@@ -1,19 +1,19 @@
 ---
 - block:
-  - name: Normalized name for management server public ip on DC-1
+  - name: Normalized name for management server public ip on dc1
     cache:
       key: 'public_mgmt_ip'
-      value: "{{ groups['dc-1-ms'][0] }}"
-    when: groups['dc-1'] is defined and groups['dc-1-ms'] is defined and inventory_hostname in groups['dc-1']
+      value: "{{ groups['dc1-ms'][0] }}"
+    when: groups['dc1'] is defined and groups['dc1-ms'] is defined and inventory_hostname in groups['dc1']
 
-  - name: Normalized name for management server public ip  on DC-2
+  - name: Normalized name for management server public ip  on dc2
     cache:
       key: 'public_mgmt_ip'
-      value: "{{ groups['dc-2-ms'][0] }}"
-    when: groups['dc-2'] is defined and groups['dc-2-ms'] is defined and inventory_hostname in groups['dc-2']
+      value: "{{ groups['dc2-ms'][0] }}"
+    when: groups['dc2'] is defined and groups['dc2-ms'] is defined and inventory_hostname in groups['dc2']
 
-  - name: Normalized name for management server public ip to DC-1 if current node is not in DC-1 or DC-2
+  - name: Normalized name for management server public ip to dc1 if current node is not in dc1 or dc2
     cache:
       key: 'public_mgmt_ip'
-      value: "{{ groups['dc-1-ms'][0] }}"
-    when: groups['dc-1'] is defined and groups['dc-1-ms'] is defined and inventory_hostname in groups['dc-1']
+      value: "{{ groups['dc1-ms'][0] }}"
+    when: groups['dc1'] is defined and groups['dc1-ms'] is defined and inventory_hostname in groups['dc1']
