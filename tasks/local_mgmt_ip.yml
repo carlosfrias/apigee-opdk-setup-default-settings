@@ -16,5 +16,5 @@
     cache:
       key: 'local_mgmt_ip'
       value: "{{ hostvars[groups['dc-1-ms'][0]][interface_name].ipv4.address }}"
-    when: inventory_hostname not in groups['dc-1'] or inventory_hostname not in groups['dc-2']
+    when: not (inventory_hostname in groups['dc-1']) and not (inventory_hostname in groups['dc-2'])
   when: groups['dc-1'] is defined or groups['dc-1-ms'] is defined
