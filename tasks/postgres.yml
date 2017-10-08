@@ -3,13 +3,13 @@
 
   - name: Obtain pgmaster IP for DC 2, if not provided
     set_fact:
-      pgmaster_ip: "{{ hostvars[groups['dc2-pgmaster'][0]][interface_name].ipv4.address }}"
-    when: pgmaster_ip is not defined and groups['dc2-pgmaster'] is defined
+      pgmaster_ip: "{{ hostvars[groups['dc-2-pgmaster'][0]][interface_name].ipv4.address }}"
+    when: pgmaster_ip is not defined and groups['dc-2-pgmaster'] is defined
 
   - name: Obtain pgstandby IP for DC 2, if not provided
     set_fact:
-      pgstandby_ip: "{{ hostvars[groups['dc2-pgstandby'][0]][interface_name].ipv4.address }}"
-    when: pgstandby_ip is not defined and groups['dc2-pgstandby'] is defined
+      pgstandby_ip: "{{ hostvars[groups['dc-2-pgstandby'][0]][interface_name].ipv4.address }}"
+    when: pgstandby_ip is not defined and groups['dc-2-pgstandby'] is defined
 
   - name: Set pgmaster_ip for DC 2, in cache, if defined
     cache:
@@ -23,18 +23,18 @@
       value: '{{ pgstandby_ip }}'
     when: pgstandby_ip is defined
 
-  when: (groups['dc2-pgmaster'] is defined or groups['dc2-pgstandby'] is defined) and inventory_hostname in groups['dc2']
+  when: (groups['dc-2-pgmaster'] is defined or groups['dc-2-pgstandby'] is defined) and inventory_hostname in groups['dc-2']
 
 - block:
   - name: Obtain pgmaster IP for DC 1, if not provided
     set_fact:
-      pgmaster_ip: "{{ hostvars[groups['dc1-pgmaster'][0]][interface_name].ipv4.address }}"
-    when: pgmaster_ip is not defined and groups['dc1-pgmaster'] is defined
+      pgmaster_ip: "{{ hostvars[groups['dc-1-pgmaster'][0]][interface_name].ipv4.address }}"
+    when: pgmaster_ip is not defined and groups['dc-1-pgmaster'] is defined
 
   - name: Obtain pgstandby IP for DC 1, if not provided
     set_fact:
-      pgstandby_ip: "{{ hostvars[groups['dc1-pgstandby'][0]][interface_name].ipv4.address }}"
-    when: pgstandby_ip is not defined and groups['dc1-pgstandby'] is defined
+      pgstandby_ip: "{{ hostvars[groups['dc-1-pgstandby'][0]][interface_name].ipv4.address }}"
+    when: pgstandby_ip is not defined and groups['dc-1-pgstandby'] is defined
 
   - name: Set pgmaster_ip for DC 1, in cache, if defined
     cache:
@@ -48,16 +48,16 @@
       value: '{{ pgstandby_ip }}'
     when: pgstandby_ip is defined
 
-  when: (groups['dc1-pgmaster'] is defined or groups['dc1-pgstandby'] is defined) and inventory_hostname in groups['dc1']
+  when: (groups['dc-1-pgmaster'] is defined or groups['dc-1-pgstandby'] is defined) and inventory_hostname in groups['dc-1']
 
 - block:
   - name: Obtain pgmaster IP for DC 1, if not provided
     set_fact:
-      pgmaster_ip: "{{ groups['dc1-pgmaster'][0] }}"
+      pgmaster_ip: "{{ groups['dc-1-pgmaster'][0] }}"
 
   - name: Obtain pgstandby IP for DC 1, if not provided
     set_fact:
-      pgstandby_ip: "{{ groups['dc2-pgstandby'][0] }}"
+      pgstandby_ip: "{{ groups['dc-2-pgstandby'][0] }}"
 
   - name: Set pgmaster_ip for DC 1, in cache, if defined
     cache:
@@ -69,4 +69,4 @@
       key: pgstandby_ip
       value: '{{ pgstandby_ip }}'
 
-  when: groups['dc1-pgmaster'] is defined and groups['dc2-pgstandby'] is defined
+  when: groups['dc-1-pgmaster'] is defined and groups['dc-2-pgstandby'] is defined

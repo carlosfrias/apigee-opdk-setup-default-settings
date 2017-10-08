@@ -6,4 +6,4 @@
 
   tasks:
   - name: Set Apigee facts
-    apigee_facts: topology='cassandra' my_hostname='dc1'
+    apigee_facts: topology='cassandra' my_hostname='dc-1'
