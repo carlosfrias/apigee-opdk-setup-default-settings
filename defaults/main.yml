@@ -105,7 +105,7 @@ apigee_validate_config_file: '{{ opdk_installer_path }}/apigee-validate.conf'
 default_apigee_repo_user: '{{ opdk_user_name }}'
 
 # Apigee bootstra download user name password
-default_apigee_repo_pass: ''
+default_apigee_repo_password: ''
 
 # Apigee bootstrap download uri
 default_apigee_repo_uri: 'software.apigee.com'
