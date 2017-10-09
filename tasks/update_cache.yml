@@ -45,8 +45,8 @@
   - { key: 'opdk_installation_config_file', value: "{{ opdk_installation_config_file }}" }
   - { key: 'apigee_postgresql_data_dir', value: "{{ apigee_postgresql_data_dir }}" }
   - { key: 'apigee_validate_config_file', value: "{{ apigee_validate_config_file }}" }
-  - { key: 'apigee_repo_user', value: '{{ apigee_repo_user }}' }
-  - { key: 'apigee_repo_password', value: '{{ apigee_repo_password }}' }
+  - { key: 'default_apigee_repo_user', value: '{{ apigee_repo_user }}' }
+  - { key: 'default_apigee_repo_password', value: '{{ apigee_repo_password }}' }
   - { key: 'default_apigee_repo_uri', value: '{{ default_apigee_repo_uri }}' }
   - { key: 'default_apigee_repo_protocol', value: '{{ default_apigee_repo_protocol }}' }
   - { key: 'default_apigee_repo_url', value: '{{ default_apigee_repo_url }}' }
