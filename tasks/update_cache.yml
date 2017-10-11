@@ -116,4 +116,5 @@
   - { key: 'org_name', value: '{{ org_name }}' }
   - { key: 'opdk_bind_on_all_interfaces', value: '{{ opdk_bind_on_all_interfaces }}' }
   - { key: 'opdk_smtp_mail_from', value: '{{ opdk_smtp_mail_from }}' }
+  - { key: 'enable_system_check', value: '{{ enable_system_check }}' }
 
