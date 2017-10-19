@@ -113,7 +113,7 @@
   - { key: 'enable_system_check', value: '{{ enable_system_check }}' }
   - { key: 'local_apigee_secure', value: '{{ local_apigee_secure }}' }
   - { key: 'drupal_pg_user', value: '{{ opdk_user_name }}' }
-  - { key: 'drupal_pg_password', value: '{{ opdk_user_pass }}' }
+  - { key: 'drupal_pg_pass', value: '{{ opdk_user_pass }}' }
   - { key: 'dp_admin_firstname', value: "firstname" }
   - { key: 'dp_admin_lastname', value: "lastname" }
   - { key: 'dp_admin_username', value: "dp_admin" }
