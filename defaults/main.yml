@@ -6,7 +6,7 @@ jdk_version: '1.8'
 java_home: /usr/lib/jvm/java-openjdk
 
 # OPDK OS user name
-opdk_user_name: ''
+opdk_user_name: 'apigee'
 
 # OPDK OS group name
 opdk_group_name: "{{ opdk_user_name }}"
@@ -270,7 +270,7 @@ opdk_cass_clustername: 'Apigee'
 
 # SMTP settings for Edge Configuration
 opdk_smtp_skip: 'y'
-opdk_smtp_host: 'smtp.example.com'
+opdk_smtp_host: 'smtp.gmail.com'
 opdk_smtp_port: '25'
 opdk_smtp_user: ''
 opdk_smtp_password: ''
