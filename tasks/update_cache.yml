@@ -22,7 +22,7 @@
   - { key: 'opdk_version', value: '{{ opdk_version }}' }
   - { key: 'apigee_mirror_version', value: '{{ apigee_mirror_version }}' }
   - { key: 'opdk_installer_path', value: '{{ opdk_installer_path }}' }
-  - { key: 'opdk_portal_config_file', value: '{{ opdk_portal_installation_config_file }}' }
+  - { key: 'opdk_portal_config_file', value: '{{ opdk_portal_config_file }}' }
   - { key: 'apigee_data_backup_archive_name', value: '{{ apigee_data_backup_archive_name }}' }
   - { key: 'apigee_archive_storage_folder', value: '{{ apigee_archive_storage_folder }}' }
   - { key: 'apigee_installation_home', value: '{{ apigee_installation_home }}' }
