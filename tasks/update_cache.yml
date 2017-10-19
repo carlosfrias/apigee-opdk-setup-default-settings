@@ -22,7 +22,6 @@
   - { key: 'opdk_version', value: '{{ opdk_version }}' }
   - { key: 'apigee_mirror_version', value: '{{ apigee_mirror_version }}' }
   - { key: 'opdk_installer_path', value: '{{ opdk_installer_path }}' }
-#  - { key: 'opdk_portal_config_file', value: '{{ opdk_portal_config_file }}' }
   - { key: 'apigee_data_backup_archive_name', value: '{{ apigee_data_backup_archive_name }}' }
   - { key: 'apigee_archive_storage_folder', value: '{{ apigee_archive_storage_folder }}' }
   - { key: 'apigee_installation_home', value: '{{ apigee_installation_home }}' }
@@ -37,7 +36,6 @@
   - { key: 'opdk_license_target_file_path', value: "{{ opdk_license_target_file_path }}" }
   - { key: 'local_apigee_path', value: "{{ local_apigee_path }}" }
   - { key: 'opdk_license_source_file_name', value: "{{ opdk_license_source_file_name }}" }
-#  - { key: 'opdk_installation_config_file', value: "{{ opdk_installation_config_file }}" }
   - { key: 'apigee_postgresql_data_dir', value: "{{ apigee_postgresql_data_dir }}" }
   - { key: 'apigee_validate_config_file', value: "{{ apigee_validate_config_file }}" }
   - { key: 'default_apigee_repo_user', value: '{{ default_apigee_repo_user }}' }
@@ -103,8 +101,6 @@
   - { key: 'last_name', value: '{{ last_name }}' }
   - { key: 'first_name', value: '{{ first_name }}' }
   - { key: 'new_user', value: '{{ new_user }}' }
-  - { key: 'onboarding_config', value: '{{ onboarding_config }}' }
-  - { key: 'onboarding_config_file_path', value: '{{ onboarding_config_file_path }}' }
   - { key: 'qpid_ext_mgmt_port', value: '{{ qpid_ext_mgmt_port }}' }
   - { key: 'ms_ext_mgmt_port', value: '{{ ms_ext_mgmt_port }}' }
   - { key: 'org_name', value: '{{ org_name }}' }

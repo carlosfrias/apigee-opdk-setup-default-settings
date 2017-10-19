@@ -217,12 +217,12 @@ ax_group: axgroup001
 
 # Default consumer group
 consumer_group: consumer-group-001
-
-# Default onboarding provisioning file name
-onboarding_config: 'apigee-provision.conf'
-
-# Default onboarding provisioning file path
-onboarding_config_file_path: "{{ opdk_installer_path }}/{{ onboarding_config }}"
+#
+## Default onboarding provisioning file name
+#onboarding_config: 'apigee-provision.conf'
+#
+## Default onboarding provisioning file path
+#onboarding_config_file_path: "{{ opdk_installer_path }}/{{ onboarding_config }}"
 
 # Default onboarding provisioning directory
 apigee_provision_dir: '{{ apigee_installation_home }}/apigee-provision'
