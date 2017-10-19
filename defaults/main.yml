@@ -1,7 +1,4 @@
 ---
-# defaults file for apigee-opdk-setup-default-settings
-credentials_file: '~/.apigee/credentials.yml'
-
 # Target Java JDK version
 jdk_version: '1.8'
 
@@ -32,7 +29,7 @@ admin_user: '{{ opdk_user_email }}'
 admin_pass: '{{ opdk_user_pass }}'
 
 # Default Apigee Edge Private Cloud Version
-opdk_version: '4.17.01'
+opdk_version: '4.17.09'
 
 # Default version of the Apigee mirror to use
 apigee_mirror_version: '{{ opdk_version }}'
@@ -83,8 +80,14 @@ opdk_license_target_file_path: "{{ opdk_installer_path }}/license.conf"
 # Local resource location
 local_apigee_path: ~/.apigee
 
+# Local secure resource location
+local_apigee_secure: ~/.apigee-secure
+
+# defaults file for apigee-opdk-setup-default-settings
+credentials_file: '{{ local_apigee_secure }}/credentials.yml'
+
 # Apigee license file provided by customer
-opdk_license_source_file_name: '~/.apigee-secure/license.txt'
+opdk_license_source_file_name: '{{ local_apigee_secure }}/license.txt'
 
 # Apigee silent installation configuration file
 opdk_installation_config_file: "{{ opdk_installer_path }}/edge-response.conf"

@@ -1,10 +1,4 @@
 ---
-- name: Update cache with apigeerepobasepath if provided
-  cache:
-    key: 'apigeerepobasepath'
-    value: '{{ apigeerepobasepath }}'
-  when: apigeerepobasepath is defined
-
 - name: Update cache with provided_response_file if provided
   cache:
     key: 'provided_response_file'
@@ -17,6 +11,7 @@
     value: "{{ item.value }}"
   with_items:
   - { key: "jdk_version", value: "{{ jdk_version }}" }
+  - { key: "apigeerepobasepath", value: "{{ apigeerepobasepath }}" }
   - { key: 'java_home', value: '{{ java_home }}' }
   - { key: 'opdk_user_name', value: '{{ opdk_user_name }}' }
   - { key: 'opdk_group_name', value: '{{ opdk_group_name }}' }
@@ -117,4 +112,5 @@
   - { key: 'opdk_bind_on_all_interfaces', value: '{{ opdk_bind_on_all_interfaces }}' }
   - { key: 'opdk_smtp_mail_from', value: '{{ opdk_smtp_mail_from }}' }
   - { key: 'enable_system_check', value: '{{ enable_system_check }}' }
+  - { key: 'local_apigee_secure', value: '{{ local_apigee_secure }}' }
 
