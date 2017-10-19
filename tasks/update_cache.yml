@@ -1,9 +1,9 @@
 ---
-- name: Update cache with provided_response_file if provided
+- name: Update cache with manual_response_file if provided
   cache:
-    key: 'provided_response_file'
-    value: '{{ provided_response_file }}'
-  when: provided_response_file is defined
+    key: 'manual_response_file'
+    value: '{{ manual_response_file }}'
+  when: manual_response_file is defined
 
 - name: Update cache with key and value
   cache:

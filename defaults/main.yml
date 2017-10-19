@@ -99,7 +99,7 @@ opdk_portal_installation_config_file: '{{ opdk_installer_path }}/portal-silent-i
 apigee_postgresql_data_dir: '{{ apigee_installation_home }}/data/apigee-postgresql/pgdata'
 
 # Silent installation configuration file that is provided manually
-provided_response_file: ''
+manual_response_file: ''
 
 # Apigee validate config file path
 apigee_validate_config_file: '{{ opdk_installer_path }}/apigee-validate.conf'
