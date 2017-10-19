@@ -121,3 +121,4 @@
   - { key: 'dp_admin_email', value: "{{ opdk_user_email }}" }
   - { key: 'dp_devadmin_user', value: "{{ opdk_user_name }}" }
   - { key: 'dp_devadmin_pwd', value: "{{ opdk_user_pass }}" }
+  - { key: 'opdk_portal_db_config_file', value: "{{ opdk_portal_db_config_file }}" }
