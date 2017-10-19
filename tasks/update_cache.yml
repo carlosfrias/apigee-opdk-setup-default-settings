@@ -1,9 +1,9 @@
 ---
-- name: Update cache with archive_folder if provided
+- name: Update cache with apigeerepobasepath if provided
   cache:
-    key: 'archive_folder'
-    value: '{{ archive_folder }}'
-  when: archive_folder is defined
+    key: 'apigeerepobasepath'
+    value: '{{ apigeerepobasepath }}'
+  when: apigeerepobasepath is defined
 
 - name: Update cache with provided_response_file if provided
   cache:
@@ -40,7 +40,7 @@
   - { key: 'apigee_update', value: '{{ apigee_update }}' }
   - { key: 'apigee_all', value: '{{ apigee_all }}' }
   - { key: 'opdk_license_target_file_path', value: "{{ opdk_license_target_file_path }}" }
-  - { key: 'local_resource_path', value: "{{ local_resource_path }}" }
+  - { key: 'local_apigee_path', value: "{{ local_apigee_path }}" }
   - { key: 'opdk_license_source_file_name', value: "{{ opdk_license_source_file_name }}" }
   - { key: 'opdk_installation_config_file', value: "{{ opdk_installation_config_file }}" }
   - { key: 'apigee_postgresql_data_dir', value: "{{ apigee_postgresql_data_dir }}" }
@@ -52,7 +52,7 @@
   - { key: 'default_apigee_repo_url', value: '{{ default_apigee_repo_url }}' }
   - { key: 'copy_archive', value: '{{ copy_archive }}' }
   - { key: 'archive_name', value: '{{ archive_name }}' }
-  - { key: 'archive_path', value: '{{ archive_path }}' }
+  - { key: 'archive_path', value: '{{ apigeerepobasepath }}' }
   - { key: 'mp_pod', value: '{{ mp_pod }}' }
   - { key: 'opdk_ldap_type', value: '{{ opdk_ldap_type }}'}
   - { key: 'opdk_ldap_remote_host', value: '{{ opdk_ldap_remote_host }}' }

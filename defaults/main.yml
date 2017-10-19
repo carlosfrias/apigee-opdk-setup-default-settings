@@ -81,7 +81,7 @@ psql: "/usr/bin/psql"
 opdk_license_target_file_path: "{{ opdk_installer_path }}/license.conf"
 
 # Local resource location
-local_resource_path: ~/.apigee
+local_apigee_path: ~/.apigee
 
 # Apigee license file provided by customer
 opdk_license_source_file_name: '~/.apigee-secure/license.txt'
@@ -118,13 +118,13 @@ default_apigee_repo_url: '{{ default_apigee_repo_protocol }}://{{ default_apigee
 copy_archive: yes
 
 # Storage folder for the Apigee archive. Only set when you use an archive.
-#archive_folder: /tmp
+#apigeerepobasepath: /tmp
 
 # Apigee archive that is created when a mirror is used.
 archive_name: apigee-{{ opdk_version }}.tar.gz
 
 # Path to the Apigee archive that is created by apigee-mirror package
-archive_path: '{{ apigee_installation_home }}/data/apigee-mirror/{{ archive_name }}'
+apigeerepobasepath: '{{ apigee_installation_home }}/data/apigee-mirror'
 
 # Apigee edge default pod for silent-config file
 mp_pod: gateway
