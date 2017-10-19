@@ -93,7 +93,10 @@ opdk_license_source_file_name: '{{ local_apigee_secure }}/license.txt'
 opdk_installation_config_file: "{{ opdk_installer_path }}/edge-response.conf"
 
 # Silent config file for portal
-opdk_portal_installation_config_file: '{{ opdk_installer_path }}/portal-silent-install.conf'
+opdk_portal_installation_config_file: '{{ opdk_installer_path }}/devportal-silent-install.conf'
+
+# Silent config file for portal
+opdk_portal_db_config_file: '{{ opdk_installer_path }}/devportal-postgres.conf'
 
 # defaults file for apigee-opdk-setup-ps
 apigee_postgresql_data_dir: '{{ apigee_installation_home }}/data/apigee-postgresql/pgdata'
@@ -358,6 +361,13 @@ start_check_delay: 30
 
 bootstrap_filename: bootstrap.sh
 
+enable_system_check: 'n'
 drupal_pg_user: '{{ opdk_user_name }}'
 drupal_pg_password: '{{ opdk_user_pass }}'
-enable_system_check: 'n'
+dp_admin_firstname: "firstname"
+dp_admin_lastname: "lastname"
+dp_admin_username: "dp_admin"
+dp_admin_pwd: "{{ opdk_user_pass }}"
+dp_admin_email: "{{ opdk_user_email }}"
+dp_devadmin_user: "{{ opdk_user_name }}"
+dp_devadmin_pwd: "{{ opdk_user_pass }}"

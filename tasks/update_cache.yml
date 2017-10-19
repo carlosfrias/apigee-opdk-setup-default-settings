@@ -22,8 +22,7 @@
   - { key: 'opdk_version', value: '{{ opdk_version }}' }
   - { key: 'apigee_mirror_version', value: '{{ apigee_mirror_version }}' }
   - { key: 'opdk_installer_path', value: '{{ opdk_installer_path }}' }
-  - { key: 'opdk_portal_installation_config_file', value: '{{ opdk_portal_installation_config_file }}'
-  }
+  - { key: 'opdk_portal_installation_config_file', value: '{{ opdk_portal_installation_config_file }}' }
   - { key: 'apigee_data_backup_archive_name', value: '{{ apigee_data_backup_archive_name }}' }
   - { key: 'apigee_archive_storage_folder', value: '{{ apigee_archive_storage_folder }}' }
   - { key: 'apigee_installation_home', value: '{{ apigee_installation_home }}' }
@@ -113,4 +112,12 @@
   - { key: 'opdk_smtp_mail_from', value: '{{ opdk_smtp_mail_from }}' }
   - { key: 'enable_system_check', value: '{{ enable_system_check }}' }
   - { key: 'local_apigee_secure', value: '{{ local_apigee_secure }}' }
-
+  - { key: 'drupal_pg_user', value: '{{ opdk_user_name }}' }
+  - { key: 'drupal_pg_password', value: '{{ opdk_user_pass }}' }
+  - { key: 'dp_admin_firstname', value: "firstname" }
+  - { key: 'dp_admin_lastname', value: "lastname" }
+  - { key: 'dp_admin_username', value: "dp_admin" }
+  - { key: 'dp_admin_pwd', value: "{{ opdk_user_pass }}" }
+  - { key: 'dp_admin_email', value: "{{ opdk_user_email }}" }
+  - { key: 'dp_devadmin_user', value: "{{ opdk_user_name }}" }
+  - { key: 'dp_devadmin_pwd', value: "{{ opdk_user_pass }}" }
