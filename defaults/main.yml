@@ -118,7 +118,7 @@ default_apigee_repo_url: '{{ default_apigee_repo_protocol }}://{{ default_apigee
 copy_archive: yes
 
 # Apigee archive that is created when a mirror is used.
-archive_name: apigee-{{ opdk_version }}.tar.gz
+apigee_archive_name: apigee-{{ opdk_version }}.tar.gz
 
 # Path to the Apigee archive that is created by apigee-mirror package
 apigeerepobasepath: '{{ apigee_installation_home }}/data/apigee-mirror'
