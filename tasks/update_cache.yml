@@ -22,7 +22,7 @@
   - { key: 'opdk_version', value: '{{ opdk_version }}' }
   - { key: 'apigee_mirror_version', value: '{{ apigee_mirror_version }}' }
   - { key: 'opdk_installer_path', value: '{{ opdk_installer_path }}' }
-  - { key: 'opdk_portal_config_file', value: '{{ opdk_portal_config_file }}' }
+#  - { key: 'opdk_portal_config_file', value: '{{ opdk_portal_config_file }}' }
   - { key: 'apigee_data_backup_archive_name', value: '{{ apigee_data_backup_archive_name }}' }
   - { key: 'apigee_archive_storage_folder', value: '{{ apigee_archive_storage_folder }}' }
   - { key: 'apigee_installation_home', value: '{{ apigee_installation_home }}' }
@@ -37,7 +37,7 @@
   - { key: 'opdk_license_target_file_path', value: "{{ opdk_license_target_file_path }}" }
   - { key: 'local_apigee_path', value: "{{ local_apigee_path }}" }
   - { key: 'opdk_license_source_file_name', value: "{{ opdk_license_source_file_name }}" }
-  - { key: 'opdk_installation_config_file', value: "{{ opdk_installation_config_file }}" }
+#  - { key: 'opdk_installation_config_file', value: "{{ opdk_installation_config_file }}" }
   - { key: 'apigee_postgresql_data_dir', value: "{{ apigee_postgresql_data_dir }}" }
   - { key: 'apigee_validate_config_file', value: "{{ apigee_validate_config_file }}" }
   - { key: 'default_apigee_repo_user', value: '{{ default_apigee_repo_user }}' }

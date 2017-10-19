@@ -90,10 +90,10 @@ credentials_file: '{{ local_apigee_secure }}/credentials.yml'
 opdk_license_source_file_name: '{{ local_apigee_secure }}/license.txt'
 
 # Apigee silent installation configuration file
-opdk_installation_config_file: "{{ opdk_installer_path }}/edge-response.conf"
+#opdk_installation_config_file: "{{ opdk_installer_path }}/edge-response.conf"
 
-# Silent config file for portal
-opdk_portal_config_file: '{{ opdk_installer_path }}/devportal-silent-install.conf'
+## Silent config file for portal
+#opdk_portal_config_file: '{{ opdk_installer_path }}/edge-devportal-response-{{ opdk_version }}-{{ region }}.conf'
 
 # Silent config file for portal
 opdk_portal_db_config_file: '{{ opdk_installer_path }}/devportal-postgres.conf'
