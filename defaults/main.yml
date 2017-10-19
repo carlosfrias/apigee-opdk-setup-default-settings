@@ -117,9 +117,6 @@ default_apigee_repo_url: '{{ default_apigee_repo_protocol }}://{{ default_apigee
 # Choose whether to copy the Apigee Mirror archive from your control machine or use an existing archive on the server.
 copy_archive: yes
 
-# Storage folder for the Apigee archive. Only set when you use an archive.
-#apigeerepobasepath: /tmp
-
 # Apigee archive that is created when a mirror is used.
 archive_name: apigee-{{ opdk_version }}.tar.gz
 

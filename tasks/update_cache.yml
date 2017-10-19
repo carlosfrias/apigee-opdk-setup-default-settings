@@ -51,7 +51,7 @@
   - { key: 'default_apigee_repo_protocol', value: '{{ default_apigee_repo_protocol }}' }
   - { key: 'default_apigee_repo_url', value: '{{ default_apigee_repo_url }}' }
   - { key: 'copy_archive', value: '{{ copy_archive }}' }
-  - { key: 'archive_name', value: '{{ archive_name }}' }
+  - { key: 'archive_name', value: '{{ apigee_archive_name }}' }
   - { key: 'archive_path', value: '{{ apigeerepobasepath }}' }
   - { key: 'mp_pod', value: '{{ mp_pod }}' }
   - { key: 'opdk_ldap_type', value: '{{ opdk_ldap_type }}'}
