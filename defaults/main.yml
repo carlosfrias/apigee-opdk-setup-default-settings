@@ -93,7 +93,7 @@ opdk_license_source_file_name: '{{ local_apigee_secure }}/license.txt'
 opdk_installation_config_file: "{{ opdk_installer_path }}/edge-response.conf"
 
 # Silent config file for portal
-opdk_portal_installation_config_file: '{{ opdk_installer_path }}/devportal-silent-install.conf'
+opdk_portal_config_file: '{{ opdk_installer_path }}/devportal-silent-install.conf'
 
 # Silent config file for portal
 opdk_portal_db_config_file: '{{ opdk_installer_path }}/devportal-postgres.conf'
