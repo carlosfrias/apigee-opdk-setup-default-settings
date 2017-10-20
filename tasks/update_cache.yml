@@ -1,10 +1,4 @@
 ---
-- name: Update cache with manual_response_file if provided
-  cache:
-    key: 'manual_response_file'
-    value: '{{ manual_response_file }}'
-  when: manual_response_file is defined
-
 - name: Update cache with key and value
   cache:
     key: "{{ item.key }}"
@@ -20,31 +14,38 @@
   - { key: 'opdk_user_home', value: '{{ opdk_user_home }}' }
   - { key: 'admin_user', value: '{{ admin_user }}' }
   - { key: 'opdk_version', value: '{{ opdk_version }}' }
-  - { key: 'apigee_mirror_version', value: '{{ apigee_mirror_version }}' }
   - { key: 'opdk_installer_path', value: '{{ opdk_installer_path }}' }
-  - { key: 'apigee_data_backup_archive_name', value: '{{ apigee_data_backup_archive_name }}' }
-  - { key: 'apigee_archive_storage_folder', value: '{{ apigee_archive_storage_folder }}' }
   - { key: 'apigee_installation_home', value: '{{ apigee_installation_home }}' }
-  - { key: 'pg_user', value: '{{ pg_user }}' }
-  - { key: 'pg_pass', value: '{{ pg_pass }}' }
   - { key: 'apigee_service', value: '{{ apigee_service }}' }
   - { key: 'nodetool', value: '{{ nodetool }}' }
   - { key: 'cqlsh', value: '{{ cqlsh }}' }
+  - { key: "psql", value: "{{ psql }}" }
   - { key: 'apigee_setup', value: '{{ apigee_setup }}' }
   - { key: 'apigee_update', value: '{{ apigee_update }}' }
   - { key: 'apigee_all', value: '{{ apigee_all }}' }
   - { key: 'opdk_license_target_file_path', value: "{{ opdk_license_target_file_path }}" }
   - { key: 'local_apigee_path', value: "{{ local_apigee_path }}" }
+  - { key: 'local_apigee_secure', value: '{{ local_apigee_secure }}' }
   - { key: 'opdk_license_source_file_name', value: "{{ opdk_license_source_file_name }}" }
+
+
+  - { key: 'apigee_mirror_version', value: '{{ apigee_mirror_version }}' }
+  - { key: 'apigee_data_backup_archive_name', value: '{{ apigee_data_backup_archive_name }}' }
+  - { key: 'apigee_archive_storage_folder', value: '{{ apigee_archive_storage_folder }}' }
   - { key: 'apigee_postgresql_data_dir', value: "{{ apigee_postgresql_data_dir }}" }
   - { key: 'apigee_validate_config_file', value: "{{ apigee_validate_config_file }}" }
+
   - { key: 'default_apigee_repo_user', value: '{{ default_apigee_repo_user }}' }
   - { key: 'default_apigee_repo_password', value: '{{ default_apigee_repo_password}}' }
   - { key: 'default_apigee_repo_uri', value: '{{ default_apigee_repo_uri }}' }
   - { key: 'default_apigee_repo_protocol', value: '{{ default_apigee_repo_protocol }}' }
   - { key: 'default_apigee_repo_url', value: '{{ default_apigee_repo_url }}' }
+
   - { key: 'copy_archive', value: '{{ copy_archive }}' }
   - { key: 'apigee_archive_name', value: '{{ apigee_archive_name }}' }
+
+  - { key: 'pg_user', value: '{{ pg_user }}' }
+  - { key: 'pg_pass', value: '{{ pg_pass }}' }
   - { key: 'mp_pod', value: '{{ mp_pod }}' }
   - { key: 'opdk_ldap_type', value: '{{ opdk_ldap_type }}'}
   - { key: 'opdk_ldap_remote_host', value: '{{ opdk_ldap_remote_host }}' }
@@ -60,11 +61,11 @@
   - { key: 'opdk_smtp_user', value: '{{ opdk_smtp_user }}'}
   - { key: 'opdk_smtp_password', value: '{{ opdk_smtp_password }}' }
   - { key: 'opdk_smtp_ssl', value: '{{ opdk_smtp_ssl }}' }
-  - { key: "psql", value: "{{ psql }}" }
   - { key: 'opdk_cass_auth', value: '{{ opdk_cass_auth }}' }
   - { key: 'opdk_cass_password', value: '{{ opdk_cass_password }}' }
   - { key: 'opdk_cass_username', value: '{{ opdk_cass_username }}' }
   - { key: 'consumer_group', value: '{{ consumer_group }}' }
+
   - { key: 'ldap_data_port', value: '{{ ldap_data_port }}' }
   - { key: 'edge_proxy_port', value: '{{ edge_proxy_port }}' }
   - { key: 'ui_http_port', value: '{{ ui_http_port }}' }
@@ -93,6 +94,9 @@
   - { key: 'cassandra_cql_native_port', value: '{{ cassandra_cql_native_port }}' }
   - { key: 'cassandra_thrift_client_port', value: '{{ cassandra_thrift_client_port }}' }
   - { key: 'cassandra_jmx_port', value: '{{ cassandra_jmx_port }}' }
+  - { key: 'qpid_ext_mgmt_port', value: '{{ qpid_ext_mgmt_port }}' }
+  - { key: 'ms_ext_mgmt_port', value: '{{ ms_ext_mgmt_port }}' }
+
   - { key: 'apigee_provision_dir', value: '{{ apigee_provision_dir }}' }
   - { key: 'env_name', value: '{{ env_name }}' }
   - { key: 'ax_group', value: '{{ ax_group }}' }
@@ -101,13 +105,11 @@
   - { key: 'last_name', value: '{{ last_name }}' }
   - { key: 'first_name', value: '{{ first_name }}' }
   - { key: 'new_user', value: '{{ new_user }}' }
-  - { key: 'qpid_ext_mgmt_port', value: '{{ qpid_ext_mgmt_port }}' }
-  - { key: 'ms_ext_mgmt_port', value: '{{ ms_ext_mgmt_port }}' }
   - { key: 'org_name', value: '{{ org_name }}' }
   - { key: 'opdk_bind_on_all_interfaces', value: '{{ opdk_bind_on_all_interfaces }}' }
   - { key: 'opdk_smtp_mail_from', value: '{{ opdk_smtp_mail_from }}' }
+
   - { key: 'enable_system_check', value: '{{ enable_system_check }}' }
-  - { key: 'local_apigee_secure', value: '{{ local_apigee_secure }}' }
   - { key: 'drupal_pg_user', value: '{{ opdk_user_name }}' }
   - { key: 'drupal_pg_pass', value: '{{ opdk_user_pass }}' }
   - { key: 'dp_admin_firstname', value: "firstname" }
