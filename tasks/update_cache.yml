@@ -14,6 +14,7 @@
   - { key: 'opdk_user_home', value: '{{ opdk_user_home }}' }
   - { key: 'admin_user', value: '{{ admin_user }}' }
   - { key: 'opdk_version', value: '{{ opdk_version }}' }
+  - { key: 'apigee_mirror_version', value: '{{ apigee_mirror_version }}' }
   - { key: 'opdk_installer_path', value: '{{ opdk_installer_path }}' }
   - { key: 'apigee_installation_home', value: '{{ apigee_installation_home }}' }
   - { key: 'apigee_service', value: '{{ apigee_service }}' }
@@ -29,9 +30,9 @@
   - { key: 'opdk_license_source_file_name', value: "{{ opdk_license_source_file_name }}" }
 
 
-  - { key: 'apigee_mirror_version', value: '{{ apigee_mirror_version }}' }
   - { key: 'apigee_data_backup_archive_name', value: '{{ apigee_data_backup_archive_name }}' }
   - { key: 'apigee_archive_storage_folder', value: '{{ apigee_archive_storage_folder }}' }
+
   - { key: 'apigee_postgresql_data_dir', value: "{{ apigee_postgresql_data_dir }}" }
   - { key: 'apigee_validate_config_file', value: "{{ apigee_validate_config_file }}" }
 
