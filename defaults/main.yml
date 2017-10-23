@@ -176,7 +176,7 @@ php_fpm_port: 8888
 influxdb_system_port: 25826
 influxdb_port: 8086
 
-grafana_username: ''
+grafana_username: '{{ opdk_user_name }}'
 grafana_password: '{{ grafana_username }}'
 
 # Default collectd installation file
