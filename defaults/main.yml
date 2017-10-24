@@ -176,14 +176,8 @@ php_fpm_port: 8888
 influxdb_system_port: 25826
 influxdb_port: 8086
 
-grafana_username: '{{ opdk_user_name }}'
-grafana_password: '{{ grafana_username }}'
-
 # Default collectd installation file
 influxdb_installation_config: influxdb.conf
-
-# Default influxdb host
-#influxdb_host: 127.0.0.1
 
 # Local folder in which to store logs and config files
 conf_logs_dir: configs_and_logs
