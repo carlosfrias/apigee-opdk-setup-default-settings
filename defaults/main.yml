@@ -360,7 +360,7 @@ drupal_pg_user: '{{ opdk_user_name }}'
 drupal_pg_pass: '{{ opdk_user_pass }}'
 dp_admin_firstname: "firstname"
 dp_admin_lastname: "lastname"
-dp_admin_username: "dp_admin"
+dp_admin_username: "{{ opdk_user_name }}"
 dp_admin_pwd: "{{ opdk_user_pass }}"
 dp_admin_email: "{{ opdk_user_email }}"
 dp_devadmin_user: "{{ opdk_user_name }}"
