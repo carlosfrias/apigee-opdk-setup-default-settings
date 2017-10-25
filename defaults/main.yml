@@ -222,7 +222,7 @@ consumer_group: consumer-group-001
 apigee_provision_dir: '{{ apigee_installation_home }}/apigee-provision'
 
 # Default location and name of the Baas Silent Install file
-opdk_baas_silent_install_file_path: '{{ opdk_installation_config_file }}'
+#opdk_baas_silent_install_file_path: '{{ opdk_installation_config_file }}'
 
 # Baas silent install file provided by customer
 opdk_baas_provided_silent_install_file: ''
