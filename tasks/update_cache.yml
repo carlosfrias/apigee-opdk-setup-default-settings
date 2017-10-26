@@ -4,23 +4,15 @@
     key: "{{ item.key }}"
     value: "{{ item.value }}"
   with_items:
-  - { key: 'opdk_installer_path', value: '{{ opdk_installer_path }}' }
   - { key: 'apigee_home', value: '{{ apigee_home }}' }
-  - { key: "apigeerepobasepath", value: "{{ apigeerepobasepath }}" }
-
   - { key: 'opdk_version', value: '{{ opdk_version }}' }
-  - { key: 'apigee_mirror_version', value: '{{ apigee_mirror_version }}' }
-  - { key: 'apigee_service', value: '{{ apigee_service }}' }
+
   - { key: 'nodetool', value: '{{ nodetool }}' }
   - { key: 'cqlsh', value: '{{ cqlsh }}' }
   - { key: "psql", value: "{{ psql }}" }
-  - { key: 'apigee_setup', value: '{{ apigee_setup }}' }
-  - { key: 'apigee_update', value: '{{ apigee_update }}' }
-  - { key: 'apigee_all', value: '{{ apigee_all }}' }
-  - { key: 'opdk_license_target_file_path', value: "{{ opdk_license_target_file_path }}" }
+
   - { key: 'local_apigee_path', value: "{{ local_apigee_path }}" }
   - { key: 'local_apigee_secure', value: '{{ local_apigee_secure }}' }
-  - { key: 'opdk_license_source_file_name', value: "{{ opdk_license_source_file_name }}" }
 
   - { key: 'apigee_data_backup_archive_name', value: '{{ apigee_data_backup_archive_name }}' }
   - { key: 'apigee_archive_storage_folder', value: '{{ apigee_archive_storage_folder }}' }

@@ -7,9 +7,6 @@ opdk_user_home: /home/{{ opdk_user_name }}
 # Default Apigee Edge Private Cloud Version
 opdk_version: '4.17.09'
 
-# Default version of the Apigee mirror to use
-apigee_mirror_version: '{{ opdk_version }}'
-
 # Apigee staging installation folder
 opdk_installer_path: "/tmp/edge"
 
@@ -22,9 +19,6 @@ apigee_archive_storage_folder: '{{ opdk_installer_path }}'
 # Default apigee installation home
 apigee_home: /opt/apigee
 
-# Apigee service command for 4.16.xx
-apigee_service: '{{ apigee_home }}/apigee-service/bin/apigee-service'
-
 # Cassandra nodetool command
 nodetool: '{{ apigee_home }}/apigee-cassandra/bin/nodetool'
 
@@ -34,20 +28,8 @@ cqlsh: '{{ apigee_home }}/apigee-cassandra/bin/cqlsh'
 # Cassandra command line command
 cassandra_cli: '{{ apigee_home }}/apigee-cassandra/bin/cassandra-cli'
 
-# Apigee setup command for 4.16.xx
-apigee_setup: '{{ apigee_home }}/apigee-setup/bin/setup.sh'
-
-# Apigee update command for 4.16.xx
-apigee_update: '{{ apigee_home }}/apigee-setup/bin/update.sh'
-
-# Apigee all command for 4.16.xx
-apigee_all: '{{ apigee_home }}/apigee-service/bin/apigee-all'
-
 # Postgres command line tool
 psql: "/usr/bin/psql"
-
-# Apigee license file path
-opdk_license_target_file_path: "{{ opdk_installer_path }}/license.conf"
 
 # Local resource location
 local_apigee_path: ~/.apigee
@@ -57,9 +39,6 @@ local_apigee_secure: ~/.apigee-secure
 
 # defaults file for apigee-opdk-setup-default-settings
 credentials_file: '{{ local_apigee_secure }}/credentials.yml'
-
-# Apigee license file provided by customer
-opdk_license_source_file_name: '{{ local_apigee_secure }}/license.txt'
 
 # Apigee silent installation configuration file
 #opdk_installation_config_file: "{{ opdk_installer_path }}/edge-response.conf"
@@ -91,15 +70,6 @@ default_apigee_repo_uri: 'software.apigee.com'
 # Apigee bootstrap download url
 default_apigee_repo_protocol: 'https'
 default_apigee_repo_url: '{{ default_apigee_repo_protocol }}://{{ default_apigee_repo_uri }}'
-
-# Choose whether to copy the Apigee Mirror archive from your control machine or use an existing archive on the server.
-copy_archive: yes
-
-# Apigee archive that is created when a mirror is used.
-apigee_archive_name: apigee-{{ opdk_version }}.tar.gz
-
-# Path to the Apigee archive that is created by apigee-mirror package
-apigeerepobasepath: '{{ apigee_home }}/data/apigee-mirror'
 
 # Apigee edge default pod for silent-config file
 mp_pod: gateway
