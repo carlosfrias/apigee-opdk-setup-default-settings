@@ -1,32 +1,8 @@
 ---
-# Target Java JDK version
-jdk_version: '1.8'
-
-# System file path to use in JAVA_HOME
-java_home: /usr/lib/jvm/java-openjdk
-
-# OPDK OS user name
-opdk_user_name: 'apigee'
-
-# OPDK OS group name
-opdk_group_name: "{{ opdk_user_name }}"
-
-# OPDK User Email
-opdk_user_email: ''
-
 opdk_smtp_mail_from: '{{ opdk_user_name }}'
-
-# OPDK User Password
-opdk_user_pass: ''
 
 # Home folder of the Apigee user
 opdk_user_home: /home/{{ opdk_user_name }}
-
-# Apigee admin user name
-admin_user: '{{ opdk_user_email }}'
-
-# Apigee admin user password
-admin_pass: '{{ opdk_user_pass }}'
 
 # Default Apigee Edge Private Cloud Version
 opdk_version: '4.17.09'
@@ -356,12 +332,3 @@ start_check_delay: 30
 bootstrap_filename: bootstrap.sh
 
 enable_system_check: 'n'
-drupal_pg_user: '{{ opdk_user_name }}'
-drupal_pg_pass: '{{ opdk_user_pass }}'
-dp_admin_firstname: "firstname"
-dp_admin_lastname: "lastname"
-dp_admin_username: "{{ opdk_user_name }}"
-dp_admin_pwd: "{{ opdk_user_pass }}"
-dp_admin_email: "{{ opdk_user_email }}"
-dp_devadmin_user: "{{ opdk_user_name }}"
-dp_devadmin_pwd: "{{ opdk_user_pass }}"

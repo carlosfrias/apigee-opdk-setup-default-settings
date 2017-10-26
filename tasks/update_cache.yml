@@ -4,19 +4,12 @@
     key: "{{ item.key }}"
     value: "{{ item.value }}"
   with_items:
-  - { key: "jdk_version", value: "{{ jdk_version }}" }
-  - { key: "apigeerepobasepath", value: "{{ apigeerepobasepath }}" }
-  - { key: 'java_home', value: '{{ java_home }}' }
-  - { key: 'opdk_user_name', value: '{{ opdk_user_name }}' }
-  - { key: 'opdk_group_name', value: '{{ opdk_group_name }}' }
-  - { key: 'opdk_user_email', value: '{{ opdk_user_email }}' }
-  - { key: 'opdk_user_pass', value: '{{ opdk_user_pass }}' }
-  - { key: 'opdk_user_home', value: '{{ opdk_user_home }}' }
-  - { key: 'admin_user', value: '{{ admin_user }}' }
-  - { key: 'opdk_version', value: '{{ opdk_version }}' }
-  - { key: 'apigee_mirror_version', value: '{{ apigee_mirror_version }}' }
   - { key: 'opdk_installer_path', value: '{{ opdk_installer_path }}' }
   - { key: 'apigee_installation_home', value: '{{ apigee_installation_home }}' }
+  - { key: "apigeerepobasepath", value: "{{ apigeerepobasepath }}" }
+
+  - { key: 'opdk_version', value: '{{ opdk_version }}' }
+  - { key: 'apigee_mirror_version', value: '{{ apigee_mirror_version }}' }
   - { key: 'apigee_service', value: '{{ apigee_service }}' }
   - { key: 'nodetool', value: '{{ nodetool }}' }
   - { key: 'cqlsh', value: '{{ cqlsh }}' }
@@ -28,7 +21,6 @@
   - { key: 'local_apigee_path', value: "{{ local_apigee_path }}" }
   - { key: 'local_apigee_secure', value: '{{ local_apigee_secure }}' }
   - { key: 'opdk_license_source_file_name', value: "{{ opdk_license_source_file_name }}" }
-
 
   - { key: 'apigee_data_backup_archive_name', value: '{{ apigee_data_backup_archive_name }}' }
   - { key: 'apigee_archive_storage_folder', value: '{{ apigee_archive_storage_folder }}' }
@@ -45,12 +37,9 @@
   - { key: 'copy_archive', value: '{{ copy_archive }}' }
   - { key: 'apigee_archive_name', value: '{{ apigee_archive_name }}' }
 
-  - { key: 'pg_user', value: '{{ pg_user }}' }
-  - { key: 'pg_pass', value: '{{ pg_pass }}' }
   - { key: 'mp_pod', value: '{{ mp_pod }}' }
   - { key: 'opdk_ldap_type', value: '{{ opdk_ldap_type }}'}
   - { key: 'opdk_ldap_remote_host', value: '{{ opdk_ldap_remote_host }}' }
-  - { key: 'opdk_ldap_pass', value: '{{ opdk_ldap_pass }}' }
   - { key: 'opdk_enable_ax', value: '{{ opdk_enable_ax }}' }
   - { key: 'default_mp_pod', value: '{{ default_mp_pod }}' }
   - { key: 'opdk_use_zk_cluster', value: '{{ opdk_use_zk_cluster }}' }
@@ -59,12 +48,8 @@
   - { key: 'opdk_smtp_skip', value: '{{ opdk_smtp_skip }}' }
   - { key: 'opdk_smtp_host', value: '{{ opdk_smtp_host }}' }
   - { key: 'opdk_smtp_port', value: '{{ opdk_smtp_port }}' }
-  - { key: 'opdk_smtp_user', value: '{{ opdk_smtp_user }}'}
-  - { key: 'opdk_smtp_password', value: '{{ opdk_smtp_password }}' }
   - { key: 'opdk_smtp_ssl', value: '{{ opdk_smtp_ssl }}' }
   - { key: 'opdk_cass_auth', value: '{{ opdk_cass_auth }}' }
-  - { key: 'opdk_cass_password', value: '{{ opdk_cass_password }}' }
-  - { key: 'opdk_cass_username', value: '{{ opdk_cass_username }}' }
   - { key: 'consumer_group', value: '{{ consumer_group }}' }
 
   - { key: 'ldap_data_port', value: '{{ ldap_data_port }}' }
@@ -113,13 +98,4 @@
   - { key: 'opdk_smtp_mail_from', value: '{{ opdk_smtp_mail_from }}' }
 
   - { key: 'enable_system_check', value: '{{ enable_system_check }}' }
-  - { key: 'drupal_pg_user', value: '{{ opdk_user_name }}' }
-  - { key: 'drupal_pg_pass', value: '{{ opdk_user_pass }}' }
-  - { key: 'dp_admin_firstname', value: "firstname" }
-  - { key: 'dp_admin_lastname', value: "lastname" }
-  - { key: 'dp_admin_username', value: "dp_admin" }
-  - { key: 'dp_admin_pwd', value: "{{ opdk_user_pass }}" }
-  - { key: 'dp_admin_email', value: "{{ opdk_user_email }}" }
-  - { key: 'dp_devadmin_user', value: "{{ opdk_user_name }}" }
-  - { key: 'dp_devadmin_pwd', value: "{{ opdk_user_pass }}" }
   - { key: 'opdk_portal_db_config_file', value: "{{ opdk_portal_db_config_file }}" }

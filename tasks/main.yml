@@ -4,7 +4,6 @@
   cache:
     key: 'interface_name'
     value: 'ansible_{{ ansible_default_ipv4.interface }}'
-  when: ansible_os_family | lower in ['centos', 'oraclelinux', 'redhat']
 
 - include_tasks: private_address.yml
 
