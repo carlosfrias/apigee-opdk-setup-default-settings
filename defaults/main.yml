@@ -20,28 +20,28 @@ apigee_data_backup_archive_name: apigee_data_backup.tar.gz
 apigee_archive_storage_folder: '{{ opdk_installer_path }}'
 
 # Default apigee installation home
-apigee_installation_home: /opt/apigee
+apigee_home: /opt/apigee
 
 # Apigee service command for 4.16.xx
-apigee_service: '{{ apigee_installation_home }}/apigee-service/bin/apigee-service'
+apigee_service: '{{ apigee_home }}/apigee-service/bin/apigee-service'
 
 # Cassandra nodetool command
-nodetool: '{{ apigee_installation_home }}/apigee-cassandra/bin/nodetool'
+nodetool: '{{ apigee_home }}/apigee-cassandra/bin/nodetool'
 
 # Cassandra cqlsh command
-cqlsh: '{{ apigee_installation_home }}/apigee-cassandra/bin/cqlsh'
+cqlsh: '{{ apigee_home }}/apigee-cassandra/bin/cqlsh'
 
 # Cassandra command line command
-cassandra_cli: '{{ apigee_installation_home }}/apigee-cassandra/bin/cassandra-cli'
+cassandra_cli: '{{ apigee_home }}/apigee-cassandra/bin/cassandra-cli'
 
 # Apigee setup command for 4.16.xx
-apigee_setup: '{{ apigee_installation_home }}/apigee-setup/bin/setup.sh'
+apigee_setup: '{{ apigee_home }}/apigee-setup/bin/setup.sh'
 
 # Apigee update command for 4.16.xx
-apigee_update: '{{ apigee_installation_home }}/apigee-setup/bin/update.sh'
+apigee_update: '{{ apigee_home }}/apigee-setup/bin/update.sh'
 
 # Apigee all command for 4.16.xx
-apigee_all: '{{ apigee_installation_home }}/apigee-service/bin/apigee-all'
+apigee_all: '{{ apigee_home }}/apigee-service/bin/apigee-all'
 
 # Postgres command line tool
 psql: "/usr/bin/psql"
@@ -71,7 +71,7 @@ opdk_license_source_file_name: '{{ local_apigee_secure }}/license.txt'
 opdk_portal_db_config_file: '{{ opdk_installer_path }}/devportal-postgres.conf'
 
 # defaults file for apigee-opdk-setup-ps
-apigee_postgresql_data_dir: '{{ apigee_installation_home }}/data/apigee-postgresql/pgdata'
+apigee_postgresql_data_dir: '{{ apigee_home }}/data/apigee-postgresql/pgdata'
 
 # Silent installation configuration file that is provided manually
 manual_response_file: ''
@@ -99,7 +99,7 @@ copy_archive: yes
 apigee_archive_name: apigee-{{ opdk_version }}.tar.gz
 
 # Path to the Apigee archive that is created by apigee-mirror package
-apigeerepobasepath: '{{ apigee_installation_home }}/data/apigee-mirror'
+apigeerepobasepath: '{{ apigee_home }}/data/apigee-mirror'
 
 # Apigee edge default pod for silent-config file
 mp_pod: gateway
@@ -191,7 +191,7 @@ consumer_group: consumer-group-001
 #onboarding_config_file_path: "{{ opdk_installer_path }}/{{ onboarding_config }}"
 
 # Default onboarding provisioning directory
-apigee_provision_dir: '{{ apigee_installation_home }}/apigee-provision'
+apigee_provision_dir: '{{ apigee_home }}/apigee-provision'
 
 # Default location and name of the Baas Silent Install file
 #opdk_baas_silent_install_file_path: '{{ opdk_installation_config_file }}'
@@ -207,7 +207,7 @@ baas_superuser_name: ''
 baas_superuser_email: ''
 baas_superuser_pass: ''
 
-baas_create_org_and_user_script: "{{ apigee_installation_home }}/baas-usergrid/bin/create_org_and_user.py"
+baas_create_org_and_user_script: "{{ apigee_home }}/baas-usergrid/bin/create_org_and_user.py"
 
 # Cassandra username and password must be provided regardless of whether you enable authentication.
 opdk_cass_username: ''
@@ -289,29 +289,29 @@ system_config_files:
 apigee_config_files:
   - { dir: '{{ opdk_installer_path }}/', name: '*.conf' }
   - { dir: '{{ opdk_installer_path }}/', name: '*.sh' }
-  - { dir: '{{ apigee_installation_home }}/customer/', name: '*' }
-  - { dir: '{{ apigee_installation_home }}/etc/', name: 'default*.sh' }
-  - { dir: '{{ apigee_installation_home }}/customer', name: '*' }
-  - { dir: '{{ apigee_installation_home }}/apigee-cassandra/', name: '*conf' }
-  - { dir: '{{ apigee_installation_home }}/apigee-cassandra/', name: '*cfg' }
-  - { dir: '{{ apigee_installation_home }}/apigee-cassandra/', name: '*yml' }
-  - { dir: '{{ apigee_installation_home }}/apigee-cassandra/', name: '*yaml' }
-  - { dir: '{{ apigee_installation_home }}/apigee-cassandra/', name: '*properties' }
-  - { dir: '{{ apigee_installation_home }}/apigee-zookeeper/', name: '*conf' }
-  - { dir: '{{ apigee_installation_home }}/apigee-zookeeper/', name: '*cfg' }
-  - { dir: '{{ apigee_installation_home }}/apigee-zookeeper/', name: '*yml' }
-  - { dir: '{{ apigee_installation_home }}/apigee-zookeeper/', name: '*yaml' }
-  - { dir: '{{ apigee_installation_home }}/apigee-zookeeper/', name: '*properties' }
-#  - { dir: '{{ apigee_installation_home }}/*qpid-server/', name: '*conf' }
-#  - { dir: '{{ apigee_installation_home }}/*qpidd/', name: '*conf' }
-#  - { dir: '{{ apigee_installation_home }}/token/', name: '*properties' }
-#  - { dir: '{{ apigee_installation_home }}', name: '*sh' }
+  - { dir: '{{ apigee_home }}/customer/', name: '*' }
+  - { dir: '{{ apigee_home }}/etc/', name: 'default*.sh' }
+  - { dir: '{{ apigee_home }}/customer', name: '*' }
+  - { dir: '{{ apigee_home }}/apigee-cassandra/', name: '*conf' }
+  - { dir: '{{ apigee_home }}/apigee-cassandra/', name: '*cfg' }
+  - { dir: '{{ apigee_home }}/apigee-cassandra/', name: '*yml' }
+  - { dir: '{{ apigee_home }}/apigee-cassandra/', name: '*yaml' }
+  - { dir: '{{ apigee_home }}/apigee-cassandra/', name: '*properties' }
+  - { dir: '{{ apigee_home }}/apigee-zookeeper/', name: '*conf' }
+  - { dir: '{{ apigee_home }}/apigee-zookeeper/', name: '*cfg' }
+  - { dir: '{{ apigee_home }}/apigee-zookeeper/', name: '*yml' }
+  - { dir: '{{ apigee_home }}/apigee-zookeeper/', name: '*yaml' }
+  - { dir: '{{ apigee_home }}/apigee-zookeeper/', name: '*properties' }
+#  - { dir: '{{ apigee_home }}/*qpid-server/', name: '*conf' }
+#  - { dir: '{{ apigee_home }}/*qpidd/', name: '*conf' }
+#  - { dir: '{{ apigee_home }}/token/', name: '*properties' }
+#  - { dir: '{{ apigee_home }}', name: '*sh' }
 
 apigee_log_files:
   - { dir: '{{ opdk_installer_path }}/', name: '*.log' }
   - { dir: '{{ opdk_installer_path }}/', name: '*.txt' }
-  - { dir: '{{ apigee_installation_home }}/', name: '*.out' }
-  - { dir: '{{ apigee_installation_home }}/var/log', name: '*.log' }
+  - { dir: '{{ apigee_home }}/', name: '*.out' }
+  - { dir: '{{ apigee_home }}/var/log', name: '*.log' }
   - { dir: '/var/log/', name: 'messages' }
 
 # Default settings for removing data on rollback

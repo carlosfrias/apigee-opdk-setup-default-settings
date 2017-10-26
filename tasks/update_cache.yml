@@ -5,7 +5,7 @@
     value: "{{ item.value }}"
   with_items:
   - { key: 'opdk_installer_path', value: '{{ opdk_installer_path }}' }
-  - { key: 'apigee_installation_home', value: '{{ apigee_installation_home }}' }
+  - { key: 'apigee_home', value: '{{ apigee_home }}' }
   - { key: "apigeerepobasepath", value: "{{ apigeerepobasepath }}" }
 
   - { key: 'opdk_version', value: '{{ opdk_version }}' }
