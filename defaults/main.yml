@@ -31,6 +31,12 @@ cassandra_cli: '{{ apigee_home }}/apigee-cassandra/bin/cassandra-cli'
 # Postgres command line tool
 psql: "/usr/bin/psql"
 
+# Qpid stat tool
+qpid_stat: '{{ apigee_home }}/apigee-qpidd/bin/qpid-stat'
+
+# Qpid queue depth
+check_queue_depth: '{{ apigee_home }}/apigee-qpidd/bin/check_queue_depth.py'
+
 # Local resource location
 local_apigee_path: ~/.apigee
 
