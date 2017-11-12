@@ -6,20 +6,15 @@
   with_items:
   - { key: 'apigee_home', value: '{{ apigee_home }}' }
   - { key: 'opdk_version', value: '{{ opdk_version }}' }
-
   - { key: 'nodetool', value: '{{ nodetool }}' }
   - { key: 'cqlsh', value: '{{ cqlsh }}' }
   - { key: "psql", value: "{{ psql }}" }
-
   - { key: 'local_apigee_path', value: "{{ local_apigee_path }}" }
   - { key: 'local_apigee_secure', value: '{{ local_apigee_secure }}' }
-
   - { key: 'apigee_data_backup_archive_name', value: '{{ apigee_data_backup_archive_name }}' }
   - { key: 'apigee_archive_storage_folder', value: '{{ apigee_archive_storage_folder }}' }
-
   - { key: 'apigee_postgresql_data_dir', value: "{{ apigee_postgresql_data_dir }}" }
   - { key: 'apigee_validate_config_file', value: "{{ apigee_validate_config_file }}" }
-
   - { key: 'mp_pod', value: '{{ mp_pod }}' }
   - { key: 'opdk_ldap_type', value: '{{ opdk_ldap_type }}'}
   - { key: 'opdk_ldap_remote_host', value: '{{ opdk_ldap_remote_host }}' }
@@ -34,7 +29,6 @@
   - { key: 'opdk_smtp_ssl', value: '{{ opdk_smtp_ssl }}' }
   - { key: 'opdk_cass_auth', value: '{{ opdk_cass_auth }}' }
   - { key: 'consumer_group', value: '{{ consumer_group }}' }
-
   - { key: 'ldap_data_port', value: '{{ ldap_data_port }}' }
   - { key: 'edge_proxy_port', value: '{{ edge_proxy_port }}' }
   - { key: 'ui_http_port', value: '{{ ui_http_port }}' }
@@ -67,7 +61,6 @@
   - { key: 'ms_ext_mgmt_port', value: '{{ ms_ext_mgmt_port }}' }
   - { key: 'influxdb_port', value: '{{ influxdb_port }}' }
   - { key: 'influxdb_system_port', value: '{{ influxdb_system_port }}' }
-
   - { key: 'apigee_provision_dir', value: '{{ apigee_provision_dir }}' }
   - { key: 'env_name', value: '{{ env_name }}' }
   - { key: 'ax_group', value: '{{ ax_group }}' }
@@ -79,6 +72,5 @@
   - { key: 'org_name', value: '{{ org_name }}' }
   - { key: 'opdk_bind_on_all_interfaces', value: '{{ opdk_bind_on_all_interfaces }}' }
   - { key: 'opdk_smtp_mail_from', value: '{{ opdk_smtp_mail_from }}' }
-
   - { key: 'enable_system_check', value: '{{ enable_system_check }}' }
   - { key: 'opdk_portal_db_config_file', value: "{{ opdk_portal_db_config_file }}" }
