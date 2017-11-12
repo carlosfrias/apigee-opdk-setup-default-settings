@@ -61,7 +61,6 @@
   - { key: 'ms_ext_mgmt_port', value: '{{ ms_ext_mgmt_port }}' }
   - { key: 'influxdb_port', value: '{{ influxdb_port }}' }
   - { key: 'influxdb_system_port', value: '{{ influxdb_system_port }}' }
-  - { key: 'apigee_provision_dir', value: '{{ apigee_provision_dir }}' }
   - { key: 'env_name', value: '{{ env_name }}' }
   - { key: 'ax_group', value: '{{ ax_group }}' }
   - { key: 'virtual_host_name', value: '{{ virtual_host_name }}' }
