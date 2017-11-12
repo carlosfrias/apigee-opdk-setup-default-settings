@@ -153,9 +153,6 @@ consumer_group: consumer-group-001
 ## Default onboarding provisioning file path
 #onboarding_config_file_path: "{{ opdk_installer_path }}/{{ onboarding_config }}"
 
-# Default onboarding provisioning directory
-apigee_provision_dir: '{{ apigee_home }}/apigee-provision'
-
 # Default location and name of the Baas Silent Install file
 #opdk_baas_silent_install_file_path: '{{ opdk_installation_config_file }}'
 
