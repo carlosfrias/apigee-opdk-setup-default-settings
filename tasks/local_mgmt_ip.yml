@@ -17,4 +17,4 @@
       key: 'local_mgmt_ip'
       value: "{{ hostvars[groups['dc-1-ms'][0]][interface_name].ipv4.address }}"
     when: local_mgmt_ip is not defined
-  when: assign_mgmt_ip is defined and assign_mgmt_ip | bool == True
+  when: (assign_mgmt_ip is defined and assign_mgmt_ip | bool == True) or assign_mgmt_ip | default(True)
