@@ -73,7 +73,8 @@
 
 - block:
   - name: Obtain postgres ip
-    set_fact:
-      pg_ip: "{{ groups['pg'][0] }}"
+    cache:
+      key: 'pg_ip'
+      value: "{{ groups['pg'][0] }}"
 
   when: groups['pgmaster'] is not defined and groups['pgstandby'] is not defined
