@@ -70,3 +70,10 @@
       value: '{{ pgstandby_ip }}'
 
   when: groups['dc-1-pgmaster'] is defined and groups['dc-2-pgstandby'] is defined
+
+- block:
+  - name: Obtain postgres ip
+    set_fact:
+      pg_ip: "{{ groups['pg'][0] }}"
+
+  when: groups['pgmaster'] is not defined and groups['pgstandby'] is not defined
