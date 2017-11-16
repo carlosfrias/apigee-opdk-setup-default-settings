@@ -17,7 +17,7 @@
   - { key: 'apigee_validate_config_file', value: "{{ apigee_validate_config_file }}" }
   - { key: 'mp_pod', value: '{{ mp_pod }}' }
   - { key: 'opdk_ldap_type', value: '{{ opdk_ldap_type }}'}
-  - { key: 'opdk_ldap_remote_host', value: '{{ opdk_ldap_remote_host }}' }
+  - { key: 'use_opdk_ldap_remote_host', value: '{{ use_opdk_ldap_remote_host }}' }
   - { key: 'opdk_enable_ax', value: '{{ opdk_enable_ax }}' }
   - { key: 'default_mp_pod', value: '{{ default_mp_pod }}' }
   - { key: 'opdk_use_zk_cluster', value: '{{ opdk_use_zk_cluster }}' }

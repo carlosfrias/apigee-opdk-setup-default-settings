@@ -283,7 +283,7 @@ Default setting to use a cassandra ring
 Default silent-install configuration file settings for OpenLDAP
 
     opdk_ldap_type: '1'
-    opdk_ldap_remote_host: 'n'
+    use_opdk_ldap_remote_host: 'n'
     opdk_ldap_pass: ''
 
 Default to enable analytics
