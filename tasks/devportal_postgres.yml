@@ -1,0 +1,24 @@
+---
+- block:
+  - name: Obtain Devportal pgmaster IP , if not provided
+    set_fact:
+      db_pgmaster_ip: "{{ hostvars[groups['dp-db-pgmaster'][0]][interface_name].ipv4.address }}"
+    when: db_pgmaster_ip is not defined and groups['dp-db-pgmaster'] is defined
+
+  - name: Obtain Devportal pgstandby IP, if not provided
+    set_fact:
+      db_pgstandby_ip: "{{ hostvars[groups['dp-db-pgstandby'][0]][interface_name].ipv4.address }}"
+    when: pgstandby_ip is not defined and groups['dc-2-pgstandby'] is defined
+
+  - name: Set pgmaster_ip for DC 2, in cache, if defined
+    cache:
+      key: db_pgmaster_ip
+      value: '{{ db_pgmaster_ip }}'
+    when: db_pgmaster_ip is defined
+
+  - name: Set pgstandby_ip for DC 2, in cache, if defined
+    cache:
+      key: db_pgstandby_ip
+      value: '{{ db_pgstandby_ip }}'
+    when: db_pgstandby_ip is defined
+  when: groups['dp-db-pgmaster'] is defined or groups['dp-db-pgstandby'] is defined
