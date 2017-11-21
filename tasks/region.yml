@@ -14,6 +14,11 @@
     region: 'dc-3'
   when: groups['dc-3'] is defined and inventory_hostname in groups['dc-3']
 
+- name: Set default region if not set
+  set_fact:
+    region: 'dc-1'
+  when: region is not defined or region | trim | length == 0
+
 - name: Add region to cache
   cache:
     key: "region"

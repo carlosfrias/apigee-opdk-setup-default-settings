@@ -46,15 +46,6 @@ local_apigee_secure: ~/.apigee-secure
 # defaults file for apigee-opdk-setup-default-settings
 credentials_file: '{{ local_apigee_secure }}/credentials.yml'
 
-# Apigee silent installation configuration file
-#opdk_installation_config_file: "{{ opdk_installer_path }}/edge-response.conf"
-
-## Silent config file for portal
-#opdk_portal_config_file: '{{ opdk_installer_path }}/edge-devportal-response-{{ opdk_version }}-{{ region }}.conf'
-
-# Silent config file for portal
-opdk_portal_db_config_file: '{{ opdk_installer_path }}/devportal-postgres.conf'
-
 # defaults file for apigee-opdk-setup-ps
 apigee_postgresql_data_dir: '{{ apigee_home }}/data/apigee-postgresql/pgdata'
 
