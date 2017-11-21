@@ -74,4 +74,4 @@
   - { key: 'enable_system_check', value: '{{ enable_system_check }}' }
   - { key: 'opdk_installation_config_file', value: '{{ opdk_installer_path }}/edge-response-{{ opdk_version }}-{{ region }}.conf' }
   - { key: 'opdk_portal_config_file', value: '{{ opdk_installer_path }}/edge-devportal-response-{{ opdk_version }}.conf' }
-  - { key: 'opdk_portal_db_config_file', value: '{{ opdk_installer_path }}/devportal-postgres.conf' }
+  - { key: 'opdk_portal_db_config_file', value: '{{ opdk_installer_path }}/edge-devportal-postgres-response.conf' }
