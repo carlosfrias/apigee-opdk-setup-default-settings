@@ -1,5 +1,8 @@
 ---
 # tasks file for apigee-opdk-setup-default-settings
+- name: Setup module
+  setup:
+
 - name: Normalized network interface name
   cache:
     key: 'interface_name'

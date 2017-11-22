@@ -12,4 +12,4 @@
       value: "{{ hostvars[groups['dp-db-pgstandby'][0]][interface_name].ipv4.address }}"
     when: db_pgstandby_ip is not defined
 
-  when: groups['dp-db-pgmaster'] is defined and groups['dp-db-pgstandby'] is defined and interface_name is defined and ansible_eth0 is defined
+  when: groups['dp-db-pgmaster'] is defined and groups['dp-db-pgstandby'] is defined and interface_name is defined
