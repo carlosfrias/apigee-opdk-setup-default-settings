@@ -4,12 +4,12 @@
     cache:
       key: db_pgmaster_ip
       value: "{{ hostvars[groups['dp-db-pgmaster'][0]][interface_name].ipv4.address }}"
-    when: db_pgmaster_ip is not defined and hostvars[groups['dp-db-pgmaster'][0]][interface_name].ipv4.address is defined
+    when: db_pgmaster_ip is not defined
 
   - name: Obtain Devportal pgstandby IP from inventory
     cache:
       key: db_pgstandby_ip
       value: "{{ hostvars[groups['dp-db-pgstandby'][0]][interface_name].ipv4.address }}"
-    when: db_pgstandby_ip is not defined and hostvars[groups['dp-db-pgstandby'][0]][interface_name].ipv4.address is defined
+    when: db_pgstandby_ip is not defined
 
-  when: groups['dp-db-pgmaster'] is defined and groups['dp-db-pgstandby'] is defined
+  when: groups['dp-db-pgmaster'] is defined and groups['dp-db-pgstandby'] is defined and interface_name is defined
