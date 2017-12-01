@@ -70,6 +70,27 @@
   when: groups['dc-1-pgmaster'] is defined and groups['dc-2-pgstandby'] is defined
 
 - block:
+  - name: Obtain pgmaster IP for DC 1, if not provided
+    set_fact:
+      pgmaster_ip: "{{ groups['dc-2-pgmaster'][0] }}"
+
+  - name: Obtain pgstandby IP for DC 1, if not provided
+    set_fact:
+      pgstandby_ip: "{{ groups['dc-1-pgstandby'][0] }}"
+
+  - name: Set pgmaster_ip for DC 1, in cache, if defined
+    cache:
+      key: pgmaster_ip
+      value: '{{ pgmaster_ip }}'
+
+  - name: Set pgstandby_ip for DC 1, in cache, if defined
+    cache:
+      key: pgstandby_ip
+      value: '{{ pgstandby_ip }}'
+
+  when: groups['dc-2-pgmaster'] is defined and groups['dc-1-pgstandby'] is defined
+
+- block:
   - name: Obtain postgres ip
     cache:
       key: 'pg_ip'
