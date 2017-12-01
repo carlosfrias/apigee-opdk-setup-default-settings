@@ -15,7 +15,7 @@
   - { key: 'apigee_archive_storage_folder', value: '{{ apigee_archive_storage_folder }}' }
   - { key: 'apigee_postgresql_data_dir', value: "{{ apigee_postgresql_data_dir }}" }
   - { key: 'apigee_validate_config_file', value: "{{ apigee_validate_config_file }}" }
-  - { key: 'mp_pod', value: '{{ mp_pod }}' }
+  - { key: 'opdk_mp_pod', value: '{{ opdk_mp_pod }}' }
   - { key: 'opdk_ldap_type', value: '{{ opdk_ldap_type }}'}
   - { key: 'use_opdk_ldap_remote_host', value: '{{ use_opdk_ldap_remote_host }}' }
   - { key: 'opdk_enable_ax', value: '{{ opdk_enable_ax }}' }
