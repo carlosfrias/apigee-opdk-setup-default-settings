@@ -18,7 +18,7 @@
 
 - include_tasks: region.yml
 
-- include_tasks: update_cache.yml
+- include_tasks: cache.yml
 
 - include_tasks: postgres.yml
 
