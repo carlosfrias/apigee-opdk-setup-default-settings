@@ -9,6 +9,11 @@
   - { key: 'nodetool', value: '{{ nodetool }}' }
   - { key: 'cqlsh', value: '{{ cqlsh }}' }
   - { key: "psql", value: "{{ psql }}" }
+  - { key: 'apigee_service', value: '{{ apigee_home }}/apigee-service/bin/apigee-service' }
+  - { key: 'apigee_setup', value: '{{ apigee_home }}/apigee-setup/bin/setup.sh' }
+  - { key: 'apigee_update', value: '{{ apigee_home }}/apigee-setup/bin/update.sh' }
+  - { key: 'apigee_all', value: '{{ apigee_home }}/apigee-service/bin/apigee-all' }
+  - { key: "influx", value: "{{ apigee_home }}/apigee-influxdb/usr/bin/influx" }
   - { key: 'local_apigee_path', value: "{{ local_apigee_path }}" }
   - { key: 'local_apigee_secure', value: '{{ local_apigee_secure }}' }
   - { key: 'apigee_data_backup_archive_name', value: '{{ apigee_data_backup_archive_name }}' }
