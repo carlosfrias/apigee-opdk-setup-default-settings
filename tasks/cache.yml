@@ -73,6 +73,6 @@
   - { key: 'opdk_smtp_mail_from', value: '{{ opdk_smtp_mail_from }}' }
   - { key: 'enable_system_check', value: '{{ enable_system_check }}' }
   - { key: 'opdk_installer_path', value: '/tmp/edge' }
-  - { key: 'opdk_installation_config_file', value: '/tmp/edge/edge-response-{{ opdk_version }}-{{ region }}.conf' }
-  - { key: 'opdk_portal_config_file', value: '/tmp/edge/edge-devportal-response-{{ opdk_version }}.conf' }
-  - { key: 'opdk_portal_db_config_file', value: '/tmp/edge/edge-devportal-postgres-response.conf' }
+  - { key: 'opdk_installation_config_file', value: '{{ opdk_installer_path }}/edge-response-{{ opdk_version }}-{{ region }}.conf' }
+  - { key: 'opdk_portal_config_file', value: '{{ opdk_installer_path }}/edge-devportal-response-{{ opdk_version }}.conf' }
+  - { key: 'opdk_portal_db_config_file', value: '{{ opdk_installer_path }}/edge-devportal-postgres-response.conf' }
