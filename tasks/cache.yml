@@ -81,3 +81,4 @@
   - { key: 'opdk_installation_config_file', value: '{{ opdk_installer_path }}/edge-response-{{ opdk_version }}-{{ region }}.conf' }
   - { key: 'opdk_portal_config_file', value: '{{ opdk_installer_path }}/edge-devportal-response-{{ opdk_version }}.conf' }
   - { key: 'opdk_portal_db_config_file', value: '{{ opdk_installer_path }}/edge-devportal-postgres-response.conf' }
+  - { key: 'opdk_baas_silent_install_file_path', value: '{{ opdk_installer_path }}/edge-baas-response.conf' }
