@@ -220,8 +220,8 @@ baas_smtp_user_pass: ''
 baas_smtp_ssl: 'n'
 
 # Default download location for log and config files
-fetched_logs_dir: ~/.apigee/logs_configs/
-fetched_configs_dir: ~/.apigee/logs_configs/
+fetched_logs_dir: ~/.apigee/planet_resources/
+fetched_configs_dir: ~/.apigee/planet_resources/
 
 # Default system config files to download
 system_config_files:
