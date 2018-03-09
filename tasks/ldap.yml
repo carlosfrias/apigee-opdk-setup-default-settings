@@ -15,6 +15,12 @@
     cache:
       key: use_opdk_ldap_remote_host
       value: 'y'
+
+  - name: Set ldap remote flag
+    cache:
+      key: opdk_ldap_port
+      value: '{{ ldap_data_port }}'
+
   when: groups['dc-1'] is defined and groups['dc-1-ldap'] is defined and inventory_hostname in groups['dc-1'] and hostvars[groups['dc-1-ms'][0]][interface_name].ipv4.address is defined
 
 - name: Normalized name for ldap ip if on dc-2
@@ -33,6 +39,12 @@
     cache:
       key: use_opdk_ldap_remote_host
       value: 'y'
+
+  - name: Set ldap remote flag
+    cache:
+      key: opdk_ldap_port
+      value: '{{ ldap_data_port }}'
+
   when: groups['dc-2'] is defined and groups['dc-2-ldap'] is defined and inventory_hostname in groups['dc-2'] and hostvars[groups['dc-1-ms'][0]][interface_name].ipv4.address is defined
 
 - name: Normalized name for management server local ip to dc-1 if current node is not on dc-1 or dc-2
