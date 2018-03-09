@@ -14,6 +14,8 @@
 
 - include_tasks: local_mgmt_ip.yml
 
+- include_tasks: ldap.yml
+
 - include_tasks: public_mgmt_ip.yml
 
 - include_tasks: region.yml
