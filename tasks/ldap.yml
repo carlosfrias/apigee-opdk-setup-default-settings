@@ -37,7 +37,7 @@
   cache:
     key: 'ldap_ip'
     value: "{{ hostvars[groups['dc-2-ms'][0]][interface_name].ipv4.address }}"
-  when: groups['dc-2'] is defined and groups['dc-2-ms'] is defined and groups['dc-2-ldap'] is not defined and inventory_hostname in groups['dc-2'] and hostvars[groups['dc-1-ms'][0]][interface_name].ipv4.address is defined
+  when: groups['dc-2'] is defined and groups['dc-2-ms'] is defined and groups['dc-2-ldap'] is not defined and inventory_hostname in groups['dc-2'] and hostvars[groups['dc-2-ms'][0]][interface_name].ipv4.address is defined
 
 - block:
   - name: Normalized name for ldap ip is declared if on dc-2
