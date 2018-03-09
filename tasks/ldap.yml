@@ -21,10 +21,15 @@
       key: opdk_ldap_port
       value: '{{ ldap_data_port }}'
 
-  - name: Set ldap remote flag
+  - name: Set ldap flag
     cache:
       key: opdk_ldap_type
       value: 2
+
+  - name: Set ldap sid flag
+    cache:
+      key: ldap_sid
+      value: 1
 
   when: groups['dc-1'] is defined and groups['dc-1-ldap'] is defined and inventory_hostname in groups['dc-1'] and hostvars[groups['dc-1-ms'][0]][interface_name].ipv4.address is defined
 
@@ -53,6 +58,11 @@
   - name: Set ldap remote flag
     cache:
       key: opdk_ldap_type
+      value: 2
+
+  - name: Set ldap sid flag
+    cache:
+      key: ldap_sid
       value: 2
 
   when: groups['dc-2'] is defined and groups['dc-2-ldap'] is defined and inventory_hostname in groups['dc-2'] and hostvars[groups['dc-1-ms'][0]][interface_name].ipv4.address is defined
