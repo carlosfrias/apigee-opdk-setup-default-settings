@@ -14,6 +14,7 @@
 
 - include_tasks: local_mgmt_ip.yml
 
+# local_mgmt_ip.yml must run before ldap
 - include_tasks: ldap.yml
 
 - include_tasks: public_mgmt_ip.yml
