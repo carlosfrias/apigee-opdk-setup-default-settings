@@ -25,6 +25,7 @@
     cache:
       key: opdk_ldap_type
       value: 2
+    when: groups['dc-2-ldap'] is defined
 
   - name: Set ldap sid flag
     cache:
@@ -59,6 +60,7 @@
     cache:
       key: opdk_ldap_type
       value: 2
+    when: groups['dc-1-ldap'] is defined
 
   - name: Set ldap sid flag
     cache:
