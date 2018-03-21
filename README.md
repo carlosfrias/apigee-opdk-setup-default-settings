@@ -1,8 +1,8 @@
 OPDK Setup Default Settings
 ===========================
 
-This role provides a set of default attributes that are persisted to the local Ansible cache and are used to install the 
-Apigee OPDK. 
+This role provides a set of default attributes that are persisted to the local Ansible cache and are used to install,
+configure and maintain Apigee OPDK. 
 
 Requirements
 ------------
