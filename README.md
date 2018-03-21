@@ -25,7 +25,7 @@ Role Variables
 | admin_pass | '{{ opdk_user_name }}' | Apigee admin user password |
 | opdk_version |  '4.18.01' | Default Apigee Edge Private Cloud Version |
 | apigee_mirror_version | '4.18.01' | Default version of the Apigee mirror to use |
-| opdk_installer_path | "/tmp" | Apigee staging installation folder |
+| opdk_installer_path | "/tmp/edge" | Apigee staging installation folder |
 | apigee_data_backup_archive_name | apigee_data_backup.tar.gz | Default name of the backup archive of the apigee data folder |
 | apigee_archive_storage_folder | '{{ opdk_installer_path }}' | Default folder in which the apigee data backup archive will be stored. |
 | apigee_installation_home | /opt/apigee | Default apigee installation home |
