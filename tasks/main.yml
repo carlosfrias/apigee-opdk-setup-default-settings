@@ -3,6 +3,10 @@
 - name: Setup module
   setup:
 
+- name: Update cache with AWS facts if running on AWS
+  ec2_metadata_facts:
+  when: ansible_bios_version | lower | search('amazon')
+
 - name: Normalized network interface name
   cache:
     key: 'interface_name'
