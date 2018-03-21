@@ -1,37 +1,25 @@
 OPDK Setup Default Settings
 ===========================
 
-This role provides a set of default variables and modules for installing the Apigee OPDK. This role 
-is a dependency to other roles that support installing the Apigee OPDK. This role provides default settings that must be 
-provided if none are provided by the user. 
-
-The intention of this file is that a user can simply copy this file as the starter file for their settings. This 
+This role provides a set of default attributes that are persisted to the local Ansible cache and are used to install the 
+Apigee OPDK. 
 
 Requirements
 ------------
-The installation of Apigee OPDK requires root access. Credentials must also be supplied to override the empty placeholders
-provided here. It is recommended that credentials be consolidated into a single credentials.yml file that can be stored 
-separately. It is assumed that files containing credentials are stored in the ~/.apigee folder. 
+
+No requirements
 
 Role Variables
 --------------
     
-Target Java JDK version
-
-    jdk_version: '1.7'
+| Variable Name | Default Value | Description |
+|---------------|---------------|-------------|
+| jdk_version | '1.8' | Target Java JDK version |
+| java_home | /usr/lib/jvm/java-openjdk | System file path to use in JAVA_HOME |
+| opdk_user_name |  '' | OPDK OS user name |
+| opdk_group_name |  '' | OPDK OS group name|
     
-System file path to use in JAVA_HOME
 
-    java_home: /usr/lib/jvm/java-openjdk
-    
-OPDK OS user name
-
-    opdk_user_name: ''
-    
-OPDK OS group name
-
-    opdk_group_name: ''
-    
 OPDK User Email
 
     opdk_user_email: ''
