@@ -7,7 +7,7 @@
 - block:
 
   - name: Update cache for public ip on AWS
-    ec2_facts:
+    ec2_metadata_facts:
     when: ansible_ec2_public_ipv4 is not defined
 
   - name: Normalized name for public address on AWS
