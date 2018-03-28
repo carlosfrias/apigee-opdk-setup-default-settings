@@ -19,7 +19,7 @@ overriden as needed either by the playbook or at `~/.apigee/custom-properties.ym
 ## Core Variables Required by All Apigee Installation, Configuration & Maintenance Roles
 
 | Variable Name | Default or Initial Value | Description |
-| --- | --- |
+| --- | --- | --- |
 | opdk_version |  '4.18.01' | Default Apigee Edge Private Cloud Version |
 | opdk_installer_path | "/tmp/edge" | Apigee staging installation folder |
 | jdk_version | '1.8' | Target Java JDK version |
@@ -52,12 +52,12 @@ overriden as needed either by the playbook or at `~/.apigee/custom-properties.ym
 ## Analytic Settings for Edge Configuration
 
 | Variable Name | Default or Initial Value | Description |
-| --- | --- |
+| --- | --- | --- |
 | ax_group | axgroup001 | Default analytics group |
 
 ## SMTP Settings for Edge Configuration
 | Variable Name | Default or Initial Value | Description |
-| --- | --- |
+| --- | --- | --- |
 | opdk_smtp_skip | 'y' | SMTP settings for Edge Configuration | 
 | opdk_smtp_host | 'smtp.example.com' | SMTP settings for Edge Configuration |
 | opdk_smtp_port | '25' | SMTP settings for Edge Configuration |
@@ -67,12 +67,12 @@ overriden as needed either by the playbook or at `~/.apigee/custom-properties.ym
 
 ## Rollback of Apigee Component defaults 
 | Variable Name | Default or Initial Value | Description |
-| --- | --- |
+| --- | --- | --- |
 | remove_apigee | false | Default settings for removing data on rollback |
 
 ## Apigee Archive & Mirror Configurations
 | Variable Name | Default or Initial Value | Description |
-| --- | --- |
+| --- | --- | --- |
 | copy_archive | yes | Choose whether to copy the Apigee Mirror archive from your control machine or use an existing archive on the server |
 | archive_folder | {{ opdk_installer_path }}/tmp | Storage folder for the Apigee archive |
 | archive_name | apigee-{{ opdk_version }}.tar.gz | Apigee archive that is created when a mirror is used. |
@@ -83,7 +83,7 @@ overriden as needed either by the playbook or at `~/.apigee/custom-properties.ym
 
 ## Apigee Credential Variable Names
 | Variable Name | Default or Initial Value | Description |
-| --- | --- |
+| --- | --- | --- |
 | opdk_user_name |  'apigee' | OPDK OS user name |
 | opdk_user_pass | '' | OPDK User Password |
 | admin_user | '{{ opdk_user_name }}' | Apigee admin user name |
@@ -181,7 +181,7 @@ overriden as needed either by the playbook or at `~/.apigee/custom-properties.ym
 | --- | --- |
 | influxdb_system_port | 25826 |
 | influxdb_port | 8086 |
-| influxdb_host | 127.0.0.1 | Default influxdb host |
+| influxdb_host | 127.0.0.1 
 
 ## Monitoring Dashboard - Grafana Port
 | Variable Name | Port Number | Description |
@@ -204,22 +204,22 @@ overriden as needed either by the playbook or at `~/.apigee/custom-properties.ym
 | apigee_provision_dir | '{{ apigee_installation_home }}/apigee-provision' | Default onboarding provisioning directory |
 
 ## Apigee Baas Core Attributes
-| Variable Name | Port Number |
-| --- | --- |
+| Variable Name | Port Number | Description |
+| --- | --- | --- |
 | opdk_baas_silent_install_file_path | /tmp/baas-silent-install.conf | Default location and name of the Baas Silent Install file |
 | opdk_baas_provided_silent_install_file | '' | Baas silent install file provided by customer |
 | baas_cluster_name | 'apigee_baas' | Default cluster name is "apigee_baas" |
 
 ## Apigee Baas SMTP Configuration
-| Variable Name | Port Number |
-| --- | --- |
+| Variable Name | Port Number | Description |
+| --- | --- | --- |
 | baas_smtp_host | 'smtp.gmail.com' | SMTP host server for BaaS |
 | baas_smtp_port | '465' | SMTP port server for BaaS |
 | baas_smtp_ssl | 'n' | SMTP SSL configuration for BaaS |
 
 ## Apigee Baas Ports
-| Variable Name | Port Number |
-| --- | --- |
+| Variable Name | Port Number | Description |
+| --- | --- | --- |
 | baas_load_balancer_host | '' | URL of the load balancer for the API BaaS Stack nodes or IP/DNS of a single Stack node with no load balancer |
 | baas_load_balancer_port | '8080' | Port of the load balancer for the API BaaS Stack nodes or port of a single Stack node with no load balancer |
 | baas_portal_port | '9000' | Default portal UI value is 9000 |
