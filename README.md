@@ -29,11 +29,11 @@ Role Variables
 | apigee_data_backup_archive_name | apigee_data_backup.tar.gz | Default name of the backup archive of the apigee data folder |
 | apigee_archive_storage_folder | '{{ opdk_installer_path }}' | Default folder in which the apigee data backup archive will be stored. |
 | apigee_installation_home | /opt/apigee | Default apigee installation home |
-| apigee_service | '{{ apigee_installation_home }}/apigee-service/bin/apigee-service' | Apigee service command for 4.16.xx |
+| apigee_service | '{{ apigee_installation_home }}/apigee-service/bin/apigee-service' | Apigee service command as of 4.16.xx |
 | nodetool | '{{ apigee_installation_home }}/apigee-cassandra/bin/nodetool' | Cassandra nodetool command |
-| apigee_setup | '{{ apigee_installation_home }}/apigee-setup/bin/setup.sh' | Apigee setup command for 4.16.xx |
-| apigee_update | '{{ apigee_installation_home }}/apigee-setup/bin/update.sh' | Apigee update command for 4.16.xx |
-| apigee_all | '{{ apigee_installation_home }}/apigee-service/bin/apigee-all' | Apigee all command for 4.16.xx |
+| apigee_setup | '{{ apigee_installation_home }}/apigee-setup/bin/setup.sh' | Apigee setup command as of 4.16.xx |
+| apigee_update | '{{ apigee_installation_home }}/apigee-setup/bin/update.sh' | Apigee update command as of 4.16.xx |
+| apigee_all | '{{ apigee_installation_home }}/apigee-service/bin/apigee-all' | Apigee all command as of 4.16.xx |
 | opdk_license_target_file_path | "{{ opdk_installer_path }}/license.conf" | Apigee license file path |
 | opdk_license_source_file_name | '~/.apigee/license.txt' | Apigee license file provided by customer |
 | opdk_installation_config_file | "{{ opdk_installer_path }}/silent-install.conf" | Apigee silent installation configuration file |
@@ -48,13 +48,17 @@ Role Variables
 | archive_path | '{{ apigee_installation_home }}/data/apigee-mirror/{{ archive_name }}' | Path to the Apigee archive that is created by apigee-mirror package |
 | mp_pod | gateway | Apigee edge default pod for silent-config file |
     
-Apigee Edge Ports
+# Apigee Edge Ports
 
-    cassandra_jmx_port: 7199
-    cassandra_thrift_client_port: 9160
-    cassandra_cql_native_port: 9042
-    cassandra_non_ssl_gossip_port: 7000
-    cassandra_ssl_gossip_port: 7001
+## Cassandra Ports
+| Port Name | Port Number |
+| --- | --- |
+| cassandra_jmx_port | 7199 |
+| cassandra_thrift_client_port | 9160 |
+| cassandra_cql_native_port | 9042 |
+| cassandra_non_ssl_gossip_port | 7000 |
+| cassandra_ssl_gossip_port | 7001 |
+
     
     zk_data_port: 2181
     zk_leader_port: 2888
