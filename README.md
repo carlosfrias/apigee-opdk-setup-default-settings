@@ -99,11 +99,11 @@ overriden as needed either by the playbook or at `~/.apigee/custom-properties.ym
 ## Apigee Service Command Line Tools Variable Name    
 | Variable Name | Default Value | Description |
 |---------------|---------------|-------------|
-| apigee_service | '{{ apigee_installation_home }}/apigee-service/bin/apigee-service' | Apigee service command as of 4.16.xx |
-| apigee_setup | '{{ apigee_installation_home }}/apigee-setup/bin/setup.sh' | Apigee setup command as of 4.16.xx |
-| apigee_update | '{{ apigee_installation_home }}/apigee-setup/bin/update.sh' | Apigee update command as of 4.16.xx |
-| apigee_all | '{{ apigee_installation_home }}/apigee-service/bin/apigee-all' | Apigee all command as of 4.16.xx |
-| nodetool | '{{ apigee_installation_home }}/apigee-cassandra/bin/nodetool' | Cassandra nodetool command |
+| apigee_service | '{{ apigee_home }}/apigee-service/bin/apigee-service' | Apigee service command as of 4.16.xx |
+| apigee_setup | '{{ apigee_home }}/apigee-setup/bin/setup.sh' | Apigee setup command as of 4.16.xx |
+| apigee_update | '{{ apigee_home }}/apigee-setup/bin/update.sh' | Apigee update command as of 4.16.xx |
+| apigee_all | '{{ apigee_home }}/apigee-service/bin/apigee-all' | Apigee all command as of 4.16.xx |
+| nodetool | '{{ apigee_home }}/apigee-cassandra/bin/nodetool' | Cassandra nodetool command |
     
 # Apigee Edge Ports
 
@@ -185,7 +185,7 @@ overriden as needed either by the playbook or at `~/.apigee/custom-properties.ym
 
 ## Monitoring Dashboard - Grafana Port
 | Variable Name | Port Number | Description |
-| --- | --- |
+| --- | --- | --- |
 | grafana_port | 3000 | Grafana UI port |
     
 ## Configuring Edge Org and Virtual Host
@@ -201,7 +201,7 @@ overriden as needed either by the playbook or at `~/.apigee/custom-properties.ym
 | virtual_host_alias | '127.0.0.1' | Virtual host alias |
 | onboarding_config | 'apigee-provision.conf' | Default onboarding provisioning file name |
 | onboarding_config_file_path | "{{ opdk_installer_path }}/{{ onboarding_config }}" | Default onboarding provisioning file path |
-| apigee_provision_dir | '{{ apigee_installation_home }}/apigee-provision' | Default onboarding provisioning directory |
+| apigee_provision_dir | '{{ apigee_home }}/apigee-provision' | Default onboarding provisioning directory |
 
 ## Apigee Baas Core Attributes
 | Variable Name | Port Number | Description |
@@ -256,16 +256,16 @@ Default system config files to download
     
     apigee_config_files:
       - { dir: '{{ opdk_installer_path }}/', name: '*conf' }
-      - { dir: '{{ apigee_installation_home }}/customer/', name: '*' }
-      - { dir: '{{ apigee_installation_home }}/apigee-cassandra/', name: '*yaml' }
-      - { dir: '{{ apigee_installation_home }}/etc/', name: 'default*.sh' }
+      - { dir: '{{ apigee_home }}/customer/', name: '*' }
+      - { dir: '{{ apigee_home }}/apigee-cassandra/', name: '*yaml' }
+      - { dir: '{{ apigee_home }}/etc/', name: 'default*.sh' }
     
     apigee_log_files:
       - { dir: '{{ opdk_installer_path }}/', name: '*.log' }
       - { dir: '{{ opdk_installer_path }}/var/log/', name: '*.log' }
       - { dir: '{{ opdk_installer_path }}/', name: '*.txt' }
-      - { dir: '{{ apigee_installation_home }}/var/log/', name: '*.log' }
-      - { dir: '{{ apigee_installation_home }}/', name: '*.out' }
+      - { dir: '{{ apigee_home }}/var/log/', name: '*.log' }
+      - { dir: '{{ apigee_home }}/', name: '*.out' }
 
 Dependencies
 ------------
