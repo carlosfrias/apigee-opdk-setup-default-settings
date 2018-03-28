@@ -206,9 +206,11 @@ overriden as needed either by the playbook or at `~/.apigee/custom-properties.ym
 ## Apigee Baas Core Attributes
 | Variable Name | Port Number | Description |
 | --- | --- | --- |
-| opdk_baas_silent_install_file_path | /tmp/baas-silent-install.conf | Default location and name of the Baas Silent Install file |
+| opdk_baas_silent_install_file_path | '{{ opdk_installer_path }}/edge-baas-response.conf' | Default location and name of the Baas Silent Install file |
 | opdk_baas_provided_silent_install_file | '' | Baas silent install file provided by customer |
 | baas_cluster_name | 'apigee_baas' | Default cluster name is "apigee_baas" |
+| baas_create_org_and_user_script | "{{ apigee_home }}/baas-usergrid/bin/create_org_and_user.py" | Script to create orgs and users on Baas |
+
 
 ## Apigee Baas SMTP Configuration
 | Variable Name | Port Number | Description |
@@ -238,7 +240,7 @@ overriden as needed either by the playbook or at `~/.apigee/custom-properties.ym
 | baas_smtp_user | '' |
 | baas_smtp_user_pass | '' |
     
-Default system config files to download
+## Default system config files to download
 
     system_config_files:
       - { dir: '/etc/', name: 'hosts' }
