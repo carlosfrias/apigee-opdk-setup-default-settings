@@ -190,7 +190,7 @@ overriden as needed either by the playbook or at `~/.apigee/custom-properties.ym
     
 ## Configuring Edge Org and Virtual Host
 | Variable Name | Port Number | Description |
-| --- | --- |
+| --- | --- | --- |
 | org_name | opdk | Default org name |
 | env_name | test | Default environment name |
 | new_user | 'y' | Default for creating a new user in org |
