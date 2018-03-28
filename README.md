@@ -51,7 +51,7 @@ Role Variables
 # Apigee Edge Ports
 
 ## Cassandra Ports
-| Port Name | Port Number |
+| Variable Name | Port Number |
 | --- | --- |
 | cassandra_jmx_port | 7199 |
 | cassandra_thrift_client_port | 9160 |
@@ -59,44 +59,78 @@ Role Variables
 | cassandra_non_ssl_gossip_port | 7000 |
 | cassandra_ssl_gossip_port | 7001 |
 
+
+## Zookeeper Ports
+| Variable Name | Port Number |
+| --- | --- |
+| zk_data_port | 2181 |
+| zk_leader_port | 2888 |
+| zk_voter_port | 3888 |
+
+## Message Processor Ports
+| Variable Name | Port Number |
+| --- | --- |
+| mp_int_mgmt_port | 4528 |
+| mp_ext_mgmt_port | 8082 |
+| mp_jmx_port | 1101 |
+| mp_router_port | 8998 |
+
+## Management Server Ports
+| Variable Name | Port Number |
+| --- | --- |
+| ms_jmx_port | 1099 |
+| ms_ext_mgmt_port | 8080 |
+
+## Router Ports
+| Variable Name | Port Number |
+| --- | --- |
+| router_jmx_port | 1100 |
+| router_ext_mgmt_port | 8081 |
+| router_int_mgmt_port | 4527 |
+| router_load_balancer_port | 15999 |
     
-    zk_data_port: 2181
-    zk_leader_port: 2888
-    zk_voter_port: 3888
-    
-    mp_int_mgmt_port: 4528
-    mp_ext_mgmt_port: 8082
-    mp_jmx_port: 1101
-    mp_router_port: 8998
-    
-    ms_jmx_port: 1099
-    ms_ext_mgmt_port: 8080
-    
-    router_jmx_port: 1100
-    router_ext_mgmt_port: 8081
-    router_int_mgmt_port: 4527
-    
-    qpid_jmx_port: 1102
-    qpid_int_mgmt_port: 4529
-    qpid_messaging_port: 5672
-    qpid_ext_mgmt_port: 8083
-    
-    pg_jmx_port: 1103
-    pg_int_mgmt_port: 4530
-    pg_db_port: 5432
-    pg_ext_mgmt_port: 8084
-    
-    ui_http_port: 9000
-    
-    edge_proxy_port: 9001
-    
-    ldap_data_port: 10389
-    
-    influxdb_system_port: 25826
-    influxdb_port: 8086
-    
-    grafana_username: ''
-    grafana_password: ''
+## Qpid Ports 
+| Variable Name | Port Number |
+| --- | --- |
+| qpid_jmx_port | 1102 |
+| qpid_int_mgmt_port | 4529 |
+| qpid_messaging_port | 5672 |
+| qpid_ext_mgmt_port | 8083 |
+
+## Postgres & PostgreSQL Ports
+| Variable Name | Port Number |
+| --- | --- |
+| pg_jmx_port | 1103 |
+| pg_int_mgmt_port | 4530 |
+| pg_db_port | 5432 |
+| pg_ext_mgmt_port | 8084 |
+
+## Management UI Ports 
+| Variable Name | Port Number |
+| --- | --- |
+| ui_http_port | 9000 |
+
+## Default Message Processor Port 
+| Variable Name | Port Number |
+| --- | --- |
+| edge_proxy_port | 9001 |
+
+## OpenLDAP Port
+| Variable Name | Port Number |
+| --- | --- |
+| ldap_data_port | 10389 |
+
+## Monitoring Dashboard - Influxdb Port
+| Variable Name | Port Number |
+| --- | --- |
+| influxdb_system_port | 25826 |
+| influxdb_port | 8086 |
+
+## Monitoring Dashboard - Grafana Login
+| Variable Name | Port Number |
+| --- | --- |
+| grafana_username | '' |
+| grafana_password | '' |
     
 Default collectd installation file
    
