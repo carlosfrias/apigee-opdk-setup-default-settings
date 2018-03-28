@@ -17,6 +17,7 @@ are centrally managed here to reduce the maintenance burden. It is expected that
 overriden as needed either by the playbook or at `~/.apigee/custom-properties.yml`.
 
 ## Core Variables Required by All Apigee Installation, Configuration & Maintenance Roles
+
 | Variable Name | Default or Initial Value | Description |
 | --- | --- |
 | opdk_version |  '4.18.01' | Default Apigee Edge Private Cloud Version |
@@ -49,6 +50,7 @@ overriden as needed either by the playbook or at `~/.apigee/custom-properties.ym
 | enable_system_check | 'n' | Enable system check during installation of Apigee component | 
 
 ## Analytic Settings for Edge Configuration
+
 | Variable Name | Default or Initial Value | Description |
 | --- | --- |
 | ax_group | axgroup001 | Default analytics group |
