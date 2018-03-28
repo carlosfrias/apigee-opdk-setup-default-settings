@@ -11,42 +11,97 @@ No requirements
 
 Role Variables
 --------------
-    
-| Variable Name | Default Value | Description |
-|---------------|---------------|-------------|
+
+These are the variables used throughout the Apigee management framework. Defaults and initial value settings
+are centrally managed here to reduce the maintenance burden. It is expected that specific variables would be
+overriden as needed either by the playbook or at `~/.apigee/custom-properties.yml`.
+
+## Core Variables Required by All Apigee Installation, Configuration & Maintenance Roles
+| Variable Name | Default or Initial Value | Description |
+| --- | --- |
+| opdk_version |  '4.18.01' | Default Apigee Edge Private Cloud Version |
+| opdk_installer_path | "/tmp/edge" | Apigee staging installation folder |
 | jdk_version | '1.8' | Target Java JDK version |
 | java_home | /usr/lib/jvm/java-openjdk | System file path to use in JAVA_HOME |
-| opdk_user_name |  '' | OPDK OS user name |
 | opdk_group_name |  '' | OPDK OS group name|
 | opdk_user_email | '' | OPDK User Email |
-| opdk_user_pass | '' | OPDK User Password |
 | opdk_user_home | /home/{{ opdk_user_name }} | Home folder of the Apigee user |
-| admin_user | '{{ opdk_user_name }}' | Apigee admin user name |
-| admin_pass | '{{ opdk_user_name }}' | Apigee admin user password |
-| opdk_version |  '4.18.01' | Default Apigee Edge Private Cloud Version |
-| apigee_mirror_version | '4.18.01' | Default version of the Apigee mirror to use |
-| opdk_installer_path | "/tmp/edge" | Apigee staging installation folder |
-| apigee_data_backup_archive_name | apigee_data_backup.tar.gz | Default name of the backup archive of the apigee data folder |
-| apigee_archive_storage_folder | '{{ opdk_installer_path }}' | Default folder in which the apigee data backup archive will be stored. |
-| apigee_installation_home | /opt/apigee | Default apigee installation home |
-| apigee_service | '{{ apigee_installation_home }}/apigee-service/bin/apigee-service' | Apigee service command as of 4.16.xx |
-| nodetool | '{{ apigee_installation_home }}/apigee-cassandra/bin/nodetool' | Cassandra nodetool command |
-| apigee_setup | '{{ apigee_installation_home }}/apigee-setup/bin/setup.sh' | Apigee setup command as of 4.16.xx |
-| apigee_update | '{{ apigee_installation_home }}/apigee-setup/bin/update.sh' | Apigee update command as of 4.16.xx |
-| apigee_all | '{{ apigee_installation_home }}/apigee-service/bin/apigee-all' | Apigee all command as of 4.16.xx |
+| opdk_smtp_mail_from | {{ opdk_user_name }} | Home folder of the Apigee user |
+| apigee_home | /opt/apigee | Default apigee installation home |
 | opdk_license_target_file_path | "{{ opdk_installer_path }}/license.conf" | Apigee license file path |
 | opdk_license_source_file_name | '~/.apigee/license.txt' | Apigee license file provided by customer |
 | opdk_installation_config_file | "{{ opdk_installer_path }}/silent-install.conf" | Apigee silent installation configuration file |
-| provided_response_file | '' | Silent installation configuration file that is provided manually |
-| apigee_validate_config_file | '{{ opdk_installer_path }}/apigee-validate.conf' | Apigee validate config file path |
-| apigee_repo_user | '{{ opdk_user_name }}' | Apigee bootstrap download user name |
 | apigee_repo_uri | 'software.apigee.com' | Apigee bootstrap download uri |
 | apigee_repo_url | 'https://{{ apigee_repo_uri }}' | Apigee bootstrap download url |
+| provided_response_file | '' | Silent installation configuration file that is provided manually |
+| apigee_validate_config_file | '{{ opdk_installer_path }}/apigee-validate.conf' | Apigee validate config file path |
+| opdk_mp_pod | gateway | Apigee edge default pod for silent-config file |
+| conf_logs_dir | planet_resources | Local folder in which to store logs and config files |
+| fetched_logs_dir | ~/.apigee/planet_resources/ | Default download location for log and config files |
+| fetched_configs_dir | ~/.apigee/planet_resources/ | Default download location for log and config files |
+| opdk_enable_ax | 'y' | Default to enable analytics |
+| opdk_use_cass_cluster | 'y' | Default setting to use a cassandra ring |
+| opdk_use_zk_cluster | 'y' | Default to enable use of the zookeeper cluster |
+| opdk_ldap_type | '1' | Default silent-install configuration file for OpenLDAP |
+| use_opdk_ldap_remote_host | 'n' | Default silent-install configuration file for OpenLDAP |
+| opdk_bind_on_all_interfaces | 'y' | Default to bind OPDK on all network interfaces |
+| bootstrap_filename | bootstrap.sh | Name of Apigee bootstrap script 
+| enable_system_check | 'n' | Enable system check during installation of Apigee component | 
+
+## Analytic Settings for Edge Configuration
+| Variable Name | Default or Initial Value | Description |
+| --- | --- |
+| ax_group | axgroup001 | Default analytics group |
+
+## SMTP Settings for Edge Configuration
+| Variable Name | Default or Initial Value | Description |
+| --- | --- |
+| opdk_smtp_skip | 'y' | SMTP settings for Edge Configuration | 
+| opdk_smtp_host | 'smtp.example.com' | SMTP settings for Edge Configuration |
+| opdk_smtp_port | '25' | SMTP settings for Edge Configuration |
+| opdk_smtp_user | '' | SMTP settings for Edge Configuration |
+| opdk_smtp_password | '' | SMTP settings for Edge Configuration |
+| opdk_smtp_ssl | 'n' | SMTP settings for Edge Configuration |
+
+## Rollback of Apigee Component defaults 
+| Variable Name | Default or Initial Value | Description |
+| --- | --- |
+| remove_apigee | false | Default settings for removing data on rollback |
+
+## Apigee Archive & Mirror Configurations
+| Variable Name | Default or Initial Value | Description |
+| --- | --- |
 | copy_archive | yes | Choose whether to copy the Apigee Mirror archive from your control machine or use an existing archive on the server |
-| archive_folder | /tmp/ | Storage folder for the Apigee archive |
+| archive_folder | {{ opdk_installer_path }}/tmp | Storage folder for the Apigee archive |
 | archive_name | apigee-{{ opdk_version }}.tar.gz | Apigee archive that is created when a mirror is used. |
 | archive_path | '{{ apigee_installation_home }}/data/apigee-mirror/{{ archive_name }}' | Path to the Apigee archive that is created by apigee-mirror package |
-| mp_pod | gateway | Apigee edge default pod for silent-config file |
+| apigee_data_backup_archive_name | apigee_data_backup.tar.gz | Default name of the backup archive of the apigee data folder |
+| apigee_archive_storage_folder | '{{ opdk_installer_path }}' | Default folder in which the apigee data backup archive will be stored. |
+| apigee_mirror_version | {{ opdk_version }} | Default version of the Apigee mirror to use |
+
+## Apigee Credential Variable Names
+| Variable Name | Default or Initial Value | Description |
+| --- | --- |
+| opdk_user_name |  'apigee' | OPDK OS user name |
+| opdk_user_pass | '' | OPDK User Password |
+| admin_user | '{{ opdk_user_name }}' | Apigee admin user name |
+| admin_pass | '{{ opdk_user_name }}' | Apigee admin user password |
+| apigee_repo_user | '{{ opdk_user_name }}' | Apigee bootstrap download user name |
+| opdk_ldap_pass | '' | 
+| grafana_username | admin | Monitoring dashboard UI user name |
+| grafana_password | {{ opdk_user_pass }} | Monitoring dashboard UI password |
+| opdk_cass_username | '' | Cassandra username |
+| opdk_cass_password | '' | Cassandra password |
+| opdk_cass_auth | 'n' | Enable Cassandra authentication |
+
+## Apigee Service Command Line Tools Variable Name    
+| Variable Name | Default Value | Description |
+|---------------|---------------|-------------|
+| apigee_service | '{{ apigee_installation_home }}/apigee-service/bin/apigee-service' | Apigee service command as of 4.16.xx |
+| apigee_setup | '{{ apigee_installation_home }}/apigee-setup/bin/setup.sh' | Apigee setup command as of 4.16.xx |
+| apigee_update | '{{ apigee_installation_home }}/apigee-setup/bin/update.sh' | Apigee update command as of 4.16.xx |
+| apigee_all | '{{ apigee_installation_home }}/apigee-service/bin/apigee-all' | Apigee all command as of 4.16.xx |
+| nodetool | '{{ apigee_installation_home }}/apigee-cassandra/bin/nodetool' | Cassandra nodetool command |
     
 # Apigee Edge Ports
 
@@ -58,7 +113,6 @@ Role Variables
 | cassandra_cql_native_port | 9042 |
 | cassandra_non_ssl_gossip_port | 7000 |
 | cassandra_ssl_gossip_port | 7001 |
-
 
 ## Zookeeper Ports
 | Variable Name | Port Number |
@@ -125,155 +179,62 @@ Role Variables
 | --- | --- |
 | influxdb_system_port | 25826 |
 | influxdb_port | 8086 |
+| influxdb_host | 127.0.0.1 | Default influxdb host |
 
-## Monitoring Dashboard - Grafana Login
+## Monitoring Dashboard - Grafana Port
+| Variable Name | Port Number | Description |
+| --- | --- |
+| grafana_port | 3000 | Grafana UI port |
+    
+## Configuring Edge Org and Virtual Host
+| Variable Name | Port Number | Description |
+| --- | --- |
+| org_name | opdk | Default org name |
+| env_name | test | Default environment name |
+| new_user | 'y' | Default for creating a new user in org |
+| first_name | Opdk | Default for first_name in creating new user |
+| last_name | User | Default for last_name in creating new user |
+| virtual_host_port | 9001 | Virtual host port for the org |
+| virtual_host_name | default | Virtual Host name for the org
+| virtual_host_alias | '127.0.0.1' | Virtual host alias |
+| onboarding_config | 'apigee-provision.conf' | Default onboarding provisioning file name |
+| onboarding_config_file_path | "{{ opdk_installer_path }}/{{ onboarding_config }}" | Default onboarding provisioning file path |
+| apigee_provision_dir | '{{ apigee_installation_home }}/apigee-provision' | Default onboarding provisioning directory |
+
+## Apigee Baas Core Attributes
 | Variable Name | Port Number |
 | --- | --- |
-| grafana_username | '' |
-| grafana_password | '' |
+| opdk_baas_silent_install_file_path | /tmp/baas-silent-install.conf | Default location and name of the Baas Silent Install file |
+| opdk_baas_provided_silent_install_file | '' | Baas silent install file provided by customer |
+| baas_cluster_name | 'apigee_baas' | Default cluster name is "apigee_baas" |
+
+## Apigee Baas SMTP Configuration
+| Variable Name | Port Number |
+| --- | --- |
+| baas_smtp_host | 'smtp.gmail.com' | SMTP host server for BaaS |
+| baas_smtp_port | '465' | SMTP port server for BaaS |
+| baas_smtp_ssl | 'n' | SMTP SSL configuration for BaaS |
+
+## Apigee Baas Ports
+| Variable Name | Port Number |
+| --- | --- |
+| baas_load_balancer_host | '' | URL of the load balancer for the API BaaS Stack nodes or IP/DNS of a single Stack node with no load balancer |
+| baas_load_balancer_port | '8080' | Port of the load balancer for the API BaaS Stack nodes or port of a single Stack node with no load balancer |
+| baas_portal_port | '9000' | Default portal UI value is 9000 |
+| baas_elasticsearch_port_low | '9200' | Default Elastic search low port |
+| baas_elasticsearch_port_high | '9300' | Default Elastic search high port |
     
-Default collectd installation file
-   
-    collectd_installation_config: collectd-installation.conf
-
-Default influxdb host
-
-    influxdb_host: 127.0.0.1
-    
-Local folder in which to store logs and config files
-
-    conf_logs_dir: planet_resources
- 
-Organization name used in Edge and Baas setups
-
-    org_name: opdk
-
-Default for creating a new user in org
-
-    new_user: 'y'
-
-Default for first_name in creating new user
-
-    first_name: Opdk
-
-Default for last_name in creating new user
-
-    last_name: User
-
-Virtual host port for the org
-
-    virtual_host_port: 9001
-
-Virtual Host name for the org
-
-    virtual_host_name: default
-
-Virtual host alias
-
-    virtual_host_alias: '127.0.0.1'
-
-Environment name
-
-    env_name: test
-
-Default analytics group
-
-    ax_group: axgroup001
-
-Default onboarding provisioning file name
-
-    onboarding_config: 'apigee-provision.conf'
-
-Default onboarding provisioning file path
-
-    onboarding_config_file_path: "{{ opdk_installer_path }}/{{ onboarding_config }}"
-
-Default onboarding provisioning directory
-
-    apigee_provision_dir: '{{ apigee_installation_home }}/apigee-provision'
-    
-Default location and name of the Baas Silent Install file
-
-    opdk_baas_silent_install_file_path: /tmp/baas-silent-install.conf
-    
-Baas silent install file provided by customer
-
-    opdk_baas_provided_silent_install_file: ''
-    
-Define the API BaaS administrator account.
-
-    baas_admin_name: ''
-    baas_admin_email: ''
-    baas_admin_pass: ''
-    baas_superuser_name: ''
-    baas_superuser_email: ''
-    baas_superuser_pass: ''
-    
-Cassandra username and password must be provided regardless of whether you enable authentication.
-
-    opdk_cass_username: ''
-    opdk_cass_password: ''
-
-Default setting to use a cassandra ring
-
-    opdk_use_cass_cluster: 'y'
-
-Default silent-install configuration file settings for OpenLDAP
-
-    opdk_ldap_type: '1'
-    use_opdk_ldap_remote_host: 'n'
-    opdk_ldap_pass: ''
-
-Default to enable analytics
-
-    opdk_enable_ax: 'y'
-
-Default pod
-
-    opdk_mp_pod: 'gateway'
-
-Default to enable use of the zookeeper cluster
-
-    opdk_use_zk_cluster: 'y'
-
-SMTP settings for Edge Configuration
-
-    opdk_smtp_skip: 'y'
-    opdk_smtp_host: 'smtp.example.com'
-    opdk_smtp_port: '25'
-    opdk_smtp_user: ''
-    opdk_smtp_password: ''
-    opdk_smtp_ssl: 'n'
-
-Default to bind OPDK on all network interfaces
-
-    opdk_bind_on_all_interfaces: 'y'    
-    
-Default cluster name is "apigee_baas"
-
-    baas_cluster_name: 'apigee_baas'
-    
-URL and port of the load balancer for the API BaaS Stack nodes or IP/DNS and port of a single Stack node with no load balancer.
-
-    baas_load_balancer_host: ''
-    baas_load_balancer_port: '8080'
-    
-Portal port. Default value is 9000.
-
-    baas_portal_port: '9000'
-    
-Elastic search ports. Default values
-
-    baas_elasticsearch_port_low: '9200'
-    baas_elasticsearch_port_high: '9300'
-    
-SMTP information. BaaS requires an SMTP server.
-
-    baas_smtp_host: 'smtp.gmail.com'
-    baas_smtp_port: '465'
-    baas_smtp_user: ''
-    baas_smtp_user_pass: ''
-    baas_smtp_ssl: 'n'
+## Define the API BaaS Credentials
+| Variable Name | Port Number |
+| --- | --- |
+| baas_admin_name | '' |
+| baas_admin_email | '' |
+| baas_admin_pass | '' |
+| baas_superuser_name | '' |
+| baas_superuser_email | '' |
+| baas_superuser_pass | '' |
+| baas_smtp_user | '' |
+| baas_smtp_user_pass | '' |
     
 Default system config files to download
 
@@ -303,10 +264,6 @@ Default system config files to download
       - { dir: '{{ opdk_installer_path }}/', name: '*.txt' }
       - { dir: '{{ apigee_installation_home }}/var/log/', name: '*.log' }
       - { dir: '{{ apigee_installation_home }}/', name: '*.out' }
-
-Default settings for removing data on rollback
-
-    remove_apigee: false
 
 Dependencies
 ------------
