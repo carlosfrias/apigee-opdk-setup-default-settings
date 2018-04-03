@@ -1,4 +1,10 @@
 ---
+- name: Assert existence of private address
+  assert:
+    that:
+      - "hostvars[inventory_hostname][interface_name].ipv4.address"
+    msg: "Unable to retrieve private address"
+
 - name: Normalized name for private address
   cache:
     key: 'private_address'

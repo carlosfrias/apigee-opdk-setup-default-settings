@@ -30,3 +30,8 @@
 - include_tasks: postgres.yml
 
 - include_tasks: devportal_postgres.yml
+
+- name: Load Custom Properties
+  include_vars: "{{ item }}"
+  with_items: "{{ custom_property_files }}"
+  when: custom_property_files is defined
