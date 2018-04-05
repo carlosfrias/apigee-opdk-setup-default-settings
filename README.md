@@ -79,7 +79,7 @@ overriden as needed either by the playbook or at `~/.apigee/custom-properties.ym
 | archive_path | '{{ apigee_installation_home }}/data/apigee-mirror/{{ archive_name }}' | Path to the Apigee archive that is created by apigee-mirror package |
 | apigee_data_backup_archive_name | apigee_data_backup.tar.gz | Default name of the backup archive of the apigee data folder |
 | apigee_archive_storage_folder | '{{ opdk_installer_path }}' | Default folder in which the apigee data backup archive will be stored. |
-| apigee_mirror_version | {{ opdk_version }} | Default version of the Apigee mirror to use |
+| apigeereleasever | {{ opdk_version }} | Default version of the Apigee mirror to use |
 
 ## Apigee Credential Variable Names
 | Variable Name | Default or Initial Value | Description |
