@@ -222,48 +222,48 @@ baas_smtp_ssl: 'n'
 # Default download location for log and config files
 fetched_logs_dir: ~/.apigee/planet_resources/
 fetched_configs_dir: ~/.apigee/planet_resources/
-
+planet_resources
 # Default system config files to download
-system_config_files:
-  - { dir: '/etc/', name: 'hosts' }
-  - { dir: '/etc/', name: 'hosts.allow' }
-  - { dir: '/etc/', name: 'hosts.deny' }
-  - { dir: '/etc/', name: 'environment' }
-  - { dir: '/etc/', name: 'profile' }
-  - { dir: '/etc/', name: 'bashrc' }
-  - { dir: '/etc/', name: 'resolv.conf' }
-  - { dir: '/etc/', name: 'sysctl.conf' }
-  - { dir: '/etc/', name: 'sudoers' }
-  - { dir: '/etc/security/', name: 'limits.conf' }
-  - { dir: '/etc/security/limits.d/', name: '*conf' }
+#system_config_files:
+#  - { dir: '/etc/', name: 'hosts' }
+#  - { dir: '/etc/', name: 'hosts.allow' }
+#  - { dir: '/etc/', name: 'hosts.deny' }
+#  - { dir: '/etc/', name: 'environment' }
+#  - { dir: '/etc/', name: 'profile' }
+#  - { dir: '/etc/', name: 'bashrc' }
+#  - { dir: '/etc/', name: 'resolv.conf' }
+#  - { dir: '/etc/', name: 'sysctl.conf' }
+#  - { dir: '/etc/', name: 'sudoers' }
+#  - { dir: '/etc/security/', name: 'limits.conf' }
+#  - { dir: '/etc/security/limits.d/', name: '*conf' }
 
-apigee_config_files:
-  - { dir: '{{ opdk_installer_path }}/', name: '*.conf' }
-  - { dir: '{{ opdk_installer_path }}/', name: '*.sh' }
-  - { dir: '{{ apigee_home }}/customer/', name: '*' }
-  - { dir: '{{ apigee_home }}/etc/', name: 'default*.sh' }
-  - { dir: '{{ apigee_home }}/customer', name: '*' }
-  - { dir: '{{ apigee_home }}/apigee-cassandra/', name: '*conf' }
-  - { dir: '{{ apigee_home }}/apigee-cassandra/', name: '*cfg' }
-  - { dir: '{{ apigee_home }}/apigee-cassandra/', name: '*yml' }
-  - { dir: '{{ apigee_home }}/apigee-cassandra/', name: '*yaml' }
-  - { dir: '{{ apigee_home }}/apigee-cassandra/', name: '*properties' }
-  - { dir: '{{ apigee_home }}/apigee-zookeeper/', name: '*conf' }
-  - { dir: '{{ apigee_home }}/apigee-zookeeper/', name: '*cfg' }
-  - { dir: '{{ apigee_home }}/apigee-zookeeper/', name: '*yml' }
-  - { dir: '{{ apigee_home }}/apigee-zookeeper/', name: '*yaml' }
-  - { dir: '{{ apigee_home }}/apigee-zookeeper/', name: '*properties' }
-#  - { dir: '{{ apigee_home }}/*qpid-server/', name: '*conf' }
-#  - { dir: '{{ apigee_home }}/*qpidd/', name: '*conf' }
-#  - { dir: '{{ apigee_home }}/token/', name: '*properties' }
-#  - { dir: '{{ apigee_home }}', name: '*sh' }
+#apigee_config_files:
+#  - { dir: '{{ opdk_installer_path }}/', name: '*.conf' }
+#  - { dir: '{{ opdk_installer_path }}/', name: '*.sh' }
+#  - { dir: '{{ apigee_home }}/customer/', name: '*' }
+#  - { dir: '{{ apigee_home }}/etc/', name: 'default*.sh' }
+#  - { dir: '{{ apigee_home }}/customer', name: '*' }
+#  - { dir: '{{ apigee_home }}/apigee-cassandra/', name: '*conf' }
+#  - { dir: '{{ apigee_home }}/apigee-cassandra/', name: '*cfg' }
+#  - { dir: '{{ apigee_home }}/apigee-cassandra/', name: '*yml' }
+#  - { dir: '{{ apigee_home }}/apigee-cassandra/', name: '*yaml' }
+#  - { dir: '{{ apigee_home }}/apigee-cassandra/', name: '*properties' }
+#  - { dir: '{{ apigee_home }}/apigee-zookeeper/', name: '*conf' }
+#  - { dir: '{{ apigee_home }}/apigee-zookeeper/', name: '*cfg' }
+#  - { dir: '{{ apigee_home }}/apigee-zookeeper/', name: '*yml' }
+#  - { dir: '{{ apigee_home }}/apigee-zookeeper/', name: '*yaml' }
+#  - { dir: '{{ apigee_home }}/apigee-zookeeper/', name: '*properties' }
+##  - { dir: '{{ apigee_home }}/*qpid-server/', name: '*conf' }
+##  - { dir: '{{ apigee_home }}/*qpidd/', name: '*conf' }
+##  - { dir: '{{ apigee_home }}/token/', name: '*properties' }
+##  - { dir: '{{ apigee_home }}', name: '*sh' }
 
-apigee_log_files:
-  - { dir: '{{ opdk_installer_path }}/', name: '*.log' }
-  - { dir: '{{ opdk_installer_path }}/', name: '*.txt' }
-  - { dir: '{{ apigee_home }}/', name: '*.out' }
-  - { dir: '{{ apigee_home }}/var/log', name: '*.log' }
-  - { dir: '/var/log/', name: 'messages' }
+#apigee_log_files:
+#  - { dir: '{{ opdk_installer_path }}/', name: '*.log' }
+#  - { dir: '{{ opdk_installer_path }}/', name: '*.txt' }
+#  - { dir: '{{ apigee_home }}/', name: '*.out' }
+#  - { dir: '{{ apigee_home }}/var/log', name: '*.log' }
+#  - { dir: '/var/log/', name: 'messages' }
 
 # Default settings for removing data on rollback
 remove_apigee: false
@@ -280,6 +280,6 @@ bootstrap_filename: bootstrap.sh
 
 enable_system_check: 'n'
 
-custom_property_files:
-- ~/.apigee/custom-properties.yml
-- ~/.apigee-secure/credentials.yml
+#custom_property_files:
+#- ~/.apigee/custom-properties.yml
+#- ~/.apigee-secure/credentials.yml
