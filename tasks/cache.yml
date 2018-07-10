@@ -4,8 +4,6 @@
     key: "{{ item.key }}"
     value: "{{ item.value }}"
   with_items:
-  - { key: 'apigee_home', value: '{{ apigee_home }}' }
-  - { key: 'opdk_version', value: '{{ opdk_version }}' }
   - { key: 'nodetool', value: '{{ nodetool }}' }
   - { key: 'cqlsh', value: '{{ cqlsh }}' }
   - { key: "psql", value: "{{ psql }}" }
@@ -13,72 +11,74 @@
   - { key: 'apigee_setup', value: '{{ apigee_home }}/apigee-setup/bin/setup.sh' }
   - { key: 'apigee_update', value: '{{ apigee_home }}/apigee-setup/bin/update.sh' }
   - { key: 'apigee_all', value: '{{ apigee_home }}/apigee-service/bin/apigee-all' }
-  - { key: "influx", value: "{{ apigee_home }}/apigee-influxdb/usr/bin/influx" }
-  - { key: 'local_apigee_path', value: "{{ local_apigee_path }}" }
-  - { key: 'local_apigee_secure', value: '{{ local_apigee_secure }}' }
-  - { key: 'apigee_data_backup_archive_name', value: '{{ apigee_data_backup_archive_name }}' }
-  - { key: 'apigee_archive_storage_folder', value: '{{ apigee_archive_storage_folder }}' }
-  - { key: 'apigee_postgresql_data_dir', value: "{{ apigee_postgresql_data_dir }}" }
-  - { key: 'apigee_validate_config_file', value: "{{ apigee_validate_config_file }}" }
-  - { key: 'opdk_mp_pod', value: '{{ opdk_mp_pod }}' }
-  - { key: 'opdk_ldap_type', value: '{{ opdk_ldap_type }}'}
-  - { key: 'use_opdk_ldap_remote_host', value: '{{ use_opdk_ldap_remote_host }}' }
-  - { key: 'opdk_enable_ax', value: '{{ opdk_enable_ax }}' }
-  - { key: 'default_mp_pod', value: '{{ default_mp_pod }}' }
-  - { key: 'opdk_use_zk_cluster', value: '{{ opdk_use_zk_cluster }}' }
-  - { key: 'opdk_cass_clustername', value: '{{ opdk_cass_clustername }}' }
-  - { key: 'opdk_use_cass_cluster', value: '{{ opdk_use_cass_cluster }}' }
-  - { key: 'opdk_smtp_skip', value: '{{ opdk_smtp_skip }}' }
-  - { key: 'opdk_smtp_host', value: '{{ opdk_smtp_host }}' }
-  - { key: 'opdk_smtp_port', value: '{{ opdk_smtp_port }}' }
-  - { key: 'opdk_smtp_ssl', value: '{{ opdk_smtp_ssl }}' }
-  - { key: 'opdk_cass_auth', value: '{{ opdk_cass_auth }}' }
-  - { key: 'consumer_group', value: '{{ consumer_group }}' }
-  - { key: 'ldap_data_port', value: '{{ ldap_data_port }}' }
-  - { key: 'edge_proxy_port', value: '{{ edge_proxy_port }}' }
-  - { key: 'ui_http_port', value: '{{ ui_http_port }}' }
-  - { key: 'pg_ext_mgmt_port', value: '{{ pg_ext_mgmt_port }}' }
-  - { key: 'pg_db_port', value: '{{ pg_db_port }}' }
-  - { key: 'pg_int_mgmt_port', value: '{{ pg_int_mgmt_port }}' }
-  - { key: 'pg_jmx_port', value: '{{ pg_jmx_port }}' }
-  - { key: 'qpid_ext_mgmt_port', value: '{{ qpid_ext_mgmt_port }}' }
-  - { key: 'router_int_mgmt_port', value: '{{ router_int_mgmt_port }}' }
-  - { key: 'qpid_jmx_port', value: '{{ qpid_jmx_port }}' }
-  - { key: 'qpid_int_mgmt_port', value: '{{ qpid_int_mgmt_port }}' }
-  - { key: 'qpid_messaging_port', value: '{{ qpid_messaging_port }}' }
-  - { key: 'router_ext_mgmt_port', value: '{{ router_ext_mgmt_port }}' }
-  - { key: 'router_jmx_port', value: '{{ router_jmx_port }}' }
-  - { key: 'ms_ext_mgmt_port', value: '{{ ms_ext_mgmt_port }}' }
-  - { key: 'ms_jmx_port', value: '{{ ms_jmx_port }}' }
-  - { key: 'mp_router_port', value: '{{ mp_router_port }}' }
-  - { key: 'mp_jmx_port', value: '{{ mp_jmx_port }}' }
-  - { key: 'mp_ext_mgmt_port', value: '{{ mp_ext_mgmt_port }}' }
-  - { key: 'mp_int_mgmt_port', value: '{{ mp_int_mgmt_port }}' }
-  - { key: 'zk_voter_port', value: '{{ zk_voter_port }}' }
-  - { key: 'zk_leader_port', value: '{{ zk_leader_port }}' }
-  - { key: 'zk_data_port', value: '{{ zk_data_port }}' }
-  - { key: 'cassandra_ssl_gossip_port', value: '{{ cassandra_ssl_gossip_port }}' }
-  - { key: 'cassandra_non_ssl_gossip_port', value: '{{ cassandra_non_ssl_gossip_port }}' }
-  - { key: 'cassandra_cql_native_port', value: '{{ cassandra_cql_native_port }}' }
-  - { key: 'cassandra_thrift_client_port', value: '{{ cassandra_thrift_client_port }}' }
-  - { key: 'cassandra_jmx_port', value: '{{ cassandra_jmx_port }}' }
-  - { key: 'qpid_ext_mgmt_port', value: '{{ qpid_ext_mgmt_port }}' }
-  - { key: 'ms_ext_mgmt_port', value: '{{ ms_ext_mgmt_port }}' }
-  - { key: 'influxdb_port', value: '{{ influxdb_port }}' }
-  - { key: 'influxdb_system_port', value: '{{ influxdb_system_port }}' }
-  - { key: 'env_name', value: '{{ env_name }}' }
-  - { key: 'ax_group', value: '{{ ax_group }}' }
-  - { key: 'virtual_host_name', value: '{{ virtual_host_name }}' }
-  - { key: 'virtual_host_port', value: '{{ virtual_host_port }}' }
-  - { key: 'last_name', value: '{{ last_name }}' }
-  - { key: 'first_name', value: '{{ first_name }}' }
-  - { key: 'new_user', value: '{{ new_user }}' }
-  - { key: 'org_name', value: '{{ org_name }}' }
-  - { key: 'opdk_bind_on_all_interfaces', value: '{{ opdk_bind_on_all_interfaces }}' }
-  - { key: 'opdk_smtp_mail_from', value: '{{ opdk_smtp_mail_from }}' }
-  - { key: 'enable_system_check', value: '{{ enable_system_check }}' }
-  - { key: 'opdk_installer_path', value: '{{ opdk_installer_path }}' }
   - { key: 'opdk_installation_config_file', value: '{{ opdk_installer_path }}/edge-response-{{ opdk_version }}-{{ region }}.conf' }
   - { key: 'opdk_portal_config_file', value: '{{ opdk_installer_path }}/edge-devportal-response-{{ opdk_version }}.conf' }
   - { key: 'opdk_portal_db_config_file', value: '{{ opdk_installer_path }}/edge-devportal-postgres-response.conf' }
-  - { key: 'opdk_baas_silent_install_file_path', value: '{{ opdk_installer_path }}/edge-baas-response.conf' }
+#  - { key: 'apigee_home', value: '{{ apigee_home }}' }
+#  - { key: 'opdk_version', value: '{{ opdk_version }}' }
+#  - { key: "influx", value: "{{ apigee_home }}/apigee-influxdb/usr/bin/influx" }
+#  - { key: 'local_apigee_path', value: "{{ local_apigee_path }}" }
+#  - { key: 'local_apigee_secure', value: '{{ local_apigee_secure }}' }
+#  - { key: 'apigee_data_backup_archive_name', value: '{{ apigee_data_backup_archive_name }}' }
+#  - { key: 'apigee_archive_storage_folder', value: '{{ apigee_archive_storage_folder }}' }
+#  - { key: 'apigee_postgresql_data_dir', value: "{{ apigee_postgresql_data_dir }}" }
+#  - { key: 'apigee_validate_config_file', value: "{{ apigee_validate_config_file }}" }
+#  - { key: 'opdk_mp_pod', value: '{{ opdk_mp_pod }}' }
+#  - { key: 'opdk_ldap_type', value: '{{ opdk_ldap_type }}'}
+#  - { key: 'use_opdk_ldap_remote_host', value: '{{ use_opdk_ldap_remote_host }}' }
+#  - { key: 'opdk_enable_ax', value: '{{ opdk_enable_ax }}' }
+#  - { key: 'default_mp_pod', value: '{{ default_mp_pod }}' }
+#  - { key: 'opdk_use_zk_cluster', value: '{{ opdk_use_zk_cluster }}' }
+#  - { key: 'opdk_cass_clustername', value: '{{ opdk_cass_clustername }}' }
+#  - { key: 'opdk_use_cass_cluster', value: '{{ opdk_use_cass_cluster }}' }
+#  - { key: 'opdk_smtp_skip', value: '{{ opdk_smtp_skip }}' }
+#  - { key: 'opdk_smtp_host', value: '{{ opdk_smtp_host }}' }
+#  - { key: 'opdk_smtp_port', value: '{{ opdk_smtp_port }}' }
+#  - { key: 'opdk_smtp_ssl', value: '{{ opdk_smtp_ssl }}' }
+#  - { key: 'opdk_cass_auth', value: '{{ opdk_cass_auth }}' }
+#  - { key: 'consumer_group', value: '{{ consumer_group }}' }
+#  - { key: 'ldap_data_port', value: '{{ ldap_data_port }}' }
+#  - { key: 'edge_proxy_port', value: '{{ edge_proxy_port }}' }
+#  - { key: 'ui_http_port', value: '{{ ui_http_port }}' }
+#  - { key: 'pg_ext_mgmt_port', value: '{{ pg_ext_mgmt_port }}' }
+#  - { key: 'pg_db_port', value: '{{ pg_db_port }}' }
+#  - { key: 'pg_int_mgmt_port', value: '{{ pg_int_mgmt_port }}' }
+#  - { key: 'pg_jmx_port', value: '{{ pg_jmx_port }}' }
+#  - { key: 'qpid_ext_mgmt_port', value: '{{ qpid_ext_mgmt_port }}' }
+#  - { key: 'router_int_mgmt_port', value: '{{ router_int_mgmt_port }}' }
+#  - { key: 'qpid_jmx_port', value: '{{ qpid_jmx_port }}' }
+#  - { key: 'qpid_int_mgmt_port', value: '{{ qpid_int_mgmt_port }}' }
+#  - { key: 'qpid_messaging_port', value: '{{ qpid_messaging_port }}' }
+#  - { key: 'router_ext_mgmt_port', value: '{{ router_ext_mgmt_port }}' }
+#  - { key: 'router_jmx_port', value: '{{ router_jmx_port }}' }
+#  - { key: 'ms_ext_mgmt_port', value: '{{ ms_ext_mgmt_port }}' }
+#  - { key: 'ms_jmx_port', value: '{{ ms_jmx_port }}' }
+#  - { key: 'mp_router_port', value: '{{ mp_router_port }}' }
+#  - { key: 'mp_jmx_port', value: '{{ mp_jmx_port }}' }
+#  - { key: 'mp_ext_mgmt_port', value: '{{ mp_ext_mgmt_port }}' }
+#  - { key: 'mp_int_mgmt_port', value: '{{ mp_int_mgmt_port }}' }
+#  - { key: 'zk_voter_port', value: '{{ zk_voter_port }}' }
+#  - { key: 'zk_leader_port', value: '{{ zk_leader_port }}' }
+#  - { key: 'zk_data_port', value: '{{ zk_data_port }}' }
+#  - { key: 'cassandra_ssl_gossip_port', value: '{{ cassandra_ssl_gossip_port }}' }
+#  - { key: 'cassandra_non_ssl_gossip_port', value: '{{ cassandra_non_ssl_gossip_port }}' }
+#  - { key: 'cassandra_cql_native_port', value: '{{ cassandra_cql_native_port }}' }
+#  - { key: 'cassandra_thrift_client_port', value: '{{ cassandra_thrift_client_port }}' }
+#  - { key: 'cassandra_jmx_port', value: '{{ cassandra_jmx_port }}' }
+#  - { key: 'qpid_ext_mgmt_port', value: '{{ qpid_ext_mgmt_port }}' }
+#  - { key: 'ms_ext_mgmt_port', value: '{{ ms_ext_mgmt_port }}' }
+#  - { key: 'influxdb_port', value: '{{ influxdb_port }}' }
+#  - { key: 'influxdb_system_port', value: '{{ influxdb_system_port }}' }
+#  - { key: 'env_name', value: '{{ env_name }}' }
+#  - { key: 'ax_group', value: '{{ ax_group }}' }
+#  - { key: 'virtual_host_name', value: '{{ virtual_host_name }}' }
+#  - { key: 'virtual_host_port', value: '{{ virtual_host_port }}' }
+#  - { key: 'last_name', value: '{{ last_name }}' }
+#  - { key: 'first_name', value: '{{ first_name }}' }
+#  - { key: 'new_user', value: '{{ new_user }}' }
+#  - { key: 'org_name', value: '{{ org_name }}' }
+#  - { key: 'opdk_bind_on_all_interfaces', value: '{{ opdk_bind_on_all_interfaces }}' }
+#  - { key: 'opdk_smtp_mail_from', value: '{{ opdk_smtp_mail_from }}' }
+#  - { key: 'enable_system_check', value: '{{ enable_system_check }}' }
+#  - { key: 'opdk_installer_path', value: '{{ opdk_installer_path }}' }
+#  - { key: 'opdk_baas_silent_install_file_path', value: '{{ opdk_installer_path }}/edge-baas-response.conf' }
