@@ -5,7 +5,7 @@ opdk_smtp_mail_from: '{{ opdk_user_name }}'
 opdk_user_home: /home/{{ opdk_user_name }}
 
 # Default Apigee Edge Private Cloud Version
-opdk_version: '4.17.09'
+#opdk_version: '4.17.09'
 
 # Apigee staging installation folder
 opdk_installer_path: "/tmp/edge"
