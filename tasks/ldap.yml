@@ -7,7 +7,7 @@
 
 - name: Clear ldap type
   cache:
-    key: opdk_ldap_type
+    key: 'opdk_ldap_type'
     value: '1'
 
 - block:
@@ -18,25 +18,25 @@
 
   - name: Set ldap remote flag
     cache:
-      key: use_opdk_ldap_remote_host
+      key: 'use_opdk_ldap_remote_host'
       value: 'y'
     when: ldap_ip != local_mgmt_ip
 
   - name: Set ldap port
     cache:
-      key: opdk_ldap_port
+      key: 'opdk_ldap_port'
       value: '{{ ldap_data_port }}'
 
   - name: Set ldap type
     cache:
-      key: opdk_ldap_type
-      value: 2
+      key: 'opdk_ldap_type'
+      value: '2'
     when: groups['dc-2-ldap'] is defined
 
   - name: Set ldap sid flag
     cache:
-      key: ldap_sid
-      value: 1
+      key: 'ldap_sid'
+      value: '1'
 
   when: groups['dc-1'] is defined and groups['dc-1-ldap'] is defined and inventory_hostname in groups['dc-1'] and hostvars[groups['dc-1-ms'][0]][interface_name].ipv4.address is defined
 
@@ -54,25 +54,25 @@
 
   - name: Set ldap remote flag
     cache:
-      key: use_opdk_ldap_remote_host
+      key: 'use_opdk_ldap_remote_host'
       value: 'y'
     when: ldap_ip != local_mgmt_ip
 
   - name: Set ldap port
     cache:
-      key: opdk_ldap_port
+      key: 'opdk_ldap_port'
       value: '{{ ldap_data_port }}'
 
   - name: Set ldap type
     cache:
-      key: opdk_ldap_type
-      value: 2
+      key: 'opdk_ldap_type'
+      value: '2'
     when: groups['dc-1-ldap'] is defined
 
   - name: Set ldap sid flag
     cache:
-      key: ldap_sid
-      value: 2
+      key: 'ldap_sid'
+      value: '2'
 
   when: groups['dc-2'] is defined and groups['dc-2-ldap'] is defined and inventory_hostname in groups['dc-2'] and hostvars[groups['dc-1-ms'][0]][interface_name].ipv4.address is defined
 
