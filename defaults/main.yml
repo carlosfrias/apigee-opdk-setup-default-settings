@@ -279,7 +279,3 @@ start_check_delay: 30
 bootstrap_filename: bootstrap.sh
 
 enable_system_check: 'n'
-
-#custom_property_files:
-#- ~/.apigee/custom-properties.yml
-#- ~/.apigee-secure/credentials.yml

@@ -7,10 +7,8 @@
   ec2_metadata_facts:
   when: ansible_bios_version | lower | search('amazon')
 
-- name: Normalized network interface name
-  cache:
-    key: 'interface_name'
-    value: 'ansible_{{ ansible_default_ipv4.interface }}'
+- name: Determine interface name
+  include_tasks: interface.yml
 
 - include_tasks: private_address.yml
 
@@ -31,7 +29,3 @@
 
 - include_tasks: devportal_postgres.yml
 
-- name: Load Custom Properties
-  include_vars: "{{ item }}"
-  with_items: "{{ custom_property_files }}"
-  when: custom_property_files is defined
