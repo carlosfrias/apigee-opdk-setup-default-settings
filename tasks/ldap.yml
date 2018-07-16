@@ -20,7 +20,7 @@
     cache:
       key: 'use_opdk_ldap_remote_host'
       value: 'y'
-    when: ldap_ip != local_mgmt_ip
+    when: opdk_ldap_ip != local_mgmt_ip
 
   - name: Set ldap port
     cache:
