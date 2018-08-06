@@ -14,7 +14,7 @@
   - { key: 'opdk_installation_config_file', value: '{{ opdk_installer_path }}/edge-response-{{ opdk_version }}-{{ region }}.conf' }
   - { key: 'opdk_portal_config_file', value: '{{ opdk_installer_path }}/edge-devportal-response-{{ opdk_version }}.conf' }
   - { key: 'opdk_portal_db_config_file', value: '{{ opdk_installer_path }}/edge-devportal-postgres-response.conf' }
-#  - { key: 'opdk_installer_path', value: '{{ opdk_installer_path }}' }
+  - { key: 'opdk_installer_path', value: '{{ opdk_installer_path }}' }
 #  - { key: 'apigee_home', value: '{{ apigee_home }}' }
 #  - { key: 'opdk_version', value: '{{ opdk_version }}' }
 #  - { key: "influx", value: "{{ apigee_home }}/apigee-influxdb/usr/bin/influx" }
