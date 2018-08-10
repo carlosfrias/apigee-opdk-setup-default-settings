@@ -31,6 +31,9 @@ cassandra_cli: '{{ apigee_home }}/apigee-cassandra/bin/cassandra-cli'
 # Postgres command line tool
 psql: "/usr/bin/psql"
 
+# Postgres dump
+pg_dump: "/usr/bin/pg_dump"
+
 # Qpid stat tool
 qpid_stat: '{{ apigee_home }}/apigee-qpidd/bin/qpid-stat'
 
