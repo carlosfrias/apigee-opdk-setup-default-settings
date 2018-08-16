@@ -15,11 +15,11 @@
   - { key: 'opdk_portal_config_file', value: '{{ opdk_installer_path }}/edge-devportal-response-{{ opdk_version }}.conf' }
   - { key: 'opdk_portal_db_config_file', value: '{{ opdk_installer_path }}/edge-devportal-postgres-response.conf' }
   - { key: 'opdk_installer_path', value: '{{ opdk_installer_path }}' }
-#  - { key: 'apigee_home', value: '{{ apigee_home }}' }
-#  - { key: 'opdk_version', value: '{{ opdk_version }}' }
+  - { key: 'apigee_home', value: '{{ apigee_home }}' }
+  - { key: 'opdk_version', value: '{{ opdk_version }}' }
 #  - { key: "influx", value: "{{ apigee_home }}/apigee-influxdb/usr/bin/influx" }
-#  - { key: 'local_apigee_path', value: "{{ local_apigee_path }}" }
-#  - { key: 'local_apigee_secure', value: '{{ local_apigee_secure }}' }
+  - { key: 'local_apigee_path', value: "{{ local_apigee_path }}" }
+  - { key: 'local_apigee_secure', value: '{{ local_apigee_secure }}' }
 #  - { key: 'apigee_data_backup_archive_name', value: '{{ apigee_data_backup_archive_name }}' }
 #  - { key: 'apigee_archive_storage_folder', value: '{{ apigee_archive_storage_folder }}' }
 #  - { key: 'apigee_postgresql_data_dir', value: "{{ apigee_postgresql_data_dir }}" }
