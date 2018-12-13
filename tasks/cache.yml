@@ -52,7 +52,7 @@
 #  - { key: 'qpid_messaging_port', value: '{{ qpid_messaging_port }}' }
 #  - { key: 'router_ext_mgmt_port', value: '{{ router_ext_mgmt_port }}' }
 #  - { key: 'router_jmx_port', value: '{{ router_jmx_port }}' }
-#  - { key: 'ms_ext_mgmt_port', value: '{{ ms_ext_mgmt_port }}' }
+#  - { key: 'ms_port', value: '{{ ms_port }}' }
 #  - { key: 'ms_jmx_port', value: '{{ ms_jmx_port }}' }
 #  - { key: 'mp_router_port', value: '{{ mp_router_port }}' }
 #  - { key: 'mp_jmx_port', value: '{{ mp_jmx_port }}' }
@@ -67,7 +67,7 @@
 #  - { key: 'cassandra_thrift_client_port', value: '{{ cassandra_thrift_client_port }}' }
 #  - { key: 'cassandra_jmx_port', value: '{{ cassandra_jmx_port }}' }
 #  - { key: 'qpid_ext_mgmt_port', value: '{{ qpid_ext_mgmt_port }}' }
-#  - { key: 'ms_ext_mgmt_port', value: '{{ ms_ext_mgmt_port }}' }
+#  - { key: 'ms_port', value: '{{ ms_port }}' }
 #  - { key: 'influxdb_port', value: '{{ influxdb_port }}' }
 #  - { key: 'influxdb_system_port', value: '{{ influxdb_system_port }}' }
 #  - { key: 'env_name', value: '{{ env_name }}' }

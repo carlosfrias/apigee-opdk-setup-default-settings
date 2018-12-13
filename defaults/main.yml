@@ -78,7 +78,7 @@ mp_jmx_port: 1101
 mp_router_port: 8998
 
 ms_jmx_port: 1099
-ms_ext_mgmt_port: 8080
+ms_port: 8080
 
 router_jmx_port: 1100
 router_ext_mgmt_port: 8081
