@@ -14,7 +14,7 @@ Role Variables
 
 These are the variables used throughout the Apigee management framework. Defaults and initial value settings
 are centrally managed here to reduce the maintenance burden. It is expected that specific variables would be
-overriden as needed either by the playbook or at `~/apigee/custom-properties.yml`.
+overriden as needed either by the playbook or at `~/.apigee/custom-properties.yml`.
 
 ## Core Variables Required by All Apigee Installation, Configuration & Maintenance Roles
 
@@ -30,7 +30,7 @@ overriden as needed either by the playbook or at `~/apigee/custom-properties.yml
 | opdk_smtp_mail_from | {{ opdk_user_name }} | Home folder of the Apigee user |
 | apigee_home | /opt/apigee | Default apigee installation home |
 | opdk_license_target_file_path | "{{ opdk_installer_path }}/license.conf" | Apigee license file path |
-| opdk_license_source_file_name | '~/apigee/license.txt' | Apigee license file provided by customer |
+| opdk_license_source_file_name | '~/.apigee/license.txt' | Apigee license file provided by customer |
 | opdk_installation_config_file | "{{ opdk_installer_path }}/silent-install.conf" | Apigee silent installation configuration file |
 | apigee_repo_uri | 'software.apigee.com' | Apigee bootstrap download uri |
 | apigee_repo_url | 'https://{{ apigee_repo_uri }}' | Apigee bootstrap download url |
@@ -38,8 +38,8 @@ overriden as needed either by the playbook or at `~/apigee/custom-properties.yml
 | apigee_validate_config_file | '{{ opdk_installer_path }}/apigee-validate.conf' | Apigee validate config file path |
 | opdk_mp_pod | gateway | Apigee edge default pod for silent-config file |
 | conf_logs_dir | planet_resources | Local folder in which to store logs and config files |
-| fetched_logs_dir | ~/apigee/planet_resources/ | Default download location for log and config files |
-| fetched_configs_dir | ~/apigee/planet_resources/ | Default download location for log and config files |
+| fetched_logs_dir | ~/.apigee/planet_resources/ | Default download location for log and config files |
+| fetched_configs_dir | ~/.apigee/planet_resources/ | Default download location for log and config files |
 | opdk_enable_ax | 'y' | Default to enable analytics |
 | opdk_use_cass_cluster | 'y' | Default setting to use a cassandra ring |
 | opdk_use_zk_cluster | 'y' | Default to enable use of the zookeeper cluster |
