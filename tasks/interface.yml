@@ -4,6 +4,6 @@
   when: ansible_default_ipv4 is not defined
 
 - name: Normalized network interface name
-  cache:
-    key: 'interface_name'
-    value: 'ansible_{{ ansible_default_ipv4.interface }}'
+  set_fact:
+    cacheable: yes
+    interface_name: 'ansible_{{ ansible_default_ipv4.interface }}'
