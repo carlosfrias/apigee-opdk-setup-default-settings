@@ -9,7 +9,7 @@
     apigee_setup: '{{ apigee_home }}/apigee-setup/bin/setup.sh'
     apigee_update: '{{ apigee_home }}/apigee-setup/bin/update.sh'
     apigee_all: '{{ apigee_home }}/apigee-service/bin/apigee-all'
-    opdk_installation_config_file: '{{ opdk_installer_path }}/edge-response-{{ opdk_version }}-{{ region }}.conf'
+    target_response_file_path: '{{ opdk_installer_path }}/edge-response-{{ opdk_version }}-{{ region }}.conf'
     opdk_portal_config_file: '{{ opdk_installer_path }}/edge-devportal-response-{{ opdk_version }}.conf'
     opdk_portal_db_config_file: '{{ opdk_installer_path }}/edge-devportal-postgres-response.conf'
     opdk_installer_path: '{{ opdk_installer_path }}'

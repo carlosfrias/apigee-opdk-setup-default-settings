@@ -148,7 +148,7 @@ consumer_group: consumer-group-001
 #onboarding_config_file_path: "{{ opdk_installer_path }}/{{ onboarding_config }}"
 
 # Default location and name of the Baas Silent Install file
-#opdk_baas_silent_install_file_path: '{{ opdk_installation_config_file }}'
+#opdk_baas_silent_install_file_path: '{{ target_response_file_path }}'
 
 # Baas silent install file provided by customer
 opdk_baas_provided_silent_install_file: ''
