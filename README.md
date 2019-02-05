@@ -21,7 +21,7 @@ overriden as needed either by the playbook or at `~/.apigee/custom-properties.ym
 | Variable Name | Default or Initial Value | Description |
 | --- | --- | --- |
 | opdk_version is  '4.18.01' | Default Apigee Edge Private Cloud Version |
-| opdk_installer_path | "/tmp/edge" | Apigee staging installation folder |
+| opdk_resources_path | "/tmp/edge" | Apigee staging installation folder |
 | jdk_version | '1.8' | Target Java JDK version |
 | java_home | /usr/lib/jvm/java-openjdk | System file path to use in JAVA_HOME |
 | opdk_group_name |  '' | OPDK OS group name|
@@ -29,13 +29,13 @@ overriden as needed either by the playbook or at `~/.apigee/custom-properties.ym
 | opdk_user_home | /home/{{ opdk_user_name }} | Home folder of the Apigee user |
 | opdk_smtp_mail_from | {{ opdk_user_name }} | Home folder of the Apigee user |
 | apigee_home | /opt/apigee | Default apigee installation home |
-| opdk_license_target_file_path | "{{ opdk_installer_path }}/license.conf" | Apigee license file path |
+| opdk_license_target_file_path | "{{ opdk_resources_path }}/license.conf" | Apigee license file path |
 | opdk_license_source_file_name | '~/.apigee/license.txt' | Apigee license file provided by customer |
-| opdk_installation_config_file | "{{ opdk_installer_path }}/silent-install.conf" | Apigee silent installation configuration file |
+| opdk_installation_config_file | "{{ opdk_resources_path }}/silent-install.conf" | Apigee silent installation configuration file |
 | apigee_repo_uri | 'software.apigee.com' | Apigee bootstrap download uri |
 | apigee_repo_url | 'https://{{ apigee_repo_uri }}' | Apigee bootstrap download url |
 | provided_response_file | '' | Silent installation configuration file that is provided manually |
-| apigee_validate_config_file | '{{ opdk_installer_path }}/apigee-validate.conf' | Apigee validate config file path |
+| apigee_validate_config_file | '{{ opdk_resources_path }}/apigee-validate.conf' | Apigee validate config file path |
 | opdk_mp_pod | gateway | Apigee edge default pod for silent-config file |
 | conf_logs_dir | planet_resources | Local folder in which to store logs and config files |
 | fetched_logs_dir | ~/.apigee/planet_resources/ | Default download location for log and config files |
@@ -74,11 +74,11 @@ overriden as needed either by the playbook or at `~/.apigee/custom-properties.ym
 | Variable Name | Default or Initial Value | Description |
 | --- | --- | --- |
 | copy_archive | yes | Choose whether to copy the Apigee Mirror archive from your control machine or use an existing archive on the server |
-| archive_folder | {{ opdk_installer_path }}/tmp | Storage folder for the Apigee archive |
+| archive_folder | {{ opdk_resources_path }}/tmp | Storage folder for the Apigee archive |
 | archive_name | apigee-{{ opdk_version }}.tar.gz | Apigee archive that is created when a mirror is used. |
 | archive_path | '{{ apigee_installation_home }}/data/apigee-mirror/{{ archive_name }}' | Path to the Apigee archive that is created by apigee-mirror package |
 | apigee_data_backup_archive_name | apigee_data_backup.tar.gz | Default name of the backup archive of the apigee data folder |
-| apigee_archive_storage_folder | '{{ opdk_installer_path }}' | Default folder in which the apigee data backup archive will be stored. |
+| apigee_archive_storage_folder | '{{ opdk_resources_path }}' | Default folder in which the apigee data backup archive will be stored. |
 | apigeereleasever | {{ opdk_version }} | Default version of the Apigee mirror to use |
 
 ## Apigee Credential Variable Names
@@ -200,13 +200,13 @@ overriden as needed either by the playbook or at `~/.apigee/custom-properties.ym
 | virtual_host_name | default | Virtual Host name for the org
 | virtual_host_alias | '127.0.0.1' | Virtual host alias |
 | onboarding_config | 'apigee-provision.conf' | Default onboarding provisioning file name |
-| onboarding_config_file_path | "{{ opdk_installer_path }}/{{ onboarding_config }}" | Default onboarding provisioning file path |
+| onboarding_config_file_path | "{{ opdk_resources_path }}/{{ onboarding_config }}" | Default onboarding provisioning file path |
 | apigee_provision_dir | '{{ apigee_home }}/apigee-provision' | Default onboarding provisioning directory |
 
 ## Apigee Baas Core Attributes
 | Variable Name | Port Number | Description |
 | --- | --- | --- |
-| opdk_baas_silent_install_file_path | '{{ opdk_installer_path }}/edge-baas-response.conf' | Default location and name of the Baas Silent Install file |
+| opdk_baas_silent_install_file_path | '{{ opdk_resources_path }}/edge-baas-response.conf' | Default location and name of the Baas Silent Install file |
 | opdk_baas_provided_silent_install_file | '' | Baas silent install file provided by customer |
 | baas_cluster_name | 'apigee_baas' | Default cluster name is "apigee_baas" |
 | baas_create_org_and_user_script | "{{ apigee_home }}/baas-usergrid/bin/create_org_and_user.py" | Script to create orgs and users on Baas |
@@ -257,15 +257,15 @@ overriden as needed either by the playbook or at `~/.apigee/custom-properties.ym
       - { dir: '/etc/security/limits.d/', name: '*conf' }
     
     apigee_config_files:
-      - { dir: '{{ opdk_installer_path }}/', name: '*conf' }
+      - { dir: '{{ opdk_resources_path }}/', name: '*conf' }
       - { dir: '{{ apigee_home }}/customer/', name: '*' }
       - { dir: '{{ apigee_home }}/apigee-cassandra/', name: '*yaml' }
       - { dir: '{{ apigee_home }}/etc/', name: 'default*.sh' }
     
     apigee_log_files:
-      - { dir: '{{ opdk_installer_path }}/', name: '*.log' }
-      - { dir: '{{ opdk_installer_path }}/var/log/', name: '*.log' }
-      - { dir: '{{ opdk_installer_path }}/', name: '*.txt' }
+      - { dir: '{{ opdk_resources_path }}/', name: '*.log' }
+      - { dir: '{{ opdk_resources_path }}/var/log/', name: '*.log' }
+      - { dir: '{{ opdk_resources_path }}/', name: '*.txt' }
       - { dir: '{{ apigee_home }}/var/log/', name: '*.log' }
       - { dir: '{{ apigee_home }}/', name: '*.out' }
 
