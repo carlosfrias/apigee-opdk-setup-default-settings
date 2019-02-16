@@ -44,10 +44,10 @@ check_queue_depth: '{{ apigee_home }}/apigee-qpidd/bin/check_queue_depth.py'
 local_apigee_path: ~/.apigee
 
 # Local secure resource location
-local_apigee_secure: ~/.apigee-secure
+local_apigee_secure_path: ~/.apigee-secure
 
 # defaults file for apigee-opdk-setup-default-settings
-credentials_file: '{{ local_apigee_secure }}/credentials.yml'
+credentials_file: '{{ local_apigee_secure_path}}/credentials.yml'
 
 # defaults file for apigee-opdk-setup-ps
 apigee_postgresql_data_dir: '{{ apigee_home }}/data/apigee-postgresql/pgdata'

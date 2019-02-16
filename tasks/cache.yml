@@ -17,7 +17,7 @@
     opdk_version: '{{ opdk_version }}'
 #  - { key: "influx: "{{ apigee_home }}/apigee-influxdb/usr/bin/influx"
     local_apigee_path: "{{ local_apigee_path }}"
-    local_apigee_secure: '{{ local_apigee_secure }}'
+    local_apigee_secure_path: '{{ local_apigee_secure_path}}'
 #    apigee_data_backup_archive_name: '{{ apigee_data_backup_archive_name }}'
 #    apigee_archive_storage_folder: '{{ apigee_archive_storage_folder }}'
 #    apigee_postgresql_data_dir: "{{ apigee_postgresql_data_dir }}"
