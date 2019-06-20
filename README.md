@@ -21,7 +21,7 @@ overriden as needed either by the playbook or at `~/.apigee/custom-properties.ym
 | Variable Name | Default or Initial Value | Description |
 | --- | --- | --- |
 | opdk_version |  '4.18.01' | Default Apigee Edge Private Cloud Version |
-| opdk_installer_path | "/tmp/edge" | Apigee staging installation folder |
+| opdk_resources_path | "/tmp/edge" | Apigee staging installation folder |
 | jdk_version | '1.8' | Target Java JDK version |
 | java_home | /usr/lib/jvm/java-openjdk | System file path to use in JAVA_HOME |
 | opdk_group_name |  '' | OPDK OS group name|
