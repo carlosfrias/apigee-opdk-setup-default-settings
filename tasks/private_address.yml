@@ -6,9 +6,9 @@
     msg: "Unable to retrieve private address"
 
 - name: Normalized name for private address
-  cache:
-    key: 'private_address'
-    value: '{{ hostvars[inventory_hostname][interface_name].ipv4.address }}'
+  set_fact:
+    cacheable: yes
+    private_address: '{{ hostvars[inventory_hostname][interface_name].ipv4.address }}'
 
 - block:
 
@@ -17,9 +17,9 @@
     when: ansible_ec2_local_ipv4 is not defined
 
   - name: Normalized name for private address on AWS
-    cache:
-      key: 'private_address'
-      value: '{{ ansible_ec2_local_ipv4 }}'
+    set_fact:
+      cacheable: yes
+      private_address: '{{ ansible_ec2_local_ipv4 }}'
     when: ansible_ec2_local_ipv4 is defined
 
   when: ansible_bios_version is defined and ansible_bios_version | search('amazon')

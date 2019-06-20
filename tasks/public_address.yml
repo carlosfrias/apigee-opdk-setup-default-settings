@@ -1,8 +1,8 @@
 ---
 - name: Normalized name for public address
-  cache:
-    key: 'public_address'
-    value: '{{ inventory_hostname }}'
+  set_fact:
+    cacheable: yes
+    public_address: '{{ inventory_hostname }}'
 
 - block:
 
@@ -11,8 +11,8 @@
     when: ansible_ec2_public_ipv4 is not defined
 
   - name: Normalized name for public address on AWS
-    cache:
-      key: 'public_address'
-      value: '{{ ansible_ec2_public_ipv4 | default(inventory_hostname) }}'
+    set_fact:
+      cacheable: yes
+      public_address: '{{ ansible_ec2_public_ipv4 | default(inventory_hostname) }}'
 
   when: ansible_bios_version is defined and ansible_bios_version | search('amazon')
