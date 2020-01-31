@@ -8,7 +8,7 @@ opdk_user_home: /home/{{ opdk_user_name }}
 opdk_version: '4.18.05'
 
 # Apigee staging installation folder
-opdk_resources_path: "/tmp/edge"
+opdk_resources_path: "/opt/apigee/customer/installation"
 
 # Default name of the backup archive of the apigee data folder
 apigee_data_backup_archive_name: apigee_data_backup.tar.gz
