@@ -1,6 +1,8 @@
 # apigee-opdk-setup-default-settings
 
 > Central Ansible role that defines every default variable and resolves per-node network topology for the 70+ role `apigee-opdk-*` framework — the single source of truth for Apigee Edge Private Cloud installations.
+> [!NOTE]
+> Engineering portfolio note — this project demonstrates Apigee OPDK centralized defaults and topology resolution. See the [skills assessment →](SKILLS-ASSESSMENT.md) for the expertise applied.
 
 [!NOTE]
 For the skills, expertise, and engineering rationale reflected in this role, see [SKILLS-ASSESSMENT.md](./SKILLS-ASSESSMENT.md).
