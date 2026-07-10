@@ -1,6 +1,6 @@
 # Skills Assessment — apigee-opdk-setup-default-settings
 
-> **Skill domain:** Apigee OPDK infrastructure-as-code — the centralized defaults and runtime topology resolver that every other role in the 70+ role framework depends on. Part of the broader Apigee platform-operations portfolio; see the [`bap_coe` portfolio hub →](https://github.com/carlosfrias/apigee-hybrid-workspace/blob/main/SKILLS-ASSESSMENT.md) for the full corpus.
+> **Skill domain:** Apigee OPDK infrastructure-as-code — the centralized defaults and runtime topology resolver that every other role in the 70+ role framework depends on. Part of the broader Apigee platform-operations portfolio; see the [`bap_coe` portfolio hub →](https://github.com/carlosfrias/apigee-hybrid-workspace/blob/master/SKILLS-ASSESSMENT.md) for the full corpus.
 
 ---
 
@@ -36,9 +36,9 @@ The runtime resolution pattern (detect interface → resolve IPs → enrich with
 
 | Skill | Repository | Assessment |
 |-------|-----------|-----------|
-| Apigee Hybrid / K8s automation (collection) | [`apigee-hybrid-workspace`](https://github.com/carlosfrias/apigee-hybrid-workspace) | [SKILLS-ASSESSMENT.md →](https://github.com/carlosfrias/apigee-hybrid-workspace/blob/main/SKILLS-ASSESSMENT.md) ✅ portfolio hub |
-| Rolling upgrade / DR / traffic fencing | [`apigee-opdk-playbook-maintenance-opdk-upgrade`](https://github.com/carlosfrias/apigee-opdk-playbook-maintenance-opdk-upgrade) | [SKILLS-ASSESSMENT.md →](https://github.com/carlosfrias/apigee-opdk-playbook-maintenance-opdk-upgrade/blob/main/SKILLS-ASSESSMENT.md) ✅ |
-| Multi-datacenter expansion | [`apigee-opdk-playbook-maintenance-expand-region`](https://github.com/carlosfrias/apigee-opdk-playbook-maintenance-expand-region) | [SKILLS-ASSESSMENT.md →](https://github.com/carlosfrias/apigee-opdk-playbook-maintenance-expand-region/blob/main/SKILLS-ASSESSMENT.md) ✅ |
+| Apigee Hybrid / K8s automation (collection) | [`apigee-hybrid-workspace`](https://github.com/carlosfrias/apigee-hybrid-workspace) | [SKILLS-ASSESSMENT.md →](https://github.com/carlosfrias/apigee-hybrid-workspace/blob/master/SKILLS-ASSESSMENT.md) ✅ portfolio hub |
+| Rolling upgrade / DR / traffic fencing | [`apigee-opdk-playbook-maintenance-opdk-upgrade`](https://github.com/carlosfrias/apigee-opdk-playbook-maintenance-opdk-upgrade) | [SKILLS-ASSESSMENT.md →](https://github.com/carlosfrias/apigee-opdk-playbook-maintenance-opdk-upgrade/blob/master/SKILLS-ASSESSMENT.md) ✅ |
+| Multi-datacenter expansion | [`apigee-opdk-playbook-maintenance-expand-region`](https://github.com/carlosfrias/apigee-opdk-playbook-maintenance-expand-region) | [SKILLS-ASSESSMENT.md →](https://github.com/carlosfrias/apigee-opdk-playbook-maintenance-expand-region/blob/master/SKILLS-ASSESSMENT.md) ✅ |
 
 ---
 
