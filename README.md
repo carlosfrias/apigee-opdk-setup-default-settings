@@ -1,5 +1,8 @@
 # apigee-opdk-setup-default-settings
 
+> 🔄 **Evolution note:** The automation approach from this OPDK-era role has been consolidated into the `apigee-hybrid-workspace` Ansible collection. See the successor capability in the portfolio hub: [`carlosfrias/apigee-hybrid-workspace`](https://github.com/carlosfrias/apigee-hybrid-workspace) → `bap_coe/private_cloud/` and `bap_coe/apigee_hybrid/`. The collection README explains each role group’s business value and production context.
+
+
 > Central Ansible role that defines every default variable and resolves per-node network topology for the 70+ role `apigee-opdk-*` framework — the single source of truth for Apigee Edge Private Cloud installations.
 > [!NOTE]
 > Engineering portfolio note — this project demonstrates Apigee OPDK centralized defaults and topology resolution. See the [skills assessment →](SKILLS-ASSESSMENT.md) for the expertise applied.
